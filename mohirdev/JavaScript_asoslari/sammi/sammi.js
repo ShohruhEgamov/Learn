@@ -20,7 +20,7 @@
 // Object.setPrototypeOf(gm, car)
 // console.log(gm);
 
-//                                                                              Amaliy mashgulotlar
+//                                                                              Amaliy mashgulotlar u bilan ishlash
 
 const seriesDB = {
 	count: 0,
