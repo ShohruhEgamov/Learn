@@ -1,0 +1,162 @@
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+.navbar-brand {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 500;
+}
+
+.nav-link {
+	color: #6a6a6a;
+	font-size: 15px;
+	padding: 10px 20px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+	color: #8a8a8a;
+}
+
+.home {
+	background-color: #F0F5F9;
+	padding: 150px 0 100px 0;
+}
+
+.text-secondary {
+	font-size: 16px;
+	font-weight: 600;
+	color: #5c5c5c;
+	line-height: 1.2;
+}
+
+.asosiy-matn {
+	font-weight: 800;
+	color: #3a3a47;
+	line-height: 1.2;
+	margin-top: 20px;
+	font-size: 36px;
+}
+
+.btn-outline-primary:hover {
+	color: #FFFFFF !important;
+	background-color: #3498db;
+	border: 2px solid #3498db;
+}
+
+.btn-outline-primary {
+	background-color: transparent;
+	color: #3498db !important;
+	border: 2px solid #3498db
+}
+
+.btn button {
+	display: inline-block;
+	height: 42px;
+	padding: 0 30px;
+	padding-top: 0px;
+	padding-right: 30px;
+	padding-bottom: 0px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	line-height: 2.8;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	border-radius: 5px;
+	box-sizing: border-box;
+	transition: 0.2s;
+	margin-right: 10px;
+}
+
+.abaut-card-1 {
+	background-color: #f0f5f9;
+}
+
+.abaut-card-2 {
+	background-color: #f0f5f9;
+}
+
+.abaut-card-3 {
+	background-color: #f0f5f9;
+}
+
+.abaut-card-images {
+	width: 80px;
+}
+
+.container div h6 {
+	font-size: 13px;
+	font-weight: 600;
+	color: #21bf73;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.container div h2 {
+	font-weight: 800;
+	color: #383B61;
+	line-height: 1.2;
+	margin-top: 15px;
+}
+
+.container div p {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	color: #818198;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.features-cont {
+	background-color: #F0F5F9;
+}
+
+.result-img {
+	width: 80px;
+}
+
+.result-matn {
+	font-size: 14px;
+	font-weight: 600;
+	color: #3498db;
+	line-height: 1.3;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+}
+
+.foiz {
+	font-size: 30px;
+}
+
+.reviews__container {
+	padding: 100px 50px;
+	background-color: #F0F5F9;
+}
+
+.images {
+	border-radius: 50%;
+}
+
+.card-itemsl {
+	background-color: #F0F5F9;
+}
+
+.pising-images {
+	width: 120px;
+}
+
+.footer_qismi {
+	height: 100px;
+	justify-content: center;
+}

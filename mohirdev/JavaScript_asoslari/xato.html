@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<!-- <h2>JavaScript try catch</h2>
+
+	<p>Please input a number between 5 and 10:</p> -->
+
+	<!-- <input id="demo" type="text">
+	<button type="button" onclick="myFunction()">Test Input</button> -->
+
+	<!-- <p id="demo"></p> -->
+
+
+	<h1>JavaScript Classes</h1>
+	<p>Creating two car objects from a car class:</p>
+
+	<p id="demo"></p>
+
+	<script type="module">
+		// function myFunction() {
+		// 	const message = document.getElementById("p01");
+		// 	message.innerHTML = "";
+		// 	let x = document.getElementById("demo").value;
+		// 	try {
+		// 		if (x.trim() == "") throw "bo'sh";
+		// 		if (isNaN(x)) throw "raqam emas";
+		// 		x = Number(x);
+		// 		if (x > 10) throw "juda baland";
+		// 		if (x < 5) throw "juda past";
+		// 	}
+		// 	catch (err) {
+		// 		message.innerHTML = "Kiritish " + err;
+		// 	}
+		// 	finally {
+		// 		document.getElementById("demo").value = "";
+		// 	}
+		// }
+
+		// function myFunction() {
+		// 	const message = document.getElementById("p01");
+		// 	message.innerHTML = "";
+		// 	let x = document.getElementById("demo").value;
+		// 	try {
+		// 		if (x.trim() == "") throw "Bo'sh";
+		// 		if (isNaN(x)) throw "Bu son emas";
+		// 		x = Number(x);
+		// 		if (x > 10) throw "10 dan baland";
+		// 		if (x < 5) throw "5 dan past";
+		// 	}
+		// 	catch (err) {
+		// 		message.innerHTML = "Xatolik: " + err;
+		// 	}
+		// }
+
+		// let num = 1;
+		// try {
+		// 	num.toPrecision(500);
+		// }
+		// catch (err) {
+		// 	document.getElementById("demo").innerHTML = err.name;
+		// }
+
+		// try {
+		// 	// Xato bo'lishi mumkin bo'lgan kod
+		// 	let result = myFunction();
+
+		// 	// Sun'iy xato yaratish
+		// 	if (result < 0) {
+		// 		throw new Error("Natija manfiy bo'lishi mumkin emas.");
+		// 	}
+
+		// } catch (error) {
+		// 	// Xato qo'lga olinadi va qayta ishlanadi
+		// 	console.error("Xato qo'lga olindi:", error.message);
+		// } finally {
+		// 	// Bu blok har doim bajariladi
+		// 	console.log("Bu har doim bajariladi.");
+		// }
+
+		// function myFunction() {
+		// 	const message = document.getElementById("p01");
+		// 	message.innerHTML = "";
+		// 	let x = document.getElementById('demo').value;
+		// 	try {
+		// 		if (x.trim() == "") throw "Bo'sh";
+		// 		if (isNaN(x)) throw "Bu son emas";
+		// 		if (x < 0) {
+		// 			throw new Error("Natija manfiy bo'lishi mumkin emas.");
+		// 		}
+		// 		x = Number(x);
+		// 		if (x <= 5) throw "bu kichkina";
+		// 		if (x >= 10) throw "bu katta";
+		// 	}
+		// 	catch (err) {
+		// 		message.innerHTML = "Xatolik: " + err;
+		// 	}
+		// 	finally {
+		// 		document.getElementById("demo").value = "";
+		// 	}
+		// }
+
+
+		// const person = {
+		// 	firstName: "John",
+		// 	lastName: "Doe",
+		// 	fullName: function () {
+		// 		return this.firstName + " " + this.lastName;
+		// 	}
+		// }
+
+		// const member = {
+		// 	firstName: "Hege",
+		// 	lastName: "Nilsen",
+		// }
+		// let fullName = person.fullName.bind(person);
+
+		// document.getElementById("demo").innerHTML = fullName();
+
+		// 	class myCarf {
+		// 		constructor(brand, year, color) {
+		// 			this.brand = brand;
+		// 			this.year = year;
+		// 			this.color = color;
+		// 		}
+		// 	}
+
+		// 	const myCar1 = new Car("Ford", 2014);
+		// 	const myCar2 = new Car("Audi", 2019);
+
+		// 	let fullName = person.fullName.bind(person);
+
+		// 	document.getElementById("demo").innerHTML = fullName();
+
+
+		// class Car {
+		// 	constructor(name, year, color) {
+		// 		this.name = name;
+		// 		this.year = year;
+		// 	}
+		// }
+
+		// const myCar1 = new Car("Ford", 2014);
+		// const myCar2 = new Car("Audi", 2019);
+
+		// document.getElementById("demo").innerHTML =
+		// 	myCar2.name + " " + myCar2.year;
+
+		class Car {
+			constructor(name, year) {
+				this.name = name;
+				this.year = year;
+
+			}
+			age() {
+				const date = new Date();
+				return date.getFullYear() - this.year;
+			}
+		}
+		const myCar = new Car("Ford", 1968);
+		document.getElementById("demo").innerHTML =
+			"My car is a " + myCar.age() + " and it is ";
+
+		// import { name, age } from "./person.js";
+
+		// let text = " Mening ismim " + name + ", Men " + age + " yoshdaman."
+
+		// document.getElementById("demo").innerHTML = text;
+
+		// import message from "./message.js";
+		// document.getElementById("demo").innerHTML = message();
+
+		// let x = 15 * 5;
+		// debugger;
+		// document.getElementById("demo").innerHTML = x;
+	</script>
+
+</body>
+
+</html>

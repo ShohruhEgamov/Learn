@@ -1,0 +1,246 @@
+body {
+	background-color: powderblue;
+}
+
+h2 {
+	color: aqua;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 200%;
+	padding: 30px;
+	text-align: end;
+}
+
+p {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	border: 3px solid green;
+	background-color: darkturquoise;
+	background: hsl(184, 89%, 50%);
+	padding: 30px;
+	margin: 50px;
+}
+
+blockquote {
+	color: white;
+	text-align: end;
+	font-style: oblique;
+	font-weight: bold;
+	border: 2px solid grey;
+	background-color: hsl(127, 89%, 20%);
+
+}
+
+blockquote:hover {
+	color: blue;
+}
+
+blockquote:active {
+	color: black;
+}
+
+body {
+	color: black;
+	background-color: hsl(197, 12%, 25%);
+}
+
+abbr {
+	display: inline-flex;
+	table-layout: fixed;
+	background-color: hsl(107, 59%, 33%);
+}
+
+address {
+	color: #00ff00;
+}
+
+
+
+/*
+a:link {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a:visited {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover {
+	color: blue;
+	background-color: transparent;
+	text-decoration: unset;
+}
+
+a:active {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}*/
+
+a:link,
+
+a:visited {
+	background-color: #00ff00;
+	color: blue;
+	padding: 20px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+
+}
+
+a:hover {
+	background-color: aqua;
+	color: #ff3399;
+
+}
+
+a:active {
+	background-color: red;
+	color: black;
+
+}
+
+p:link {
+	color: white;
+}
+
+p:visited {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	border: 3px solid green;
+	background-color: white;
+	background: linear-gradient(to top, #00ff00 0%, #ff3399 54%);
+	padding: 30px;
+	margin: 50px;
+}
+
+p:hover {
+	color: blue;
+	padding: 30px;
+	margin: 50px;
+
+}
+
+p:active {
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	border: 3px solid green;
+	background-color: #acda00;
+	background: linear-gradient(to top, #00ff00 0%, #ff3399 54%);
+	padding: 30px;
+	margin: 50px;
+}
+
+address:link,
+address:visited {
+	color: blue;
+}
+
+address:hover,
+address:active {
+	color: black;
+}
+
+h3 {
+	color: white;
+}
+
+h3:link {
+	color: white;
+}
+
+h3:visited {
+	color: white
+}
+
+h3:hover {
+	color: #00ff00;
+}
+
+h3:active {
+	color: blue;
+}
+
+.spiner {
+	background-color: black;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	border: 25px solid green;
+	border-top: 20px solid blue;
+	animation: rotate 2.5s linear infinite;
+}
+
+body {
+	background-image: url(img_7.PNG);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+/*Bu tablo bolimi*/
+
+table {
+	color: red;
+	font-size: 100px;
+	padding: 50px;
+	text-align: center;
+	width: 400px
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+td:hover {
+	border: 5px solid black;
+	color: white;
+	background-color: grey;
+}
+
+th {
+	color: red;
+	padding: 30px;
+	border: 5px solid blue;
+}
+
+th:hover {
+	border: 5px solid blue;
+	color: white;
+	background-color: black;
+
+}
+
+ul {
+	list-style-type:none;
+	overflov: hidden;
+	background-color: #00ff00;
+	color: blue;
+	padding: 20px 40px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+li{
+	float: left;
+}

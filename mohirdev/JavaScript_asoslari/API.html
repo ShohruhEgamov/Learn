@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>API lar</title>
+</head>
+
+<body>
+	<!--                                                                                            Sizning qayerda ekaningiznin ko'rsaadi-->
+
+	<!-- <h2>JavaScript Geolocation</h2>
+
+	<p>Click the button to get your coordinates.</p>
+
+	<button onclick="getLocation()">Try It</button>
+
+	<p id="demo"></p>
+
+	<script>
+		const x = document.getElementById("demo");
+
+		function getLocation() {
+			try {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+			catch {
+				x.innerHTML = err;
+			}
+		}
+
+		function showPosition(position) {
+			x.innerHTML = "Bu yerda lokal: " + position.coords.latitude + "<br>Joylashuv: " + position.coords.longitude;
+		}
+	</script> -->
+
+
+	<!--                                                                                            Kiritilgan API to'g'ri yoki notog'riligini ko'rsatadi -->
+	<!-- <h2>JavaScript Validation</h2>
+
+	<p>Enter a number and click OK:</p>
+
+	<input id="id1" type="number" min="100" max="300" required>
+	<button onclick="myFunction()">OK</button>
+
+	<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+	<p id="demo"></p>
+
+	<script>
+		function myFunction() {
+			const inpObj = document.getElementById("id1");
+			if (!inpObj.checkValidity()) {
+				document.getElementById("demo").innerHTML = inpObj.validationMessage;
+			} else {
+				document.getElementById("demo").innerHTML = "Input OK";
+			}
+		} 
+	</script> -->
+
+	<!--                                                                                                  Yaroqlilik xususiyatlari -->
+	<!-- <input type="number" id="age" /> -->
+	<!-- <input type="number" min="20" max="40" step="2" />
+	<script>
+		const input = document.getElementById("age");
+		if (input.validity.badInput) {
+			console.log("Bad input detected…");
+		} else {
+			console.log("Content of input OK.");
+		}
+	</script> -->
+	<!-- 
+	<h2>JavaScript Validation</h2>
+
+	<p>Enter a number and click OK:</p>
+
+	<input id="id1" type="number" min="100" max="500">
+	<input id="id1" type="number" min="20" max="40" step="2" />
+
+	<button onclick="myFunction()">OK</button>
+
+	<p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+
+	<p id="demo"></p>
+
+	<script>
+		function myFunction() {
+			let text;
+			// if (document.getElementById("id1").validity.rangeOverflow) {
+			if (document.getElementById("id1").validity.rangeUnderflow) {
+				text = "yolgon";
+			} else {
+				text = "rost";
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+	</script> -->
+
+	<!-- <p id="demo"></p>
+
+	<script>
+		sessionStorage.getItem('name');
+		document.getElementById("demo").innerHTML = sessionStorage.getItem("name");
+	</script> -->
+
+	<!-- <h2>JavaScript Web Workers API</h2>
+	<p>Count numbers: <output id="result"></output></p>
+	<button onclick="startWorker()">Start Worker</button>
+	<button onclick="stopWorker()">Stop Worker</button>
+
+	<script>
+		let w;
+
+		function startWorker() {
+			if (typeof (w) == "undefined") {
+				w = new Worker("demo_workers.js");
+			}
+			w.onmessage = function (event) {
+				document.getElementById("result").innerHTML = event.data;
+			};
+		}
+
+		function stopWorker() {
+			w.terminate();
+			w = undefined;
+		}
+	</script> -->
+
+
+	<!--                                                  API da fayillar bilan ishlab uni serverga yuborish -->
+	<!-- <p id="demo">Fetch a file to change this text.</p>
+	<script>
+
+	let file = "fetch_file.txt"
+
+	fetch(file)
+	.then(x => x.text())
+	.then(y => document.getElementById("demo").innerHTML = y);
+
+
+	getText("fetch_file.txt");
+
+	async function getText(file) {
+	let x = await fetch(file);
+	let y = await x.text();
+	document.getElementById("demo").innerHTML = y;
+	}
+
+	</script> -->
+
+	<!-- <input type="text" id="userInput" placeholder="Matn kiriting">
+	<button onclick="extractText()">Extract</button>
+	<p id="result"></p>
+
+	<script>
+		function extractText() {
+			const input = document.getElementById('userInput').value;
+			const firstPart = input.split(' ')[0];
+			document.getElementById('result').innerText = firstPart;
+		}
+	</script> -->
+
+
+
+	<!-- <button onclick="getAltitude()">Get Altitude</button>
+	<p id="altitudeResult"></p>
+	<p id="errorMessage"></p>
+
+	<script>
+		function getAltitude() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showAltitude, showError);
+			} else {
+				document.getElementById('errorMessage').innerText = "Geolocation is not supported by this browser.";
+			}
+		}
+
+		function showAltitude(position) {
+			const altitude = position.coords.altitude;
+
+			if (altitude !== null) {
+				document.getElementById('altitudeResult').innerText = `Your altitude is ${altitude} meters above sea level.`;
+			} else {
+				document.getElementById('altitudeResult').innerText = "Altitude information is not available.";
+			}
+		}
+
+		function showError(error) {
+			switch (error.code) {
+				case error.PERMISSION_DENIED:
+					document.getElementById('errorMessage').innerText = "User denied the request for Geolocation.";
+					break;
+				case error.POSITION_UNAVAILABLE:
+					document.getElementById('errorMessage').innerText = "Location information is unavailable.";
+					break;
+				case error.TIMEOUT:
+					document.getElementById('errorMessage').innerText = "The request to get user location timed out.";
+					break;
+				case error.UNKNOWN_ERROR:
+					document.getElementById('errorMessage').innerText = "An unknown error occurred.";
+					break;
+			}
+		} 
+	</script>-->
+
+	<!-- <div id="demo">
+		<h2>Let AJAX change this text</h2>
+		<button type="button" onclick="loadDoc()">Change Content</button>
+	</div>
+	<script>
+		function loadDoc() {
+			const xhtt = new XMLHttpRequest();
+			xhtt.onload = function () {
+				document.getElementById("demo").innerHTML = this.responseText;
+			}
+			xhtt.open("GET", "fetch_file.txt", true);
+			xhtt.send();
+		}
+	</script> -->
+
+
+	<!-- <h2>The XMLHttpRequest Object</h2>
+	<button type="button" onclick="loadDoc()">Request data</button>
+
+	<p id="demo"></p>
+
+	<script>
+		function loadDoc() {
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function () {
+				document.getElementById("demo").innerHTML = this.responseText;
+			}
+			xhttp.open("POST", "demo_post2.asp");
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("fname=Henry&lname=Ford");
+		}
+	</script> -->
+
+	<!-- <h2>The XMLHttpRequest Object</h2>
+
+	<p id="demo">Let AJAX change this text.</p>
+
+	<button type="button" onclick="loadDoc()">Change Content</button>
+
+	<script>
+		function loadDoc() {
+			var sayt = new XMLHttpRequest();
+			sayt.open('GET', "fetch_file.txt", false);
+			sayt.send();
+			document.getElementById('demo').innerHTML = sayt.responseText;
+		}
+	</script> -->
+
+
+
+	<!-- <h2>The XMLHttpRequest Object</h2>
+	<h3>Start typing a name in the input field below:</h3>
+
+	<p>Suggestions: <span id="txtHint"></span></p>
+	<p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+
+	<script>
+		function showHint(str) {
+			if (str.length == 0) {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			}
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function () {
+				document.getElementById("txtHint").innerHTML =
+					this.responseText;
+			}
+			xhttp.open("GET", "gethint.php?q=" + str);
+			xhttp.send();
+		}
+	</script> -->
+
+
+	<!-- <h2>The XMLHttpRequest Object</h2>
+	<h3>Start typing a name in the input field below:</h3>
+
+	<p>Suggestions: <span id="txtHint"></span></p>
+	<p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+
+	<script>
+		function showHint(str) {
+			if (str.length == 0) {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			}
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function () {
+				document.getElementById("txtHint").innerHTML =
+					this.responseText;
+			}
+			xhttp.open("GET", "gethint.asp?q=" + str);
+			xhttp.send();
+		}
+	</script> -->
+
+
+	<h2>The XMLHttpRequest Object</h2>
+
+	<form action="">
+		<select name="customers" onchange="showCustomer(this.value)">
+			<option value="">Select a customer:</option>
+			<option value="ALFKI">Alfreds Futterkiste</option>
+			<option value="NORTS ">North/South</option>
+			<option value="WOLZA">Wolski Zajazd</option>
+		</select>
+	</form>
+	<br>
+	<div id="txtHint">Customer info will be listed here...</div>
+
+	<script>
+		function showCustomer(str) {
+			if (str == "") {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			}
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function () {
+				document.getElementById("txtHint").innerHTML = this.responseText;
+			}
+			xhttp.open("GET", "getcustomer.php?q=" + str);
+			xhttp.send();
+		}
+	</script>
+</body>
+
+</html>

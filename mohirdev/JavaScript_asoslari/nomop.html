@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Filter Names</title>
+	<style>
+		#namesList {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		#namesList li {
+			padding: 5px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Filter Names</h1>
+	<input type="text" id="nameInput" onkeyup="filterNames()" placeholder="Enter a letter">
+	<ul id="namesList"></ul>
+
+	<script>
+		const names = [
+			"Kate", "Kevin", "Karen", "Karl", "Kylie", "Katherine",
+			"John", "Jane", "Jake", "Julia", "James", "Jill"
+		];
+
+		function filterNames() {
+			const input = document.getElementById('nameInput').value.toLowerCase();
+			const filteredNames = names.filter(name => name.toLowerCase().startsWith(input));
+
+			const namesList = document.getElementById('namesList');
+			namesList.innerHTML = '';
+
+			filteredNames.forEach(name => {
+				const li = document.createElement('li');
+				li.textContent = name;
+				namesList.appendChild(li);
+			});
+		}
+
+		// Initial display of names
+		filterNames();
+	</script>
+</body>
+
+</html>

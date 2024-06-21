@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<h2>Finding HTML Elements by Id</h2>
+	<p id="id01">Hello World!</p>
+	<p id="id02">Hello Sweden!</p>
+	<p id="id03">Hello Japan!</p>
+
+	<p id="demo"></p>
+
+
+	<!-- <script>
+		$(document).ready(function () {
+			var myElements = $("#id02");
+			$("#demo").text("The text from the id01 paragraph is: " + myElements[0].innerHTML);
+		});
+	</script> -->
+
+	<!-- barcha p elementlarini qaytarish -->
+	<!-- <script>
+		$(document).ready(function () {
+			var myElements = $("p");
+			$("#demo").text("Salom mening ismim: " + myElements[2].innerHTML);
+		})
+	</script> -->
+
+	<!-- <script>
+		$(document).ready(function () {
+			var myElement = $("#id01");
+			myElement.text("Hello Sweden!");
+		});
+	</script> -->
+
+	<script>
+		$(document).ready(function () {
+			var myText = $("#02").text();
+			$("#demo").text(myText);
+		});
+
+		$(document).ready(function () {
+			$('#demo').text("Salom mer :) ").css("font-size", "35px").css("border", "2px solid red");
+		});
+
+		$(document).ready(function () {
+			$('#id02').remove();
+		})
+	</script>
+</body>
+
+</html>

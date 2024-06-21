@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<h2>Creating an Object from a JSON String</h2>
+
+	<p id="demo"></p>
+
+	<!-- <script>
+		const txt = '{"name":"John", "age":30, "city":"New York"}'
+		const obj = JSON.parse(txt);
+		document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+	</script> -->
+
+
+	<!-- <script>
+		const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+		const myArr = JSON.parse(text);
+		document.getElementById("demo").innerHTML = myArr[0];
+	</script> -->
+
+	<!-- <script>
+		const txt = '{"name":"Shohruh", "age":23, "year":"2000-12-21", "city":"New York"}';
+		const obj = JSON.parse(txt);
+		obj.year = new Date(obj.year);
+		document.getElementById('demo').innerHTML = obj.name + ", " + obj.year;
+	</script> -->
+
+	<!-- <script>
+	const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+	const obj = JSON.parse(text, function (key, value) {
+	  if (key == "birth") {
+		return new Date(value);
+	  } else {
+		return value;
+	  }
+	});
+	document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+	</script> -->
+
+	<!-- <script>
+		const text = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}';
+		const obj = JSON.parse(text);
+		obj.age = eval("(" + obj.age + ")");
+		document.getElementById("demo").innerHTML = obj.name + ", " + obj.age(); 
+	</script> -->
+
+	<!-- <script>
+		const text = { name: "John", age: 30, city: "New York" };
+		const obj = JSON.stringify(text);
+		document.getElementById("demo").innerHTML = obj; 
+	</script> -->
+
+
+	<!-- <script>
+		const text = ["John", 30, "New York"];
+		const obj = JSON.stringify(text);
+		document.getElementById("demo").innerHTML = obj; 
+	</script> -->
+
+	<!-- <script>
+		let x = prompt("Ism kirit: ");
+		let y = prompt("Yoshingiz: ");
+		let z = prompt("Ma,lakatingiz: ");
+		const myObj = { name: x, age: y, city: z }
+		const myJson = JSON.stringify(myObj);
+		localStorage.setItem("malumotlar", myJson);
+
+		let text = localStorage.getItem("malumotlar");
+		let obj = JSON.parse(text);
+		document.getElementById('demo').innerHTML = obj.age;
+	</script> -->
+
+	<!-- <script>
+		const myJSON = '{"name":"John", "age":30, "car":null}';
+		const myObj = JSON.parse(myJSON);
+
+		let text = "";
+		for (const x in myObj) {
+			text += myObj[x] + ", ";
+		}
+		document.getElementById("demo").innerHTML = text;
+	</script> -->
+
+	<!-- <script>
+		const myJson = '{"name":"John", "age":30, "cars":["Ford", "BMW", "Fiat"]}';
+		const myObj = JSON.parse(myJson);
+
+		let txt = "";
+		for (let i = 0; i < myObj.cars.length; i++) {
+			txt += myObj.cars[i] + ", ";
+		}
+
+		document.getElementById('demo').innerHTML = txt;
+	</script> -->
+
+	<!-- <script>
+		const xmlhttp = new XMLHttpRequest();
+		xmlhttp.onload = function () {
+			const myObj = JSON.parse(this.responseText);
+			document.getElementById("demo").innerHTML = myObj.name;
+		}
+		xmlhttp.open("GET", "json.json");
+		xmlhttp.send();
+	</script> -->
+
+
+	<!-- <script>
+		const sayt = new XMLHttpRequest();
+		sayt.onload = function () {
+			const myArr = JSON.parse(this.responseText);
+			document.getElementById("demo").innerHTML = myArr[1];
+		}
+		sayt.open("GET", "json_demo_array.txt");
+		sayt.send();
+	</script> -->
+
+	<!-- <script>
+		const xmlhttp = new XMLHttpRequest();
+		xmlhttp.onload = function () {
+			const myObj = JSON.parse(this.responseText);
+			document.getElementById("demo").innerHTML = myObj.CD.ARTIST;
+		}
+		xmlhttp.open("GET", "cd_catalog.xml");
+		xmlhttp.send();
+	</script> -->
+
+</body>
+
+</html>

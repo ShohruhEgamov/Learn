@@ -1,0 +1,204 @@
+.heder_qism {
+	width: 1110px;
+	height: 455px;
+	background-color: #EAF1EB;
+	margin: 32px, 165px;
+	border-radius: 24px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.heder_matn {
+	margin-left: 50px;
+	width: 650px;
+	height: 108px;
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 54px;
+	color: #1F2533;
+}
+
+.hader_matnlar {
+	padding-top: 50px;
+}
+
+.heder_matn__izoh {
+	margin-left: 50px;
+	width: 560px;
+	height: 84px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 28px;
+	color: #1F2533;
+}
+
+.summa_raqam {
+	width: 132pc;
+	height: 54px;
+	font-weight: 600;
+	font-size: 42px;
+	line-height: 54px;
+}
+
+.olov_rasm {
+	width: 46px;
+	height: 46;
+}
+
+.summalar {
+	margin-left: 50px;
+}
+
+.avvalgi_summa {
+	width: 70px;
+	height: 54px;
+	margin-top: 29px;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 54px;
+	color: #70737C;
+}
+
+.button__css {
+	margin-left: 50px;
+	margin-top: 20px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 28.51px;
+	width: 153px;
+	height: 51px;
+	border-radius: 8px;
+}
+
+.button__css1 {
+	margin-left: 10px;
+	margin-top: 20px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 28.51px;
+	width: 153px;
+	height: 51px;
+	color: #359740;
+	border-radius: 8px;
+
+}
+
+.rasmlar__effekt {
+	position: relative;
+}
+
+.rasm_asosiy {
+	position: absolute;
+	z-index: 1;
+}
+
+.rasm_orqa__fon {
+	width: 318px;
+	height: 259px;
+	left: 40px;
+	top: 151px;
+	position: absolute;
+}
+
+.rasm_orqa__fon1 {
+	width: 42.39px;
+	left: 317px;
+	top: -40px;
+	position: absolute;
+}
+
+.rasm_orqa__fon2 {
+	width: 200px;
+	top: 240px;
+	left: -60px;
+	position: absolute;
+}
+
+.rasm_orqa__fon4 {
+	width: 150px;
+	top: -30px;
+	left: 210px;
+	position: absolute;
+}
+
+.qisqa_malumotlar {
+	text-align: center;
+	width: 1110px;
+	height: 104px;
+	background-color: #FFE62E17;
+	border-radius: 12px;
+	position: relative;
+	overflow: hidden;
+}
+
+.qisqa_malumot__matn {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 31.5px;
+	color: #1F2533;
+}
+
+.qisqa_malumot__paragrf {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 28.51px;
+	color: #70737C;
+}
+
+.ong__rasm {
+	position: absolute;
+	top: 20px;
+	left: -1px;
+}
+
+.chap__rasm {
+	position: absolute;
+	right: -5px;
+}
+
+.mahsulot__heding {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 54px;
+}
+
+.mah__turlar {
+	text-align: justify;
+	width: 150px;
+	height: 72px;
+	border-radius: 8px;
+	border: 2px solid #EFEFEF;
+	font-size: 14px;
+}
+
+.mah_1 {
+	width: 170px;
+	height: 72px;
+}
+
+.mah__turlar:hover {
+	border: 2px solid seagreen;
+}
+
+.mah_0 {
+	left: -10px;
+}
+
+form {
+	a {
+		color: #359740;
+		width: 50px;
+	}
+}
+
+.carddd {
+	border: 2px solid #EFEFEF;
+}
+
+.sum {
+	color: #70737C;
+}
+
+.mijoz-haqida__reyt {
+	color: #FFCF55;
+}

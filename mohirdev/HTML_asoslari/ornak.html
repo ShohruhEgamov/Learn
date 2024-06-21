@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ornak</title>
+	<link rel="icon" type="image/x-icon" href="favicon (5).ico">
+	<a href="kurs_txt.html" target="_blank">1 chi sahifa</a>
+<meta name="viewport" content="Width=device-width, initial-scale=1.0">
+</head>
+<style>
+	table {
+		border: 5px solid blue;
+		margin: 100px;
+		background-color: white;
+		border-radius: 20px;
+		border-style: double;
+	}
+
+	th {
+		padding: 10px;
+		border: 2px inset black;
+		border-radius: 15px;
+		font-size: 150%;
+	}
+
+	td {
+		padding: 10px;
+		border: 2px inset black;
+		border-radius: 15px;
+		font-size: 120%;
+	}
+
+	td:hover {
+		color: blue;
+		background-color: grey;
+		border: 2px dashed blue;
+	}
+
+	th:hover {
+		color: red;
+		border: 2px dashed black;
+		background-color: grey;
+	}
+
+	table.center { 
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	body {
+		background-color: #B0C4DE;
+	}
+
+	a {
+		border: 3px solid black;
+		padding: 5px;
+		text-decoration: none;
+		text-align: center;
+		color: black;
+		font-size: 20px;
+		border-radius: 10px;
+		border-collapse: collapse;
+	}
+
+	a:hover {
+		background-color: grey;
+		color: blue;
+		border: 2px solid blue;
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 5px;
+		padding: 5px;
+		overflow: hidden;
+	}
+
+	li {
+		float: inherit;
+		/* bu kantentlarni chap tarafda qoyadi */
+	}
+
+	li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 10px;
+		text-decoration: none;
+	}
+
+	hr {
+		border: 1px solid black;
+		width: 90%;
+	}
+
+	.malumotlar {
+		margin: 0;
+		padding: 5x;
+		background-color: lightgray;
+	}
+
+	.malumotlar>h1,
+	.yangi {
+		margin: 20px;
+		padding: 5px;
+	}
+
+	.yangi {
+		background: white;
+	}
+
+	.yangi>h2,
+	p {
+		margin: 5px;
+		font-size: 90%
+	}
+
+	.yangi:hover {
+		background-color: grey;
+		color: blue;
+		border: 2px solid blue;
+	}
+
+	aside {
+		width: 30%;
+		padding-left: 40px;
+		margin-left: 30px;
+		float: right;
+		font-style: italic;
+		background-color: lightgray;
+		display: block;
+	}
+
+
+	aside:hover {
+		border: 2px solid blue;
+	}
+
+	span {
+		color: blue;
+	}
+
+	span:hover {
+		border: 2px dashed green;
+	}
+
+	button {
+		padding: 10px;
+		border: 2px inset black;
+		border-radius: 10px;
+		font-size: 90%;
+	}
+
+	button:hover {
+		background-color: grey;
+		color: blue;
+		border: 2px solid blue;
+	}
+
+	.loyiha {
+		display: grid;
+		grid-template-columns: 33% 33% 33%
+	}
+
+	.loyiha>div {
+		float: left;
+		width: 100%;
+		display: flex;
+
+	}
+
+	div:hover {
+
+		border: 2px dashed blue;
+	}
+
+	.loyiha:hover {
+		border: 1px solid #B0C4DE;
+	}
+
+	.obunachi {
+		padding: 10px;
+		margin: 60px;
+	}
+
+	.gazeta {
+		margin: 10px;
+		padding: 10px;
+	}
+
+	#misol {
+		border: 1px solid black;
+		text-align: center;
+		background-color: grey;
+	}
+
+	figure {
+		border: 10px inset;
+		padding: 20px;
+		margin: auto;
+		border-color: white;
+	}
+*{
+ box-sizing: border-box;
+}
+.menyu{
+		float: left;
+		width: 20%;
+		text-align: center;
+}
+.menyu a{
+	background-color:  #e5e5e5;
+	padding: 8px;
+	margin-top: 7px;
+	display: block;
+	width: 100%;
+	color: black;
+}
+.asosiy{
+	float: left;
+	width: 60%;
+	padding:0 20px;			
+}
+.reklama{
+	background-color: #e5e5e5;
+	padding: 15px;
+	float: left;
+	width: 20%;
+	margin-top: 7px;
+	text-align: center;
+}
+@media only screen and (max-width: 620px){
+.menyu, .asosiy, .reklama {
+ width: 100%;
+}
+}
+
+form{
+	margin-top: 20px;
+	padding: 10px
+}
+
+#cars{
+	color: blue;
+	background-color: #B0C4DE;
+	border-radius: 5px;
+	border: 2px solid black;
+}
+
+#cars:hover{
+		background-color: grey;
+		color: blue;
+		border: 2px solid blue;
+}
+
+fieldset{
+		border: 2px solid black;
+}
+</style>
+</head>
+
+<body>
+	<button type="button" onclick="alert('Salom hali ishga tushmadi')"><b>Test</button>
+	<h1 style="text-align: center;">Oyliklar ro`yxati</h1>
+	<p style="text-align: center;">Bu ischilar oylik royxati:</p>
+
+	<table style="width:700px">
+		<caption><b>Bu birinchi jadvalim</caption>
+		<colgroup>
+			<col span="3" style="background-color:width">
+			<col style="background-color:yellow">
+		</colgroup>
+		<tr>
+			<th style="width:30px">No</th>
+			<th scope="col" style="height:100px">Oylar</th>
+			<th scope="col" style="height:100px">Har kun</th>
+			<th scope="col" style="height:100px">Oyliq maosh</th>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><b>1</td>
+			<td style="font-size: 140%"><b>January</td>
+			<td>$100</td>
+			<td>$1000</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><b>2</td>
+			<td style="font-size: 140%"><b>February</td>
+			<td>$80</td>
+			<td>$1500</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><b>3</td>
+			<td style="font-size: 140%"><b>Dekabr</td>
+			<td>$10</td>
+			<td>$2200</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><b>4</td>
+			<td style="font-size: 140%"><b>Noyabr</td>
+			<td>$100</td>
+			<td>$1000</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><b>5</td>
+			<td><b>Oktiyabr</td>
+			<td>$80</td>
+			<td>$1500</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><b>6</td>
+			<td style="font-size: 140%"><b>Avgust</td>
+			<td>$10</td>
+			<td>$2200</td>
+		</tr>
+		<hr>
+
+
+	</table>
+
+	<table style="width:700px">
+		<hr>
+		<caption style="caption-side:none"><b>Aloqa</caption>
+		<tr>
+			<th>Shohruh</th>
+			<th>Egamov</th>
+		</tr>
+		<td>2000-yil</td>
+		<td>21-dekabr</td>
+		</tr>
+		<tr>
+			<th rowspan="2">Tel: &#x1F4AC;</th>
+			<td id="contact">237-20-42</td>
+		</tr>
+		<tr>
+			<td>237-20-42</td>
+		</tr>
+	</table>
+	<table style="width:700px">
+		<caption style="caption-side:none"><b>Bugalter nazorati bilan</caption>
+		<tr>
+			<th colspan="4">Toplam</th>
+		</tr>
+		<tr>
+			<td style="text-align:center">Yil</td>
+			<td style="text-align:center">2000</td>
+			<td style="text-align:center">Kun</td>
+			<td style="text-align:center">21-dekabr</td>
+		</tr>
+
+		<tr>
+			<th style="text-align:center" colspan="2">Toplam:</th>
+			<td style="text-align:center; background-color:yellow" colspan="2"><b>$ 9400<b></td>
+		</tr>
+		<hr>
+	</table>
+	</table>
+	<hr>
+
+	<h2>Boshliqlar ro`yxati.</h2>
+
+	<ul style="list-style-type: circle">
+		<li>Egamov Diyorbek</li>
+		<li>Egamov Bekmirza</li>
+		<li>Egamov Farrux</li>
+	</ul>
+
+	<ol type="I" start="1">
+		<li>Egamov Diyorbek</li>
+		<ul>
+			<li>1994-yil 14-aprel</li>
+		</ul>
+		<li>Egamov Bekmirza</li>
+		<ul>
+			<li>1996-yil 21-noyabr</li>
+		</ul>
+		<li>Egamov Farrux</li>
+		<ul>
+			<li>1998-yil 15-noyabr</li>
+		</ul>
+	</ol>
+
+	<dl>
+		<dt>Shohruh</dt>
+		<dd>-Bog`ot tumani</dd>
+		<dt>Diyorbek</dt>
+		<dd>-Toshkent viloyati</dd>
+	</dl>
+	<hr>
+
+	<h2>Bu boshqa bolimlar</h2>
+	<p><b>Bu yerda malumotlarga javob olishingiz mumkin</p>
+	<dl>
+		<li><a href="kurs_txt.html" target="_blank">Uy</a></li>
+		<li><a href="#news">News</a></li>
+		<li><a href="#contact" accesskey="t">Contact</a></li>
+	</dl>
+	<hr>
+
+
+	<h1 id="news">Bu qisqa malumotlar</h1>
+
+	<article class="malumotlar">
+		<h1>Yangi malumotlar &#128064;</h1>
+		<article class="yangi">
+			<h1>Birinchi</h1>
+			<p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most
+				popular web browser since January, 2018.</p>
+		</article>
+		<article class="yangi">
+			<h1>Ikkinchi</h1>
+			<p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular
+				web browser today!.</p>
+		</article>
+		<article class="yangi">
+			<h1>Uchinchi</h1>
+			<p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced
+				Internet Explorer.</p>
+		</article>
+	</article>
+	<div class="gazeta">
+
+
+
+		<h1>Gazeta tipdagi matn</h1>
+
+		<p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a
+			great summer together with my family!</p>
+
+		<aside>
+			<p>The Epcot center is a theme park at <span><b>Walt Disney World</span> Resort featuring exciting
+				attractions,<br> international pavilions, award-winning fireworks and <br>seasonal special events.</p>
+		</aside>
+		<p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a
+			great summer together with my family!</p>
+		<p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a
+			great summer together with my family!</p>
+	</div>
+
+	<div class="obunachi" style="background-color: #D9EEE1">
+		<h1>Salom mening obunachilarim</h1>
+		<p>Men Xorazm viloyatida</p>
+		<p>Bog`ot tumanida tugilganman</p>
+	</div>
+
+
+
+	<h1>Yangi loyiha</h1>
+
+	<div class="loyiha">
+		<div style="background-color: #FFF4A3;">
+			<h2>Tashkent</h2>
+			<p>Bu o`zbekistonning poyitaxti</p>
+		</div>
+
+		<div style="background-color: #FFC0C7;">
+			<h2>Xorazm</h2>
+			<p>Bu o`zbekistonning yuragi</p>
+		</div>
+
+		<div style="background-color: #D9EEE1;">
+			<h2>Andijon</h2>
+			<p>Bu o`zbekistonning sanoat rivojlangan shaxri</p>
+		</div>
+	</div>
+
+	<h2> Bu ID haqidagi kurs</h2>
+	<p>Bu yerda ID ni ishlatish uchun biron soz oldiga # qoyib<br>
+		ID = "so`z kiritiladi"</p>
+
+	<h1 id="misol">Bu misol</h1>
+
+	<h1>HTML Iframes</h1>
+	<p>
+		bu esa boshqa saytni bu yerda kichik qilib korssatish uchun
+	</p>
+	<figure>
+		<iframe src="shoh.html" height="200" width="100%" title="boshqa sayt"></iframe>
+	</figure>
+
+	<figure>
+		<iframe src="shoh.html" name="yangisayt" height="300px" width="100%" title="boshqa sayt"></iframe>
+
+		<p><a href="kurs.css" target="yangisayt">Bosh sahifani css kodlari</a></p>
+	</figure>
+
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script> 
+
+
+<h1>Bu divlar bilan ishlash</h1>
+<p>Bu yerda 3 xatorli kanteynir div yordamida yasaladi</p>
+<!-- 
+<div class="menyu">
+	<p>Menyu</p>
+</div>
+
+<div class="asosiy">
+	<p>Asosiy</p>
+</div>
+
+<div class="reklama">
+	<p>Reklama</p>
+</div> -->
+
+
+
+<div style="background-color: #e5e5e5; padding:15px; text-align: center;">
+	<h1>Salom Shohruh</h1>
+</div>
+
+<div style="overflow: auto">
+	<div class="menyu">
+		<a href="#">Asosiy</a>
+		<a href="#">Menyu</a>
+		<a href="#">Kurs</a>
+		<a href="#">Loyiha</a>
+		<a href="#">Misollar</a>
+	</div>
+	
+	<div class="asosiy">
+		<h1>Lorum Ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+			
+	</div class="reklama">
+		<h2>Reklama</h2>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+	<div>
+		
+	</div>
+</div>
+
+<nav style="padding: 10px">
+	<a href="/html/">HTML</a>
+	<a href="/css/">CSS</a>
+	<a href="/js/">JavaScript</a>
+</nav>
+
+
+<form>
+	<fieldset>
+	<legend>Malumotlarga kirish</legend>
+	<label for="fname">Familiya</label><br>
+	<input type="text" id="fname" name="fname" placeholder="familiya"><br>
+
+	<label for="lname">Ismi</label><br>
+	<input type="text" id="lname" name="lname" placeholder="ism"><br>
+	<input type="submit" value="Yuborish">	
+</form>
+
+<form>
+	<input type="radio" id="html" name="fav_language" value="HTML">
+	<label for="html">HTML</label><br>
+
+	<input type="radio" id="css" name="fav_language" value="CSS">
+	<label for="css">CSS</label><br>
+
+	<input type="radio" id="python" name="fav_language" value="PYTHON">
+	<label for="python">PYTHON</label><br>
+</form>
+
+<form>
+  <input type="checkbox" id="katakcha1" name="katakcha1" value="Bike">
+  <label for="katakcha1"> I have a bike</label><br>
+  <input type="checkbox" id="katakcha2" name="katakcha2" value="Car">
+  <label for="katakcha2"> I have a car</label><br>
+  <input type="checkbox" id="katakcha3" name="katakcha3" value="Boat">
+  <label for="katakcha3"> I have a boat</label><br><br>
+  <input type="submit" value="Kirish">
+</form>
+
+<form action="/kurs_txt.html" target="_blank">
+	<label for="cars">Moshina nomi</label>
+	<select id="cars" name="cars">
+		<option value="volva">Volva</option>
+		<option value="bmw">BMW</option>
+		<option value="audi">AUDI</option>
+		<option value="lasetti">LASETTI</option>
+		<option value="spark">SPARK</option>
+		<option value="nexia">NEXIA</option>
+	</select>
+	<input type="submit">
+</form>
+
+<form>
+	<label for="cars">Moshinalar tanlang</label>
+	<select id="cars" name="cars" size="4" multiple>
+		<option value="volvo">VOLVA</option>
+		<option value="bmw">BMW</option>
+		<optgroup>
+		<option value="lasetti">LASETTI</option>
+		<option value="spark">SPARK</option>
+		</optgroup>
+		<option value="audi">AUDI</option>
+		<option value="lasetti">LASETTI</option>
+		<option value="spark">SPARK</option>
+		<option value="nexia">NEXIA</option>
+	</select>
+</form>
+
+<form>
+<textarea name="message" rows="10" cols="160" placeholder="Yozing">
+Siz haqingizda</textarea>
+</form>
+</fieldset>
+
+<form>
+	<input list="saytlar" name="sayt">
+	<datalist id="saytlar"></datalist>
+	<option value="Edge">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+	</datalist>
+</form>
+
+<form>
+
+<label for="favcolor">Bu yerdan ranglardan foydalansa boladi</label>
+<input type="color" id="favcolor" name="favcolor" value="#ff0000">
+
+<label for="birthday">bugun</label>
+<input type="date" id="birthday" name="birthday">
+<input type="datetime-local" id="birthday" name="birthday">
+<input type="month" id="birthday" name="birthday">
+<input type="number" id="birthday" name="birthday" min="0" max="100" step="10"> 
+<input type="time" id="birthday" name="birthday">
+<input type="week" id="birthday" name="birthday">
+<input type="password" id="birthday" name="birthday">
+</form>
+
+<form>
+<input type="image" src="img_5.PNG" alt="Submit" width="48" height="48">
+</form>
+
+<form>
+<label for="mylife">Faylni tanla:</label>
+<input type="file" id="myfile" name="mylife"><br>
+</form>
+
+<form>
+<label for="tel">Telefon raqamni kiriting</label><br>
+<input type="tel" id="tel" name="tel" placeholder="123-45-67" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+</form>
+
+
+<convas id="namuna" width="200" heigth="100" style="border:1px solid #000000;">
+Mening birinchi convasim
+</convas>
+
+<svg width="100" height="100">
+	<circle cx="50" cy="50" r="40" stroke="green" stroke-width="5" fill="yellow" />
+</svg>
+
+<svg width="400" height="120">
+	<rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue"/>
+</svg>
+
+<svg width="400" height="120">
+	<rect x="10" y="10" rx="10" ry="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue"/>
+</svg>
+
+
+<svg width="300" height="200">
+	<polygon points="100,10 40,198 190,78 10,78 160,198" 
+style="fill:lime; stroke:purple"; stroke-width:10; fill-rule:evenodd;" />
+</svg><br>
+
+<hr>
+
+<label for="birinchi">Korsatgichlar</label>
+<meter id="birinchi" min="0" low="50" high="80" max="100" value="75"></meter>
+
+<label for="ikkinchi">Korsatgichlar 2</label>
+<meter id="ikkinchi" value="0.3" high="0.9" low="0.1" optimum="0.5"></meter>
+
+<label for="ikkinchi">Korsatgichlar 2</label>
+<meter id="ikkinchi" value="0.3" high="0.9" low="0.1" optimum="0.5"></meter>
+
+<form
+oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+<input type="range" id="a" value="50"></input>
++<input type="range" id="b" value="25"></input>
+=<output name="x" for="a b"></output>
+</form>
+
+<ruby>
+D <rp>(</rp><rt>d</rt><rp>)</rp>
+</ruby>
+
+<form>
+  <label for="cars">Moshinalar</label>
+  <select name="cars" id="cars" size="1"multiple required>
+    <option value="">None</option>
+    <option value="volvo">Volvo</option>
+    <option value="bmw">BMW</option>
+    <option value="mers">Mersides benz</option>
+    <option value="lambo">Lamborgini</option>
+    <option value="ferr">Ferrari</option>
+  </select>
+</form>
+
+</body> 
+</html>

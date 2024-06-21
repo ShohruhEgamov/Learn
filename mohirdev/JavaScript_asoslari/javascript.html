@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>JavaScript</title>
+</head>
+
+<body>
+
+
+	<h2 id="demo">What Can JavaScript Do?</h2>
+	<p>JavaScript can change HTML content.</p>
+	<p id="dema" style="display:none">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+		Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+		type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+		into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+		of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+		Aldus PageMaker including versions of Lorem Ipsum.!</p>
+	<button type="button"
+		onclick="document.getElementById('demo').innerHTML = 'Salom bu yerda ko`p narsa o`rganishingiz mumkin'">Click
+		Me!</button>
+	<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Kattalashtir</button>
+	<button type="button" onclick="document.getElementById('dema').style.fontSize='35px'">Kattalashtir</button>
+	<button type="button" onclick="document.getElementById('demo').style.display='none'">Yashir</button>
+	<button type="button" onclick="document.getElementById('dema').style.display='block'">Yashiringan fayl!</button>
+	<button type="button" onclick="document.getElementById('dema').style.display='none'">Yashir</button>
+
+
+
+	<p id="de"></p>
+	<p id="head">A paragraf</p>
+	<button type="button" onclick="myFunction()">Bosss</button>
+	<hr><br>
+
+
+
+	<h2>Demo External JavaScript</h2>
+	<p id="salom">A Paragraph.</p>
+	<p id="alik">tugadi.</p>
+	<button type="button" onclick="Salomlashish()">Try it</button>
+	<button type="button" onclick="Alikolish()">Try it</button>
+
+
+
+	<p>This example links to "myScript.js".</p>
+	<p>(myFunction is stored in "myScript.js")</p>
+	<hr><br>
+
+
+	<h1>Salom bu alert qilib chiqarish</h1>
+	<p>Printirdan chiqarish</p>
+	<button onclick="window.print()">chiqdi olish</button>
+	<hr><br>
+
+
+	<!--                                                              JavaScript bayonotlari -->
+
+	<p>A <b>Shohruh Egamov</b> bu javascript tilini o`rganayapdi <b>Ishlariga omad</b> bundan keyin to`xtamaslikingz
+		kerak</p>
+	<p id="bayonot"></p>
+
+
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<button onclick="yana_Ismla()">Buni bos</button>
+	<hr><br>
+
+	<!--                                                               JavaScript sintaksisi -->
+
+	<p id="raqam"></p>
+	<h1 id="son"></h1>
+	<hr><br>
+
+	<!--                                                               JavaScript o'zgaruvchilari -->
+
+	<h1>O'zgaruvchilarni o'rganish</h1>
+	<p id="ozgaruvchi"></p>
+	<hr><br>
+
+	<!--                                                               JavaScript Let -->
+
+	<h2>O'zgaruvchilarni elon qilsh</h2>
+	<p id="elon"></p>
+	<hr><br>
+
+	<!--                                                               JavaScript Const -->
+
+	<h1>JavaScript const</h1>
+	<p id="moshina"></p>
+	<h1>Bu yana bir uslubi</h1>
+	<p>Doimiy ob'ektni e'lon qilish ob'ektlarning xususiyatlarini o'zgartirib bo'lmaydigan qilib qo'ymaydi:</p>
+
+	<p id="ranglar"></p>
+	<hr><br>
+
+
+	<!--                                                               JavaScript operatorlari -->
+	<h1>JavaScript String Operators</h1>
+	<p id="operator"></p>
+	<p id="harflar"></p>
+	<hr><br>
+
+	<!--                                                               JavaScript arifmetikasi -->
+
+	<h1>JavaScript Arithmetic</h1>
+	<h2>The ** Operator</h2>
+	<p id="arifmet"></p>
+
+	<p>Bu ikkalasi ham bir narsani ifodalaydi</p>
+	<p id="arifmet1"></p>
+	<hr><br>
+
+
+	<!--                                                               JavaScript Data Types -->
+
+	<h1>JavScript Bigint</h1>
+	<p>A BigInt can not have decimals.</p>
+
+	<p id="bigint"></p>
+
+	<p>You cannot perform math between a BigInt type and a Number type.</p>
+
+	<h2>JavaScript Arrays</h2>
+
+	<p>Array indexes are zero-based, which means the first item is [0].</p>
+
+	<p id="massiv"></p>
+
+	<h2>JavaScript Objects</h2>
+
+	<p id="objekt"></p>
+
+	<h2>The typeof Operator</h2>
+	<p id="taypeof"></p>
+
+	<p>Qiymati bo'lmagan o'zgaruvchining qiymati (va ma'lumotlar turi) aniqlanmagan .<b>undefined</b>.</p>
+	<p id="undefn"></p>
+	<hr><br>
+
+
+	<!--                                                               JavaScript Functions -->
+
+	<h1>JavaScript Functions</h1>
+
+	<p>Hisoblashni amalga oshiradigan va natijani qaytaradigan funktsiyani chaqiring:</p>
+
+	<p id="function"></p>
+
+	<p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p>
+	<p id="funk"></p>
+
+	<h1>JavaScript Functions</h1>
+
+	<p>Outside myFunction() carName is undefined.</p>
+
+	<p id="lokal"></p>
+	<p id="lokal1"></p>
+	<hr><br>
+
+
+	<!--                                                               JavaScript ob'ektlari -->
+
+	<h2>JavaScript Objects</h2>
+	<p>Ob'ekt usuli - bu xususiyat qiymati sifatida saqlanadigan funksiya ta'rifi.</p>
+
+	<p id="thisUsuli"></p>
+	<p id="thisUsuli1"></p>
+	<hr><br>
+
+
+	<!--                                                               JavaScript Events -->
+
+	<button onclick="document.getElementById('event').innerHTML = Date()">Bu yerda Vaqt</button>
+	<button onclick="this.innerHTML = Date()">Bu yerda Vaqt</button>
+	<p id="event"></p>
+	<hr><br>
+
+
+	<!--                                                               JavaScript string usullari-->
+	<h1>JavaScript Strings</h1>
+	<h2>The charAt() Method</h2>
+
+	<p id="strd"></p>
+
+	<p id="header"></p>
+	<hr><br>
+
+	<!--                                                                JavaScript string qidiruvi -->
+	<marquee behavior="alternate" direction="right">salom men shohruh</marquee>
+	<br>
+	<hr>
+	<div class="input-grup">
+		<input type="text" name="text" class="input">
+		<label class="label">First Name</label>
+	</div>
+	<!--                                                               JavaScript Funksiyalar -->
+	<p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+	<button onclick="myFunction1()">Sort Alphabetically</button>
+	<button onclick="myFunction2()">Sort Numerically</button>
+
+	<p id="saralash"></p>
+	<script src="javascript.js"></script>
+</body>
+
+</html>

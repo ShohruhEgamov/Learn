@@ -1,0 +1,53 @@
+.secsin_title {
+	padding-top: 10px;
+}
+
+textarea,
+input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: 1px solid #f0e9ff;
+	border-radius: 5px;
+	padding-left: 18px;
+	font-size: 13px;
+	background: transparent;
+	color: #495057;
+}
+
+textarea:focus,
+input:focus {
+	outline: 0;
+}
+
+.havf {
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+}
+
+.yana {
+	padding-right: 40px;
+}
+
+.pastroq {
+	margin-top: 30px;
+}
+
+@media only screen and (max-width: 991px) {
+
+	.secsin_title,
+	.maqola-satri {
+		width: 100%;
+	}
+
+	.havf,
+	.yana,
+	.emaa,
+	input [type="text"] {
+		width: 100%;
+		padding: 0;
+		padding-right: 10px;
+	}
+}

@@ -1,0 +1,22 @@
+//SASS Code
+$color: #ff0099;
+$complement: complement($color);
+//Returns the complement of a color.
+$invert: invert($color); //Returns the inverse of a color.
+
+.complement {
+	background: $complement;
+}
+
+.invert {
+	background: $invert;
+}
+
+//CSS
+.complement {
+	background: #00ff66; //Same Color Code
+}
+
+.invert {
+	background: #00ff66; //Same Color Code
+}

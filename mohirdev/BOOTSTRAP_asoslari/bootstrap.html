@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<title>BOOTSTRAP</title>
+</head>
+
+<body>
+	<!--                                                                                                                                                              boshlarish -->
+	<div class="container-xxl p-5 my-5 border">
+		<h1>My First Bootstrap Page</h1>
+		<p>This container has a border and some extra padding and margins.</p>
+	</div>
+
+	<div class="container p-5 my-5 bg-dark text-white">
+		<h1>My First Bootstrap Page</h1>
+		<p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+	</div>
+
+	<div class="container p-5 my-5 bg-primary text-white">
+		<h1>My First Bootstrap Page</h1>
+		<p>This container has a blue background color and a white text, and some extra padding and margins.</p>
+	</div>
+
+
+	<!--                                                                                                                                                              RANGLAR -->
+	<div class="container-fluid mt-3">
+		<h1 class="text-bg-primary">Three equal width columns</h1>
+		<p class="text-white bg-success">Note: Try to add a new div with class="col" inside the row class - this
+			will
+			create four
+			equal-width columns.
+		</p>
+		<div class="row">
+			<div class="col-sm-4 p-3 bg-primary text-white">.col</div>
+			<div class="col-sm-8 p-3 bg-dark text-white">.col</div>
+			<div class="col p-3 bg-primary text-white">.col</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                                      jadvallar-->
+	<div class="container mt-3">
+		<h2>Basic Table</h2>
+		<p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+		<table class="table  table-bordered table-hover table-sm">
+			<thead>
+				<tr class="table-dark">
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>John</td>
+					<td>Doe</td>
+					<td>john@example.com</td>
+				</tr>
+				<tr>
+					<td>Mary</td>
+					<td>Moe</td>
+					<td>mary@example.com</td>
+				</tr>
+				<tr>
+					<td>July</td>
+					<td>Dooley</td>
+					<td>july@example.com</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!--                                                                                                                                                                     rasmlar-->
+	<div class="container mt-3">
+		<h2>Rounded Corners</h2>
+		<p>The .rounded class adds rounded corners to an image:</p>
+		<img src="../CSS asoslari/Portfoilo/images/border3.png" class="rounded" alt="Ramka rasmi" width="304"
+			height="236">
+		<img src="../CSS asoslari/Portfoilo/images/border1.png" alt="aa" class="rounded-circle" width="400"
+			height="300">
+		<img src="../CSS asoslari/Portfoilo/images/border2.png" alt="aa" class="rounded-thumbnail" width="500"
+			height="400">
+	</div>
+
+	<!--                                                                                                                                                       jumbotron-->
+	<div class="container mt-3">
+		<h2 class="mt-4">Example of Jumbotron</h2>
+		<div class="mt-5 p-5 bg-primary text-white rounded">
+			<h1>Jumbotron Example</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat..</p>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                           ogohlarntirish alert-->
+	<div class="container mt-3">
+		<h2>Alerts</h2>
+		<p>Alerts are created with the .alert class, followed by a contextual color classes:</p>
+
+
+		<div class="alert alert-success alert-dismissible fade show">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong>Success!</strong> This alert box could indicate a successful or positive action.
+		</div>
+		<div class="alert alert-info alert-dismissible">
+			<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+			<strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+		</div>
+
+
+		<div class="alert alert-warning">
+			<strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+		</div>
+		<div class="alert alert-danger">
+			<strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+		</div>
+		<div class="alert alert-primary">
+			<strong>Primary!</strong> Indicates an important action.
+		</div>
+		<div class="alert alert-secondary">
+			<strong>Secondary!</strong> Indicates a slightly less important action.
+		</div>
+		<div class="alert alert-dark">
+			<strong>Dark!</strong> Dark grey alert.
+		</div>
+		<div class="alert alert-light">
+			<strong>Light!</strong> Light grey alert.
+		</div>
+	</div>
+
+	<!--                                                                                                                                                                ogohlarntirish alert-->
+	<div class="container mt-3">
+		<h2>Button Styles</h2>
+
+
+		<button type="button" class="btn">Basic</button>
+		<button type="button" class="btn btn-outline-primary">Primary</button>
+		<button type="button" class="btn btn-outline-secondary">Secondary</button>
+		<div class="d-grid mt-5 mb-5">
+			<button type="button" class="btn btn-outline-success">Success</button>
+		</div>
+
+		<button type="button" class="btn btn-info">Info</button>
+		<button class="btn btn-warning">
+			<span class="spinner-border spinner-border-sm"></span>
+			Loading..
+		</button> <button type="button" class="btn btn-danger">Danger</button>
+		<button type="button" class="btn btn-dark btn-block">Dark</button>
+		<button type="button" class="btn btn-light">Light</button>
+		<button type="button" class="btn btn-link">Link</button>
+	</div>
+
+	<!--                                                                                                                                                                     tugmalar-->
+	<div class="container mt-3">
+		<h2>Button Group</h2>
+		<p>The .btn-group class creates a button group:</p>
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary">Apple</button>
+			<button type="button" class="btn btn-primary">Samsung</button>
+			<button type="button" class="btn btn-primary">Sony</button>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                                     ustunlar columns-->
+	<div class="container text-center">
+		<div class="row align-items-end">
+			<div class="col-6 col-sm-4 col-lg-2">.col</div>
+			<div class="col-6 col-sm-2 col-lg-2">.col</div>
+			<div class="col-sm-2 col-lg-2">.col</div>
+			<div class="col-sm-4 col-lg-6">.col</div>
+		</div>
+	</div>
+	<div class="container text-center">
+		<div class="row align-items-center text-center">
+			<div class="col align-self-start">
+				One of three columns
+			</div>
+			<div class="col">
+				One of three columns
+			</div>
+			<div class="col align-self-end">
+				One of three columns
+			</div>
+		</div>
+	</div>
+
+	<div class="container text-center text-var">
+		<div class="row ">
+			<div class="col-md-6 mt-5">.col-md-4</div>
+			<div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+			<div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto</div>
+		</div>
+		<div class="row">
+			<div class="col-auto me-auto">.col-auto .me-auto</div>
+			<div class="col-auto">.col-auto</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               vertikal tekkislash-->
+	<div class="container">
+		<div class="row align-items-start">
+			<div class="col">
+				1
+			</div>
+			<div class="col">
+				2
+			</div>
+			<div class="col">
+				3
+			</div>
+		</div>
+		<div class="row align-items-center">
+			<div class="col">
+				1
+			</div>
+			<div class="col">
+				2
+			</div>
+			<div class="col">
+				3
+			</div>
+		</div>
+		<div class="row align-items-end">
+			<div class="col">
+				1
+			</div>
+			<div class="col">
+				2
+			</div>
+			<div class="col">
+				3
+			</div>
+		</div>
+		<div class="row">
+			<div class="col align-self-start">
+				1
+			</div>
+			<div class="col align-self-center">
+				2
+			</div>
+			<div class="col align-self-end">
+				3
+			</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               Gorizontal tekislash-->
+	<div class="container text-center">
+		<div class="row justify-content-start">
+			<div class="col-4">
+				justify-content-start
+			</div>
+			<div class="col-4">
+				justify-content-start
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-4">
+				justify-content-center
+			</div>
+			<div class="col-4">
+				justify-content-center
+			</div>
+		</div>
+		<div class="row justify-content-end">
+			<div class="col-4">
+				justify-content-end
+			</div>
+			<div class="col-4">
+				justify-content-end
+			</div>
+		</div>
+		<div class="row justify-content-around">
+			<div class="col-4">
+				justify-content-around
+			</div>
+			<div class="col-4">
+				justify-content-around
+			</div>
+		</div>
+		<div class="row justify-content-between">
+			<div class="col-4">
+				justify-content-between
+			</div>
+			<div class="col-4">
+				justify-content-between
+			</div>
+		</div>
+		<div class="row justify-content-evenly">
+			<div class="col-4">
+				justify-content-evenly
+			</div>
+			<div class="col-4">
+				justify-content-evenly
+			</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               Ustunlarni o'rash-->
+	<div class="container">
+		<div class="row">
+			<div class="col-12">.col-9</div>
+			<div class="col-12">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line
+				as one contiguous unit.</div>
+			<div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               Qayta tartiblash-->
+	<div class="container text-center">
+		<div class="row">
+			<div class="col">
+				DOMda birinchi bo'lib, hech qanday buyurtma qo'llanilmaydi
+			</div>
+			<div class="col order-5">
+				DOM-da uchinchi, 1 buyurtma bilan
+			</div>
+			<div class="col order-1">
+				DOMda ikkinchi, kattaroq buyurtma bilan
+			</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               Ofset sinflari-->
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+			<div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               gaters sinflari-->
+	<div class="container">
+		<div class="row gy-2">
+			<div class="col">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row g-5">
+			<div class="col">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row g-lg-5">
+			<div class="col">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+			<div class="col-6">
+				<div class="content">Custom column padding</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-md-4 col-sm-6">1</div>
+			<div class="col-lg-2 col-md-4 col-sm-6">2</div>
+			<div class="col-lg-2 col-md-4 col-sm-6">3</div>
+			<div class="col-lg-2 col-md-4 col-sm-6">4</div>
+			<div class="col-lg-2 col-md-4 col-sm-6">5</div>
+			<div class="col-lg-2 col-md-4 col-sm-6">6</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               images sinflari-->
+	<div class="imag-container">
+		<img src="../CSS asoslari/Portfoilo/images/img_11.PNG" alt="rasm" class="raunded">
+	</div>
+
+	<figure class="figure">
+		<img src="../CSS asoslari/Portfoilo/images/img_10.PNG" alt="figure" class="figure-img img-fluid rounded">
+		<figcaption class="figure-caption">salom men </figcaption>
+	</figure>
+
+	<!--                                                                                                                                                               jadvallar sinflari-->
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td colspan="2">Larry the Bird</td>
+					<td>@twitter</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!--                                                                                                                                                               forms sinflari-->
+	<div class="container">
+		<form class="row">
+			<div class="mb-3 col-6">
+				<label for="exampleInputEmail1" class="form-label">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+			</div>
+			<div class="mb-3 col-6">
+				<label for="exampleInputPassword1" class="form-label">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1">
+			</div>
+			<div class="mb-3">
+				<label for="example-textarea" class="form-label"> Text area uchun misol</label>
+				<textarea id="example-textarea" rows="3" class="form-control"></textarea>
+			</div>
+			<div class="mb-3 form-check m-2">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Check me out</label>
+			</div>
+			<div>
+				<label for="file-input" class="form-label">Fayl yuklash uchun</label>
+				<input type="file" id="file-input" class="form-control">
+			</div>
+			<div>
+				<label for="color-input" class="form-label">Rang tanlagich</label>
+				<input type="color" id="color-input" class="form-control form-control-color" value="#563d7c"
+					title="Choose your color">
+			</div>
+			<div>
+				<label for="exampleDataList" class="form-label">Datalist example</label>
+				<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+				<datalist id="datalistOptions">
+					<option value="San Francisco">
+					<option value="New York">
+					<option value="Seattle">
+					<option value="Los Angeles">
+					<option value="Chicago">
+				</datalist>
+			</div>
+			<div class="form-check form-switch m-3">
+				<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+				<label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+			</div>
+			<div>
+				<input type="checkbox" class="btn-check" id="btn-check-4" autocomplete="off">
+				<label class="btn" for="btn-check-4">Single toggle</label>
+			</div>
+			<div>
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Recipient's username"
+						aria-label="Recipient's username" aria-describedby="basic-addon2">
+					<span class="input-group-text" id="basic-addon2">@example.com</span>
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon1">@</span>
+					<input type="text" class="form-control" placeholder="Username" aria-label="Username"
+						aria-describedby="basic-addon1">
+				</div>
+				<div class="mb-3">
+					<label for="basic-url" class="form-label">Your vanity URL</label>
+					<div class="input-group">
+						<span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+						<input type="text" class="form-control" id="basic-url"
+							aria-describedby="basic-addon3 basic-addon4">
+					</div>
+					<div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div>
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text">$</span>
+					<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+					<span class="input-group-text">.00</span>
+				</div>
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Username" aria-label="Username">
+					<span class="input-group-text">@</span>
+					<input type="text" class="form-control" placeholder="Server" aria-label="Server">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-text">
+						<input class="form-check-input mt-0" type="checkbox" value=""
+							aria-label="Checkbox for following text input">
+					</div>
+					<input type="text" class="form-control" aria-label="Text input with checkbox">
+				</div>
+
+				<div class="input-group">
+					<div class="input-group-text sss">
+						<input class="form-check-input mt-0" type="radio" value=""
+							aria-label="Radio button for following text input">
+					</div>
+					<input type="text" class="form-control" aria-label="Text input with radio button">
+				</div>
+			</div>
+	</div>
+	<button type="submit" class="btn btn-primary col-1 m-2">Submit</button>
+	</form>
+	</div>
+	<div class="ui form">
+		<div class="grouped fields">
+			<label>Outbound Throughput</label>
+			<div class="field">
+				<div class="ui slider checkbox">
+					<input type="radio" name="throughput" checked="checked">
+					<label>20 mbps max</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui slider checkbox">
+					<input type="radio" name="throughput">
+					<label>10mbps max</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui slider checkbox">
+					<input type="radio" name="throughput">
+					<label>5mbps max</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui slider checkbox checked">
+					<input type="radio" name="throughput">
+					<label>Unmetered</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               forms sinflari-->
+	<div class="container">
+		<div class="form-floating mb-3 mt-3">
+			<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+			<label for="floatingInput">Email address</label>
+		</div>
+		<div class="form-floating">
+			<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+			<label for="floatingPassword">Password</label>
+		</div>
+	</div>
+	<div class="container ">
+		<div class="yangi mb-5">
+			<label class="yozuv" for="floatingPassword">Password</label><br>
+			<input type="password" class="yangi-hususiyat" id="floatingPassword" placeholder="Password">
+		</div>
+		<div class="ui buttons mt-5 ">
+			<button class="ui button">Cancel</button>
+			<div class="or"></div>
+			<button class="ui positive button active">Save</button>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               Floating labels sinflari-->
+	<div class="container mt-5">
+		<div class="form-floating mb-3">
+			<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+			<label for="floatingInput">Email address</label>
+		</div>
+		<div class="form-floating">
+			<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+			<label for="floatingPassword">Password</label>
+		</div>
+	</div>
+
+	<div class="container mt-5">
+		<form class="row g-3">
+			<div class="col-md-6">
+				<label for="inputEmail4" class="form-label">Email</label>
+				<input type="email" class="form-control" id="inputEmail4">
+			</div>
+			<div class="col-md-6">
+				<label for="inputPassword4" class="form-label">Password</label>
+				<input type="password" class="form-control" id="inputPassword4">
+			</div>
+			<div class="col-12">
+				<label for="inputAddress" class="form-label">Address</label>
+				<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+			</div>
+			<div class="col-12">
+				<label for="inputAddress2" class="form-label">Address 2</label>
+				<input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+			</div>
+			<div class="col-md-6">
+				<label for="inputCity" class="form-label">City</label>
+				<input type="text" class="form-control" id="inputCity">
+			</div>
+			<div class="col-md-4">
+				<label for="inputState" class="form-label">State</label>
+				<select id="inputState" class="form-select">
+					<option selected>Choose...</option>
+					<option>...</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<label for="inputZip" class="form-label">Zip</label>
+				<input type="text" class="form-control" id="inputZip">
+			</div>
+			<div class="col-12">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck">
+					<label class="form-check-label" for="gridCheck">
+						Check me out
+					</label>
+				</div>
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Sign in</button>
+			</div>
+		</form>
+
+		<form>
+			<div class="row mb-3">
+				<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" id="inputEmail3">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="inputPassword3">
+				</div>
+			</div>
+			<fieldset class="row mb-3">
+				<legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+				<div class="col-sm-10">
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+							checked>
+						<label class="form-check-label" for="gridRadios1">
+							First radio
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+						<label class="form-check-label" for="gridRadios2">
+							Second radio
+						</label>
+					</div>
+					<div class="form-check disabled">
+						<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+							disabled>
+						<label class="form-check-label" for="gridRadios3">
+							Third disabled radio
+						</label>
+					</div>
+				</div>
+			</fieldset>
+			<div class="row mb-3">
+				<div class="col-sm-10 offset-sm-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck1">
+						<label class="form-check-label" for="gridCheck1">
+							Example checkbox
+						</label>
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Sign in</button>
+		</form>
+	</div>
+
+	<!--                                                                                                                                                               valatesion labels sinflari-->
+	<div class="container mt-5">
+		<form class="row g-3 needs-validation" novalidate>
+			<div class="col-md-4 position-relative">
+				<label for="validationTooltip01" class="form-label">First name</label>
+				<input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
+				<div class="valid-tooltip">
+					Looks good!
+				</div>
+			</div>
+			<div class="col-md-4 position-relative">
+				<label for="validationTooltip02" class="form-label">Last name</label>
+				<input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+				<div class="valid-tooltip">
+					Looks good!
+				</div>
+			</div>
+			<div class="col-md-4 position-relative">
+				<label for="validationTooltipUsername" class="form-label">Username</label>
+				<div class="input-group has-validation">
+					<span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+					<input type="text" class="form-control" id="validationTooltipUsername"
+						aria-describedby="validationTooltipUsernamePrepend" required>
+					<div class="invalid-tooltip">
+						Please choose a unique and valid username.
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 position-relative">
+				<label for="validationTooltip03" class="form-label">City</label>
+				<input type="text" class="form-control" id="validationTooltip03" required>
+				<div class="invalid-tooltip">
+					Please provide a valid city.
+				</div>
+			</div>
+			<div class="col-md-3 position-relative">
+				<label for="validationTooltip04" class="form-label">State</label>
+				<select class="form-select" id="validationTooltip04" required>
+					<option selected disabled value="">Choose...</option>
+					<option>...</option>
+				</select>
+				<div class="invalid-tooltip">
+					Please select a valid state.
+				</div>
+			</div>
+			<div class="col-md-3 position-relative">
+				<label for="validationTooltip05" class="form-label">Zip</label>
+				<input type="text" class="form-control" id="validationTooltip05" required>
+				<div class="invalid-tooltip">
+					Please provide a valid zip.
+				</div>
+			</div>
+			<div class="col-12">
+				<button class="btn btn-primary" type="submit">Submit form</button>
+			</div>
+		</form>
+	</div>
+
+	<script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(() => {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			const forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.from(forms).forEach(form => {
+				form.addEventListener('submit', event => {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+			})
+		})()</script>
+
+	<!--                                                                                                                                                               belgilar sinflari-->
+	<div class="container mt-3">
+		<h2>Badges</h2>
+		<h1>Exemple heding <span class="badge rounded-pill bg-primary">new</span></h1>
+		<h2>Example heading <span class="badge bg-secondary">New</span></h2>
+		<h3>Example heading <span class="badge bg-success">New</span></h3>
+		<h4>Example heading <span class="badge bg-danger">New</span></h4>
+		<h5>Example heading <span class="badge bg-warning">New</span></h5>
+		<h6>Example heading <span class="badge bg-info">New</span></h6>
+		<button type="button" class="btn btn-danger">
+			Xabar <span class="badge rounded-pill bg-dark">4</span>
+		</button>
+	</div>
+
+	<!--                                                                                                                                                               panellar sinflari-->
+	<div class="container mt-5">
+		<div class="progress">
+			<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 70%;">70%
+			</div>
+		</div>
+	</div>
+	<div class="spinner-border text-primary"></div>
+	<div class="spinner-grow text-primary"></div>
+	<span class="loader"></span>
+	<button> Button
+		<span></span>
+	</button>
+
+	<!--                                                                                                                                                               panellar sinflari-->
+	<div class="container mt-5">
+		<ul class="pagination justify-content-center">
+			<li class="page-item"> <a href="#" class="page-link">Boshi</a></li>
+			<li class="page-item"> <a href="#" class="page-link">1</a></li>
+			<li class="page-item active"> <a href="#" class="page-link">2</a></li>
+			<li class="page-item"> <a href="#" class="page-link">3</a></li>
+			<li class="page-item"> <a href="#" class="page-link">4</a></li>
+			<li class="page-item"> <a href="#" class="page-link">Oxiri</a></li>
+		</ul>
+	</div>
+
+	<!--                                                                                                                                                               proyhatlar sinflari-->
+	<div class="container mt-5">
+		<ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Birinchi
+				<span class="badge bg-primary rounded-pill">12</span>
+			</li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Ikkinchi
+				<span class="badge bg-primary rounded-pill">35</span>
+			</li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Uchinchi
+				<span class="badge bg-primary rounded-pill">47</span>
+			</li>
+		</ul>
+	</div>
+
+	<!--                                                                                                                                                               cardlar sinflari-->
+	<div class="container mt-5 card">
+		<div class="card-body">Birinchi</div>
+	</div>
+	<div class="container mt-5">
+		<div class="card">
+			<div class="card-header bg-info">Birinchi</div>
+			<div class="card-body">Birinchi</div>
+			<div class="card-body">Birinchi</div>
+			<div class="card-body">Birinchi</div>
+			<div class="card-footer bg-danger">Birinchi</div>
+		</div>
+		<div class="card" style="width: 400px;">
+			<img src="../CSS asoslari/Portfoilo/images/img_10.PNG" alt="rasm">
+			<div class="card-body">
+
+				<h4 class="card-title">Tom va Jery</h4>
+				<p class="card-text">Bu multifilm juda zo'r</p>
+				<a href="#" class="btn btn-primary d-flex justify-content-center">Ko'proq</a>
+			</div>
+		</div>
+	</div>
+
+	<!--                                                                                                                                                               cardlar sinflari-->
+	<div class="container mt-5">
+		<div class="dropdown">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+				Ochiladi
+			</button>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">birinchi</a></li>
+				<li><a class="dropdown-item" href="#">ikkinchi</a></li>
+				<li><a class="dropdown-item" href="#">uchunchi</a></li>
+				<li><a class="dropdown-item" href="#">tortinchi</a></li>
+			</ul>
+		</div>
+
+		<div class="dropdpwn">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+				Ochiladigan
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#" class="dropdown-item">birinchi</a></li>
+				<li><a href="#" class="dropdown-item">misol uchun</a></li>
+				<li><a href="#" class="dropdown-item">misol uchun</a></li>
+				<li><a href="#" class="dropdown-item">misol uchun</a></li>
+				<li><a href="#" class="dropdown-item">misol uchun</a></li>
+				<li><span class="dropdown-item-text">yana</span></li>
+			</ul>
+		</div>
+
+		<!--                                                                                                                                                               Yigiladigan sinflari-->
+		<div class="container">
+			<h2>Salom</h2>
+			<p>Bu yerda malumot kop</p>
+			<button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Shu yerdan
+				o'rganing
+			</button>
+			<div id="demo" class="collapse show">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+
+		<div class="container mt-3">
+			<h2>Accordion Example</h2>
+			<p><strong>Note:</strong> The <strong>data-bs-parent</strong> attribute makes sure that all collapsible
+				elements
+				under the specified parent will be closed when one of the collapsible item is shown.</p>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header">
+						<a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+							Collapsible Group Item #1
+						</a>
+					</div>
+					<div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+						<div class="card-body">
+							Lorem ipsum dolor
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+							Collapsible Group Item #2
+						</a>
+					</div>
+					<div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+						<div class="card-body">
+							Lorem ipsum
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+							Collapsible Group Item #3
+						</a>
+					</div>
+					<div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+						<div class="card-body">
+							Lorem ipsum
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--                                                                                                                                                               NAVIGATSIYA sinflari-->
+		<div class="container mt-5">
+			<h2>nav</h2>
+			<p>navni o'rganish</p>
+			<ul class="nav justify-content-end nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Link</a>
+				</li>
+			</ul>
+
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+				</li>
+			</ul>
+
+
+			<div class="tab-content">
+				<div id="home" class="container tab-pane active"><br>
+					<h3>HOME</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore
+						et dolore magna aliqua.</p>
+				</div>
+				<div id="menu1" class="container tab-pane fade"><br>
+					<h3>Menu 1</h3>
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.</p>
+				</div>
+				<div id="menu2" class="container tab-pane fade"><br>
+					<h3>Menu 2</h3>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+						totam rem aperiam.</p>
+				</div>
+			</div>
+		</div>
+
+		<!--                                                                                                                                                               navbar sinflari-->
+		<div class="container mt-5">
+			<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+				<div class="container-fluid">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link 1</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link 2</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link 3</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+
+			<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link 1</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link 2</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link 3</a>
+					</li>
+				</ul>
+			</nav>
+
+
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Logo</a>
+				</div>
+			</nav>
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Logo</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="javascript:void(0)">Logo</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="mynavbar">
+						<ul class="navbar-nav me-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="javascript:void(0)">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="javascript:void(0)">Link</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="javascript:void(0)">Link</a>
+							</li>
+						</ul>
+						<form class="d-flex">
+							<input class="form-control me-2" type="text" placeholder="Search">
+							<button class="btn btn-primary" type="button">Search</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<!--                                                                                                                                                               carusel sinflari-->
+		<!-- Carousel -->
+		<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+				<button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="active"></button>
+				<button type="button" data-bs-target="#demo" data-bs-slide-to="2" class="active"></button>
+			</div>
+
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="../CSS asoslari/Portfoilo/images/img_14.PNG" alt="rasm" class="d-blok"
+						style="width: 100%;">
+					<div class="carousel-caption">
+						<h3 class="text-dark">Los Angeles</h3>
+						<p class="text-dark">We had such a great time in LA!</p>
+					</div>
+				</div>
+				<div class="carousel-item active">
+					<img src="../CSS asoslari/Portfoilo/images/img_15.PNG" alt="rasm" class="d-blok"
+						style="width: 100%;">
+				</div>
+				<div class="carousel-item active">
+					<img src="../CSS asoslari/Portfoilo/images/img_16.PNG" alt="rasm" class="d-blok"
+						style="width: 100%;">
+				</div>
+			</div>
+
+			<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</button>
+		</div>
+
+		<!--                                                                                                                                                               modal sinflari-->
+		<div class="container mt-3">
+			<h3>Modal Example</h3>
+			<p>Click on the button to open the modal.</p>
+
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+				Open modal
+			</button>
+		</div>
+
+
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog modal-dialog-scrollable">
+				<div class="modal-content">
+
+
+					<div class="modal-header">
+						<h4 class="modal-title">Shohruh Egamov</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+
+
+					<div class="modal-body">
+						<h3>Some text to enable scrolling..</h3>
+						<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+							do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+							irure
+							dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur
+							sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+							laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+							magna
+							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea
+							commodo consequat.</p>
+						<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+							do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+							irure
+							dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur
+							sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+							laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+							magna
+							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea
+							commodo consequat.</p>
+
+						<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+							do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+							irure
+							dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Excepteur
+							sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+							laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+							magna
+							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea
+							commodo consequat.</p>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-3">
+			<h3>Tooltip Example</h3>
+
+			<button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">
+				Hover over me!
+			</button>
+		</div>
+
+		<script>
+			var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+			var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+				return new bootstrap.Tooltip(tooltipTriggerEl)
+			})
+		</script>
+
+		<!--                                                                                                                                                               toas sinflari-->
+		<div class="container mt-3">
+			<h3>Toast Example</h3>
+			<p>In this example, we use a button to show the toast message.</p>
+
+			<button type="button" class="btn btn-primary" id="toastbtn">Show Toast</button>
+
+			<div class="toast">
+				<div class="toast-header">
+					<strong class="me-auto">Toast Header</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+				</div>
+				<div class="toast-body">
+					<p>Some text inside the toast body</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById("toastbtn").onclick = function () {
+				var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+				var toastList = toastElList.map(function (toastEl) {
+					return new bootstrap.Toast(toastEl)
+				})
+				toastList.forEach(toast => toast.show())
+			}
+		</script>
+
+		<!--                                                                                                                                                               offcanvas sinflari-->
+		<div class="offcanvas offcanvas-bottom offcanvas-lg" id="demo">
+			<div class="offcanvas-header">
+				<h1 class="offcanvas-title">Heading</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+			</div>
+			<div class="offcanvas-body">
+				<p>Some text lorem ipsum.</p>
+				<p>Some text lorem ipsum.</p>
+				<p>Some text lorem ipsum.</p>
+				<button class="btn btn-secondary" type="button">A Button</button>
+			</div>
+		</div>
+
+		<div class="container-fluid mt-3">
+			<h3>Offcanvas Sidebar</h3>
+			<p>Offcanvas is similar to modals, except that it is often used as a sidebar.</p>
+			<button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+				Open Offcanvas Sidebar
+			</button>
+		</div>
+
+		<!--                                                                                                                                                               offcanvas sinflari-->
+		<div class="container mt-3">
+			<h2>Borders</h2>
+			<p>Use the border classes to add or remove borders from an element:</p>
+
+			<span class="border"></span>
+			<span class="border border-0"></span>
+			<span class="border border-top-0"></span>
+			<span class="border border-end-2 border-5 border-primary float-end"></span>
+			<span class="border border-bottom-0"></span>
+			<span class="border border-start-0"></span>
+			<br>
+
+			<span class="border-top"></span>
+			<span class="border-end"></span>
+			<span class="border-bottom"></span>
+			<span class="border-start"></span>
+		</div>
+		<div class="container mt-3">
+			<h2>Responsive Floats</h2>
+			<p>Float an element to the left or to the right depending on screen width, with the responsive float classes
+				.float-*-left|right (where * is sm, md, lg, xl or xxl).</p>
+			<p>Resize the browser window to see the effect.</p>
+			<div class="clearfix">
+				<div class="float-sm-left">Float right on small screens or wider</div><br>
+				<div class="float-md-left">Float right on medium screens or wider</div><br>
+				<div class="float-lg-end">Float right on large screens or wider</div><br>
+				<div class="float-xl-left">Float right on extra large screens or wider</div><br>
+				<div class="float-xxl-end">Float right on XXL screens or wider</div><br>
+				<div class="float-none">Float none</div>
+			</div>
+		</div>
+
+		<div class="container mt-3">
+			<h1>Shadows</h1>
+			<p>Use the shadow- classes to to add shadows to an element:</p>
+			<div class="shadow-none p-4 mb-4 bg-light">No shadow</div>
+			<div class="shadow-sm p-4 mb-4 bg-white">Small shadow</div>
+			<div class="shadow p-4 mb-4 bg-white">Default shadow</div>
+			<div class="shadow-xxl p-4 mb-4 bg-white">Large shadow</div>
+		</div>
+
+		<div class="container mt-3">
+			<h1>Vertical Align</h1>
+			<p>Change the alignment of elements with the align classes (only works on inline, inline-block, inline-table
+				and
+				table cell elements):</p>
+			<span class="align-baseline">baseline</span>
+			<span class="align-top">top</span>
+			<span class="align-middle">middle</span>
+			<span class="align-bottom">bottom</span>
+			<span class="align-text-top">text-top</span>
+			<span class="align-text-bottom">text-bottom</span>
+		</div>
+
+		<div class="container mt-3">
+			<h2>Aspect Ratio</h2>
+			<p>Create a responsive video and scale it nicely to the parent element.</p>
+
+			<h2>Aspect ratio 1:1</h2>
+			<div class="ratio ratio-1x1">
+				<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+			</div>
+			<br>
+
+			<h2>Aspect ratio 4:3</h2>
+			<div class="ratio ratio-4x3">
+				<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+			</div>
+			<br>
+
+			<h2>Aspect ratio 16:9</h2>
+			<div class="ratio ratio-16x9">
+				<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+			</div>
+			<br>
+
+			<h2>Aspect ratio 21:9</h2>
+			<div class="ratio ratio-21x9">
+				<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+			</div>
+		</div>
+
+		<div class="container mt-3 mb-5">
+			<h1>Close Icon</h1>
+			<p>Use the .close class to style a close icon. This is often used for alerts and modals. Note that we use
+				the
+				times; symbol to create the actual icon (a better looking "x"). Also note that it is right-aligned by
+				default:</p>
+			<div class="clearfix">
+				<button type="button" class="close">&times;</button>
+			</div>
+		</div>
+
+		<!--                                                                                                                                                               offcanvas sinflari-->
+		<div class="container">
+			<h2>Flex</h2>
+			<p>Bu yerda flexni o'rganamiz</p>
+			<div class="d-flex justify-content- p-3 flex-nowrap  align-content-stretch bg-secondary text-white "
+				style="height:150px">
+				<div class="p-2 bg-info ">Flex item</div>
+				<div class="p-2 bg-warning flex-sm-fill align-self-center">Flex item</div>
+				<div class="p-2 bg-primary flex-grow-1">Flex item</div>
+			</div>
+		</div>
+
+		<!--                                                                                                                                                                  shakllari sinflari-->
+		<div class="container">
+			<form action="/__pycache__/Numpy.cpython-312.pyc">
+				<div class="row">
+					<div class="mb-3 mt-3">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+					</div>
+					<div class="mb-3 mt-3">
+						<label for="pwd" class="form-label">Password</label>
+						<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+					</div>
+					<div class="form-check mb-3 ms-3">
+						<label for="form-check-label">Remember me
+							<input type="checkbox" class="form-check-input" name="remember">
+						</label>
+					</div>
+					<div class="mb-3 mt-3 form-floating">
+						<textarea class="form-control" name="text" id="comment"
+							placeholder="Comment goes here"></textarea>
+						<label for="commend" class="ms-2 form-label">Commants</label>
+					</div>
+					<button type="submit" class="btn btn-primary ms-3 col-2">Submit</button>
+				</div>
+			</form>
+			<form>
+				<div class="row mt-3">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Enter email" name="email">
+					</div>
+					<div class="col">
+						<input type="password" class="form-control" placeholder="Enter password" name="pswd">
+					</div>
+				</div>
+				<input type="text" class="form-control mt-3" placeholder="Nolrmal input">
+				<select class="form-select mt-3">
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+				</select>
+				<form>
+					<label for="browser" class="form-label mt-3">Bu yerdan kerak saytni tanlang</label>
+					<input class="form-control" list="browser" name="browser" id="browsers">
+					<datalist id="browser">
+						<option value="edge"></option>
+						<option value="opera"></option>
+						<option value="google"></option>
+						<option value="mazilla"></option>
+						<option value="safari"></option>
+					</datalist>
+				</form>
+				<div class="form-check mt-3">
+					<input class="form-check-input" type="checkbox" id="check2" name="option2" value="something"
+						checked>
+					<label class="form-check-label"> Option 1</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="check2" name="option2" value="something"
+						checked>
+					<label class="form-check-label"> Option 2</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="check3" name="option3" value="something"
+						checked>
+					<label class="form-check-label"> Option 3</label>
+				</div>
+				<div class="form-check mt-3">
+					<input type="radio" class="form-check-input" id="radio1" name="optradio">Option</input>
+					<label class="form-check-label" for="radio1"></label>
+				</div>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="radio1" name="optradio">Option</input>
+					<label class="form-check-label" for="radio1"></label>
+				</div>
+				<div class="form-check">
+					<input type="radio" class="form-check-input" id="radio1" name="optradio">Option</input>
+					<label class="form-check-label" for="radio1"></label>
+				</div>
+				<div class="form-check form-switch mt-3">
+					<input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes"></input>
+					<label class="form-check-label" for="mySwitch">Dark mode</label>
+				</div>
+				<div class="mt-3">
+					<h2>Bu diyapazonni bildiradi</h2>
+					<p> Bu yerda diyapazonni o'zingizga moslab olishingiz mumkin</p>
+					<form>
+						<label class="form-label" for="customRenge">Custom renge</label>
+						<input type="range" class="form-range" id="customRenge" name="points" step="10" min="0"
+							max="100">
+						<button type="submit" class="btn btn-primary mt-3">Submit</button>
+					</form>
+				</div>
+				<form class="row">
+					<div class="input-group mt-3 col">
+						<span class="input-group-text">@</span>
+						<input type="text" class="form-control" placeholder="Username">
+					</div>
+					<div class="input-group mt-3 col">
+						<input type="text" class="form-control" placeholder="Your Email">
+						<span class="input-group-text">@gmail.com</span>
+					</div>
+				</form>
+				<div class="input-group mb-3 mt-3">
+					<div class="input-group-text">
+						<input type="checkbox">
+					</div>
+					<input type="text" class="form-control" placeholder="Some text">
+				</div>
+
+				<div class="input-group mb-3">
+					<div class="input-group-text">
+						<input type="radio">
+					</div>
+					<input type="text" class="form-control" placeholder="Some text">
+				</div>
+				<div class="input-group mb-3">
+					<button class="btn btn-outline-primary" type="button">Basic Button</button>
+					<input type="text" class="form-control" placeholder="Some text">
+				</div>
+
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Search">
+					<button class="btn btn-success" type="submit">Go</button>
+				</div>
+
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Something clever..">
+					<button class="btn btn-primary" type="button">OK</button>
+					<button class="btn btn-danger" type="button">Cancel</button>
+				</div>
+				<div class="row">
+					<div class="form-floating mb-3 mt-3 col">
+						<input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+						<label for="email" class="ms-2">Email</label>
+					</div>
+					<div class="form-floating mt-3 mb-3 col">
+						<input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+						<label for="pwd" class="ms-2">Password</label>
+					</div>
+				</div>
+				<div class="form-floating">
+					<select class="form-select" id="sel1" name="sellist">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+					</select>
+					<label for="sel1" class="form-label">Select list (select one):</label>
+				</div>
+				<form action="/action_page.php" class="was-validated">
+					<div class="mb-3 mt-3">
+						<label for="uname" class="form-label">Username:</label>
+						<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname">
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="mb-3">
+						<label for="pwd" class="form-label">Password:</label>
+						<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+					<div class="form-check mb-3">
+						<input class="form-check-input" type="checkbox" id="myCheck" name="remember">
+						<label class="form-check-label" for="myCheck">I agree on blabla.</label>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Check this checkbox to continue.</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+		</div>
+		</form>
+	</div>
+
+
+	<!--                                                                                                                                                                  shakllari sinflari-->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-6 bg-primary text-white">50%</div>
+			<div class="col-sm-6 bg-dark text-white">50%</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-sm-4 bg-primary text-white">33.3%</div>
+			<div class="col-sm-4 bg-dark text-white">33.3%</div>
+			<div class="col-sm-4 bg-primary text-white">33.3%</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-sm bg-primary text-white">25%</div>
+			<div class="col-sm bg-dark text-white">25%</div>
+			<div class="col-sm bg-primary text-white">25%</div>
+			<div class="col-sm bg-dark text-white">25%</div>
+		</div>
+
+		<div class="container mt-3 mb-3">
+			<div class="row">
+				<div class="col-sm bg-primary text-white p-3">1 of 2</div>
+				<div class="col-sm bg-dark text-white p-3">2 of 2</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-sm bg-primary text-white p-3">1 of 4</div>
+				<div class="col-sm bg-dark text-white p-3">1 of 4</div>
+				<div class="col-sm bg-primary text-white p-3">1 of 4</div>
+				<div class="col-sm bg-dark text-white p-3">1 of 4</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid mt-3">
+		<h1>Bu yerda small grid</h1>
+		<p>The following example will result in a 25%/75% split on all devices.</p>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-sm-4 col-xl-6 bg-primary text-white p-3">Lorem ipsum dolor sit amet, consectetur
+					adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</div>
+				<div class="col-12 col-sm-8 col-xl-6 bg-dark text-white p-3">Sed ut perspiciatis unde omnis iste natus
+					error sit
+					voluptatem
+					accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+					quasi architecto beatae vitae dicta sunt explicabo.<i class="bi bi-arrows-angle-expand"></i>
+				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+					class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+					<path fill-rule="evenodd"
+						d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

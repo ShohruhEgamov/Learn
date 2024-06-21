@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="DOM.css">
+	<title>HTML DOM o'rganish</title>
+</head>
+
+<body>
+	<!-- <h2>JavaScript HTML DOM</h2>
+
+	<p>Sifat nomi bilan HTML elementlarini topish.</p>
+	<p class="intro">Hello World!</p>
+	<p class="intro">Ushbu misol <b>getElementsByClassName</b> namoyish etadi.</p>
+
+	<p id="demo"></p>
+
+	<h2>JavaScript HTML DOM</h2>
+	<p>Finding HTML Elements Using <b>document.forms</b>.</p>
+
+	<form id="frm1" action="/action_page.php">
+		First name:
+		<input type="text" name="fname" value="Shohruh"><br>
+
+		Last name:
+		<input type="text" name="lname" value="Egamov"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<p>These are the values of each element in the form:</p>
+
+	<p id="demo"></p>
+	<p id="demo1"></p>
+
+	<h2>JavaScript HTML DOM</h2>
+
+	<p>Finding HTML Elements by Query Selector</p>
+	<p class="intro">Hello World!.</p>
+	<p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+	<p id="demo"></p>
+
+
+	<form name="myForm" onsubmit="return validateForm()" action="/action_page.php" method="post">Name:
+		<input type="text" name="fname">
+		<input type="submit" value="Submit">
+	</form>
+
+
+	<h2>JavaScript Validation</h2>
+
+	<p>Please input a number between 1 and 10:</p>
+
+	<input id="numb" required>
+
+	<button type="button" onclick="myFunksion()">Submit</button>
+
+	<p id="demo"></p>
+
+	<h1 id="id1">Buni bos va qizil bo'lsin va shrifti o'zgarsin</h1>
+	<button type="button" onclick="document.getElementById('id1').style.color ='red'">Boss</button>
+
+
+	<h2>My First JavaScript Animation</h2>
+	<p><button onclick="myMove()">Click Me</button></p>
+	<div id="container">
+		<div id="animate"></div>
+	</div>
+
+
+	<h1 id="but">Bu yerga bosing</h1>
+	<p id="demo"></p>
+
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)"
+		style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+		Mouse Over Me
+	</div>
+
+	<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+		style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+		Assalomu Aleykum
+	</div>
+
+	<h2>JavaScript addEventListener()</h2>
+
+	<p>This example uses the addEventListener() method to add two click events to the same button.</p>
+
+	<button id="myBtn">Try it</button>
+
+	<h2>JavaScript addEventListener()</h2>
+
+	<p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+	<button id="myBtn">Try it</button>
+
+	<p id="demo"></p>
+
+	<h2>JavaScript removeEventListener()</h2>
+
+	<div id="myDIV">
+		<p>This div element has an onmousemove event handler that displays a random number every time you move your
+			mouse inside this orange field.</p>
+		<p>Click the button to remove the div's event handler.</p>
+		<button onclick="removeHandler()" id="myBtn">Remove</button>
+	</div>
+
+	<p id="demo"></p>
+
+	<p id="child"></p>
+
+	<h2>JavaScript HTML DOM</h2>
+	<p>Add a new HTML Element.</p>
+
+	<div id="div1">
+		<p id="p1">This is a paragraph.</p>
+		<p id="p2">This is another paragraph.</p>
+	</div> -->
+
+	<!-- <h2>JavaScript HTML DOM</h2>
+	<p>Add a new HTML Element.</p>
+
+	<div id="div1">
+		<p id="p1">bu birinchi p.</p>
+		<p id="p2">bu ikkinchi paragraf.</p>
+	</div>
+	<script>
+		const para = document.createElement("p");
+		const node = document.createTextNode("This is new.");
+		para.appendChild(node);
+		const element = document.getElementById("div1");
+		const child = document.getElementById("p1");
+		element.insertBefore(para, child);
+	</script> -->
+
+	<!-- <p id="lokal"></p>
+	<input type="button" value="Load new document" onclick="newDoc()">
+	<script>
+		document.getElementById("lokal").innerHTML =
+			// "The full URL of this page is:<br>" + window.location.href;
+			// "The full URL of this page is:<br>" + window.location.hostname;
+			//"The full URL of this page is:<br>" + window.location.pathname;
+			//"The full URL of this page is:<br>" + window.location.protocol;
+			// navigator.appVersion;
+			navigator.platform;
+		function newDoc() {
+			window.location.assign("https://www.w3schools.com")
+		}
+	</script> -->
+
+	<!-- <h2>The Navigator Object</h2>
+
+	<p>The appName property returns the application name of the browser:</p>
+
+	<p id="demo"></p>
+
+	<p>Strange enough, "Netscape" is the application name for IE11, Chrome, Firefox, and Safari.</p>
+
+	<script>
+		document.getElementById("demo").innerHTML =
+			"navigator.appName is " + navigator.appName;
+	</script> -->
+
+	<!-- 
+	<h2>JavaScript Confirm Box</h2>
+
+
+	<button onclick="myFunction()">Try it</button>
+
+	<p id="demo"></p>
+
+
+	<script src=" DOM.js"></script> -->
+
+	<!-- <p id="soat"></p>
+
+	<script>
+		setInterval(myTimer, 1000);
+
+		function myTimer() {
+			const d = new Date();
+			document.getElementById("soat").innerHTML = d.toLocaleTimeString();
+		}
+	</script> -->
+
+
+	<!--                                                    Bu yerda coooke fayllarni yaratish o'rganiladi -->
+	<script>
+		function setCookie(cname, cvalue, exdays) {
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			let expires = "expires=" + d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function getCookie(cname) {
+			let name = cname + "=";
+			let decodedCookie = decodeURIComponent(document.cookie);
+			let ca = decodedCookie.split(';');
+			for (let i = 0; i < ca.length; i++) {
+				let c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		function checkCookie() {
+			let user = getCookie("username");
+			if (user != "") {
+				alert("Welcome again " + user);
+			} else {
+				user = prompt("Please enter your name:", "");
+				if (user != "" && user != null) {
+					setCookie("username", user, 30);
+				}
+			}
+		}
+	</script>
+</body>
+
+<body onload="checkCookie()"></body>
+
+</html>

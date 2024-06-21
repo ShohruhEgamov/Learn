@@ -1,0 +1,203 @@
+ul> {
+	li {
+		color: #000
+	}
+}
+
+h1 {
+	border: {
+		color: black;
+		radius: 15px;
+		style: solid;
+	}
+
+	background: {
+		color: red;
+	}
+
+	&:hover {
+		background-color: blue;
+	}
+}
+
+h1 {
+	transition: {
+		property: all;
+		duration: 1s;
+		delay: 1s;
+	}
+}
+
+h1:hover {
+	background-color: blue;
+}
+
+@debug 10s+15s;
+@debug 5px+3px;
+
+$body: 16px;
+
+h1 {
+	font: {
+		size: $body;
+	}
+}
+
+h2 {
+	font: {
+		size: $body * 2;
+	}
+}
+
+@use "sass:list";
+
+
+@each $name, $color in $buttons {
+	.button-#{$name} {
+		display: inline-block;
+		background-color: $color;
+	}
+}
+
+@use "sass:math";
+
+h1 {
+	$width: 800px;
+	width: $width;
+	height: math.div($width, 2);
+	left: calc(50% - #{math.div($width, 2)});
+	border: 2px solid red;
+}
+
+$type: 'danger';
+
+.alert {
+	&:hover {
+		color: red;
+	}
+
+	&.alll {
+		cursor: pointer;
+	}
+
+	&_salom {
+		padding: 15px;
+
+		border: {
+			radius: 10px;
+			color: red;
+			style: solid;
+		}
+
+		&__salom-#{$type} {
+			padding: 55px;
+		}
+	}
+}
+
+@mixin button($background-color, $color, $hover-color) {
+
+	background-color: $background-color;
+}
+
+$type: 'danger';
+
+.alert {
+	&:hover {
+		color: red;
+	}
+
+	&.alll {
+		cursor: pointer;
+	}
+
+	&__salom {
+		padding: 15px;
+
+		border: {
+			radius: 10px;
+			color: red;
+			style: solid;
+		}
+
+		&-salom-#{$type} {
+			padding: 55px;
+		}
+	}
+}
+
+%button {
+	border: 1px;
+	color: blue;
+	background-color: green;
+}
+
+.strong {
+	@extend %button
+}
+
+@use './reset.scss';
+@use './sass.scss';
+
+$sizes: 40px, 50px, 80px;
+
+@each $size in $sizes {
+	.icon-#{$size} {
+		font-size: $size;
+		height: $size;
+		width: $size;
+	}
+}
+
+$icons: (
+	"eye": "\f112",
+	"start": "\f12e",
+	"stop": "\f12f"
+);
+
+@each $name, $glyph in $icons {
+	.icon-#{$name}:before {
+		display: inline-block;
+		font-family: "Icon Font";
+		content: $glyph;
+	}
+}
+
+$base-color: #036;
+
+@for $i from 1 through 3 {
+	ul:nth-child(3n + #{$i}) {
+		background-color: lighten($base-color, $i * 5%);
+	}
+}
+
+@use "sass:math";
+
+/// Divides `$value` by `$ratio` until it's below `$base`.
+@function scale-below($value, $base, $ratio: 1.618) {
+	@while $value >$base {
+		$value: math.div($value, $ratio);
+	}
+
+	@return $value;
+}
+
+$normal-font-size: 16px;
+
+sup {
+	font-size: scale-below(20px, 16px);
+}
+
+@use "sass:color";
+
+.button {
+	$primary-color: #6b717f;
+	color: $primary-color;
+	border: 1px solid color.scale($primary-color, $lightness: 20%);
+}
+
+@use 'sass:color';
+
+@debug color.adjust(#6b717f, $red: 15); // #7a717f
+@debug color.adjust(#d2e1dd, $red: -10, $blue: 10); // #c8e1e7
+@debug color.adjust(#998099, $lightness: -30%, $alpha: -0.4); // rgba(71, 57, 71, 0.6)
