@@ -159,10 +159,10 @@ li.ikkilamchi {
 	justify-content: space-between;
 }
 
-.asosiy_qisim>div {
+/* .asosiy_qisim > div {
 	/* width: 50%;
-	float: left; */
-}
+	float: left; 
+}*/
 
 .asosiy_qisim__rasm {
 	text-align: right;

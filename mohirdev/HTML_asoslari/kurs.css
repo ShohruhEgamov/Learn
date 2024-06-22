@@ -231,8 +231,8 @@ th:hover {
 }
 
 ul {
-	list-style-type:none;
-	overflov: hidden;
+	list-style-type: none;
+	overflow: hidden;
 	background-color: #00ff00;
 	color: blue;
 	padding: 20px 40px;
@@ -241,6 +241,6 @@ ul {
 	display: inline-block;
 }
 
-li{
+li {
 	float: left;
 }

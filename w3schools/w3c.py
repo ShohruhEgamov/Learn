@@ -319,28 +319,28 @@ for x in (car1, boat1, plane1):
    x.move()
 
 
-import shoh as mix  # shoh ga laqab berish
+# import shoh as mix  # shoh ga laqab berish
 
-mix.egamov("shohruh")
-a = mix.personal["mamlakat"]
-print(a)
-
-
-import platform
-
-x = platform.__dict__()
-print(x)
+# mix.egamov("shohruh")
+# a = mix.personal["mamlakat"]
+# print(a)
 
 
-x = dir(platform) # hamma platformalarni chop etish
-print(x)
+# import platform
 
-from shoh import egamov
+# x = platform.__dict__()
+# print(x)
 
-egamov("shoh")
 
-import shoh
-print(dir(shoh))
+# x = dir(platform) # hamma platformalarni chop etish
+# print(x)
+
+# from shoh import egamov
+
+# egamov("shoh")
+
+# import shoh
+# print(dir(shoh))
 
 import datetime
 x = datetime.datetime.now()
