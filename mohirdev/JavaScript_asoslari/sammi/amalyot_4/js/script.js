@@ -100,37 +100,136 @@ window.addEventListener('DOMContentLoaded', () => {
 	setClock('.timer', deadline)
 
 	//Modal xxxzzz
-	const modalTrigger = document.querySelector('[data-madal]'),
+	const modalTrigger1 = document.querySelector('[data-madal1]'),
+		modalTrigger2 = document.querySelector('[data-madal2]'),
 		modal = document.querySelector('.modal'),
 		modalCloseBtn = document.querySelector('[data-close]');
 
+	// Chiqish uchun funksiya
 	function closeModal() {
 		modal.classList.add('hide')
 		modal.classList.remove('show')
 		document.body.style.overflow = ''
 	}
 
+	// Kirish uchun funksiya
 	function openModal() {
 		modal.classList.add('show')
 		modal.classList.remove('hide')
 		document.body.style.overflow = 'hidden'
 		clearInterval(modalTimer)
 	}
-	modalTrigger.addEventListener('click', openModal)
+
+	// modalTrigger.forEach((item) => {
+	// 	item.addEventListener('click', openModal)
+	// })
+
+	//modal buttonlaari
+	modalTrigger1.addEventListener('click', openModal)
+	modalTrigger2.addEventListener('click', openModal)
 
 	modalCloseBtn.addEventListener('click', closeModal)
 
+	// madaldan tashqarini boshganda madaldan chiqishi uchun
 	modal.addEventListener('click', (e) => {
 		if (e.target === modal) {
 			closeModal()
 		}
 	})
 
+	// esc knopkasini boshganda modaldan chiqishi uchun
 	document.addEventListener('keydown', (e) => {
 		if (e.code === 'Escape' && modal.classList.contains('show')) {
 			closeModal()
 		}
 	})
 
-	const modalTimer = setTimeout(openModal, 3000)
+	// avtamatic sayt yuklanganda madal chiqishi uchun
+	const modalTimer = setTimeout(openModal, 3000);
+
+
+	//Eng pastga tushganida modal chqishi uchun
+	function showModalByScroll() {
+		if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
+			openModal()
+			window.removeEventListener('scroll', showModalByScroll)
+		}
+	}
+	window.addEventListener('scroll', showModalByScroll)
+
+	//Class
+	class MenuCard {
+		constructor(src, alt, title, descr, price, perentSelector,) {
+			this.src = src;
+			this.alt = alt;
+			this.title = title;
+			this.descr = descr;
+			this.price = price;
+			// this.classes = classes;
+			this.perent = document.querySelector(perentSelector);
+			this.transfer = 11000;
+			this.chageToUSZ()
+		}
+
+		// Bu dollrni so'mga aylantirish uchun
+		chageToUSZ() {
+			this.price = this.price * 11000
+		}
+		// Bu qartalarni almashtirish uchun
+		render() {
+			const element = document.createElement('div');
+
+			// this.classes.forEach((clasname) => element.classList.add(this.clasname))
+
+			element.innerHTML = `
+			<div class="menu__item">
+					<img src=${this.src} alt=${this.alt} />
+					<h3 class="menu__item-subtitle">${this.title}</h3>
+					<div class="menu__item-descr">${this.descr}
+					</div>
+					<div class="menu__item-divider"></div>
+					<div class="menu__item-price">
+						<div class="menu__item-cost">Price:</div>
+						<div class="menu__item-total"><span>${this.price}</span> uz/month</div>
+					</div>
+				</div>
+			`
+			this.perent.append(element)
+		}
+	}
+
+	// const card1 = new MenuCard()
+	// card1.render()
+
+	//Qisqa usul
+	new MenuCard(
+		'img/tabs/1.png',
+		'vegy',
+		'Plan "Usual"',
+		'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+		10,
+		'.menu .container'
+		// 'menu__item'
+	).render()
+
+	new MenuCard(
+		'img/tabs/2.jpg',
+		'elite',
+		'Plan “Premium”',
+		'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+		15,
+		'.menu .container'
+		// 'menu__item'
+	).render()
+
+	new MenuCard(
+		'img/tabs/3.jpg',
+		'post',
+		'Plan "VIP"',
+		'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.',
+		20,
+		'.menu .container'
+		// 'menu__item'
+	).render()
 })
+
