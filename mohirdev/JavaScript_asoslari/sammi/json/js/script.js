@@ -44,3 +44,78 @@ uzs.addEventListener('input', (e) => {
 		}
 	})
 })
+
+
+// Bu yerda agar dosti kelgan bo'lsa birinchi ifni chiqaradi kelmagan bolsa else ni agar ikkalasi ham ishlamasa finally ishga tushadi
+const isFrendCome = true
+
+const meetingRequest = new Promise((resolve, reaject) => {
+	if (isFrendCome) {
+		const msg = "Frend I'm there"
+		resolve(msg)
+	}
+	else {
+		const arr = "I can't come there"
+		reaject(arr)
+	}
+})
+
+meetingRequest
+	.then((msg) => console.log(msg))  // Birinchisi ishga tushsa chiqadi
+	.catch((arr) => console.log(arr)) // Ikkinchisi ishga tushsa chiqadi
+	.finally(() => console.log("I'm colling you")) // Har doim chiqadi
+
+
+
+// Bu yerda ketma ket ishlashligi uchun
+console.log("Request date..."); // Birinchi bu ishlaydi
+
+const req = new Promise((resolve) => {
+	setTimeout(() => {
+		const praduct = {
+			name: 'car',
+			color: 'black'
+		}
+		console.log('Processing date...'); // Ikkinchi bu ishlaydi
+		resolve(praduct)
+	}, 2000);
+})
+
+req
+	.then((data) => {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				data.status = 'ordered'
+				console.log('Get data...');
+				resolve(data)
+			}, 2000)
+		})
+	})
+
+	.then((result) => console.log(result))
+	.finally(() => console.log('Fetching end'))
+
+
+
+// Bu yerda promise ning boshqacha turi ko'rsatilgan
+
+const request = (time) => {
+	return new Promise((resolve) => {
+		setTimeout(() => resolve(), time)
+	})
+}
+
+// //Oddiy ko'rinishi
+// request(1000).then(() => console.log('Request 1000 ms'))
+// request(2000).then(() => console.log('Request 2000 ms'))
+// request(3000).then(() => console.log('Request 3000 ms'))
+
+// //  Bu esa qisqa boshqacha yo'li
+// Promise.all([request(1000), request(2000), request(3000)]).then(() => console.log('all'))
+
+// Bu yana bir ko'rinishi
+Promise.race([request(1000), request(2000), request(3000)]).then(() => console.log('all'))
+
+
+
+
