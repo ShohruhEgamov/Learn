@@ -14,7 +14,7 @@
 	<title>AJAX</title>
 </head>
 
-<body class="bg-dark">
+<body>
 	<div class="w-50 mx-auto p-5 bg-light mt-5">
 		<div class="mb-3">
 			<label class="form-label text-success">UZS</label>
@@ -25,8 +25,16 @@
 			<input id="usd" type="text" class="form-control" placeholder="US dollar">
 		</div>
 	</div>
+	<p id="soat"></p>
 
-	<script src="js/script.js"></script>
+	<script>
+		setInterval(myTimer, 1000);
+
+		function myTimer() {
+			const d = new Date();
+			document.getElementById("soat").innerHTML = d.toLocaleTimeString();
+		}
+	</script>
 </body>
 
 </html>
