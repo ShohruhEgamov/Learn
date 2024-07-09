@@ -307,79 +307,144 @@ print(thislist)'''
 # 		print(til.upper(), end=' ')  # bu end=' ' malumotlar bir birining izidan davom qilib chiqishi uchun
 
 
-# lug'at ichidagi lugatlarga misollar
-hamkasblar = {
-	'Shohruh':{
-		'familya':'Egamov',
-		't_yil':2000,
-		'malumot':'oliy',
-		'til':['Python', 'JavaScript', 'php'],
-		'oylik': []
-	},
-	'Farrux':{
-		'familya':'Egamov',
-		't_yil':1998,
-		'malumot':'oliy',
-		'til':['Java', 'SQL'],
-		'oylik': []
-	},
-	'Bekmirza':{
-		'familya':'Egamov',
-		't_yil':1996,
-		'malumot':'oliy',
-		'til':['html', 'css', 'bootstrap'],
-		'oylik': []
-	},
-	'Diyorbek':{
-		'familya':'Egamov',
-		't_yil':1994,
-		'malumot':'oliy',
-		'til':['Kali', 'Linux'],
-		'oylik': []
-	},
-}
-#Bu yerda ismlar va malumotlar alohida olingan
-for ism, info in hamkasblar.items():
-	print(f"\n {ism.title()} {info['familya'].title()},"
-		f"{info['t_yil']}-yilda tug'ilgan, "
-		f"Malumoti {info['malumot']}. \n"
-		"Quyidagi dasturlash tillarini biladi:"
-		)
-	#Bu yerda agar dasturlash tilining ichida Python bolsa qimmat aks holda arzon
-	a = info['oylik']
-	t = info['til']
-	for maosh in t:
-			if 'Python' in maosh:
-				a.append(400)
-			else:
-				a.append(300)
-			print(f"{maosh.upper()}")
-	def datsur_ucun_pul(nomi,haqqi):
-		b = {}
-		# b = []
-		for nom,haq in zip(nomi,haqqi):
-			# b.append(f"{nom} uchun {haq}") #Bu yerda royhatga yuborish uchun
-			b[nom] = haq
-			# bu royhatni (Kali: 300), (Linux: 300) Quyidagi korinishda chiqaradi
-			format = ', '.join([f'({nom}: {haq}$)' 
-				for nom,haq in b.items()])  
-		return format
-	tillar = t
-	haqlar = a
-	d = datsur_ucun_pul(tillar, haqlar)
-	print(d)
-	toplam = sum(a)
-	print(f"Toplam oylik {toplam}")
+#.....................................................lug'at ichidagi lugatlarga misollar
+# hamkasblar = {
+# 	'Shohruh':{
+# 		'familya':'Egamov',
+# 		't_yil':2000,
+# 		'malumot':'oliy',
+# 		'til':['Python', 'JavaScript', 'php'],
+# 		'oylik': []
+# 	},
+# 	'Farrux':{
+# 		'familya':'Egamov',
+# 		't_yil':1998,
+# 		'malumot':'oliy',
+# 		'til':['Java', 'SQL'],
+# 		'oylik': []
+# 	},
+# 	'Bekmirza':{
+# 		'familya':'Egamov',
+# 		't_yil':1996,
+# 		'malumot':'oliy',
+# 		'til':['html', 'css', 'bootstrap'],
+# 		'oylik': []
+# 	},
+# 	'Diyorbek':{
+# 		'familya':'Egamov',
+# 		't_yil':1994,
+# 		'malumot':'oliy',
+# 		'til':['Kali', 'Linux'],
+# 		'oylik': []
+# 	},
+# }
+# #Bu yerda ismlar va malumotlar alohida olingan
+# for ism, info in hamkasblar.items():
+# 	print(f"\n {ism.title()} {info['familya'].title()},"
+# 		f"{info['t_yil']}-yilda tug'ilgan, "
+# 		f"Malumoti {info['malumot']}. \n"
+# 		"Quyidagi dasturlash tillarini biladi:"
+# 		)
+# 	#Bu yerda agar dasturlash tilining ichida Python bolsa qimmat aks holda arzon
+# 	a = info['oylik']
+# 	t = info['til']
+# 	for maosh in t:
+# 			if 'Python' in maosh:
+# 				a.append(400)
+# 			else:
+# 				a.append(300)
+# 			print(f"{maosh.upper()}")
+# 	def datsur_ucun_pul(nomi,haqqi):
+# 		b = {}
+# 		# b = []
+# 		for nom,haq in zip(nomi,haqqi):
+# 			# b.append(f"{nom} uchun {haq}") #Bu yerda royhatga yuborish uchun
+# 			b[nom] = haq
+# 			# bu royhatni (Kali: 300), (Linux: 300) Quyidagi korinishda chiqaradi
+# 			format = ', '.join([f'({nom}: {haq}$)' 
+# 				for nom,haq in b.items()])  
+# 		return format
+# 	tillar = t
+# 	haqlar = a
+# 	d = datsur_ucun_pul(tillar, haqlar)
+# 	print(d)
+# 	toplam = sum(a)
+# 	print(f"Toplam oylik {toplam}")
 
 
+#...........................................................while loop
+
+# son = 1
+# while son <= 5:
+# 	print(son, end=" ") # end bu izidan davom qilishlik uchun
+# 	son += 1
+
+#.................................Soni kvadratini chiqaradigan dastur
+
+# print("Sonning kvadratini beradigan dastur")
+# savol = "Istalgan son kiriting "
+# savol += ("dasturni to'xtatish uchun 'exit' yozing: ")
+# qiymat = ""
+# # while qiymat != 'exit':  #Bu exitgacha ishlaydi 
+# while True:                #Bu esa abadiy davom etadi
+# 	qiymat = input(savol)
+# 	# if qiymat != 'exit':   # Bu exit ni yozganda to'xtashi uchun
+# 	if qiymat == 'exit':
+# 		break                # Bu yerda exit bolganda toxtaydi
+# 	else:
+# 		print(float(qiymat)**2)
+# print('Dastur tugadi...')
 
 
+#.................................Bu juft yoki toq bilish uchun
+
+# son = 0
+# while son < 10:
+# 	son += 1
+# 	if son % 2 != 0:    # Bu toq bolsa chiqarmaydi va boshiga qaytadi
+# 	# if son % 2 == 0:  # Bu juft bolsa chiqarmaydi va boshiga qaytadi
+# 		continue
+# 	else:
+# 		print(son)
+
+#....................................kitob soraydigan dastur
+
+# kitob = "Sevgan kitobingizni kiriting: "
+# kitoblar = ""
+# hammasi = []
+# while True:
+# 	kitoblar = input(kitob)
+# 	if kitoblar == 'stop':
+# 		break
+# 	else:
+# 		hammasi.append(kitoblar)
+# print(hammasi)
 
 
+#....................................Kino teatirga chipta
 
+tamoshabin = "Yoshingiz nechida: "
+chiptalar = ""
 
-
-
+while True:
+	chiptalar = input(tamoshabin)
+	if chiptalar == 'exit' or chiptalar == 'quit':
+		print("Chipta sotilishi toxtadi")
+		break
+	sonuchun = int(chiptalar)
+	if sonuchun <= 7:
+		print("Chipta narxi 2000 So'm" )
+		continue
+	elif 7<= sonuchun <= 18:
+		print("Chipta narxi 3000 So'm" )
+		continue
+	if 18<= sonuchun <= 65:
+		print("Chipta narxi 10000 So'm" )
+		continue
+	if sonuchun >= 65:
+		print("Chipta narxi 0 So'm" )
+		continue
+print('Raxmat')
 
 
 
