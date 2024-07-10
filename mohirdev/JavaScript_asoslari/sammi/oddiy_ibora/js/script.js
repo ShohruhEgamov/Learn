@@ -67,9 +67,43 @@ function Car(name, color, bonus) {
 	}
 }
 
+const bmw1 = new Car('bmw', 'black', 10)
+
+console.log(bmw1.getBonus());
+bmw1.setBonus(30)
+
+bmw1.info();
+
+// Bu yerda classlarni organamiz
+class Car {
+	constructor(name, color, bonus) {
+		this.name = name;
+		this.color = color;
+		this._bonus = bonus;
+	}
+	info() {
+		console.log(`Name of car: ${this.name}: color is ${this.color}. There is
+				sam bons ${this._bonus}`
+		);
+	}
+	// Bu getter
+	get bonus() {
+		return this._bonus;
+	}
+	// Bu setter
+	set bonus(bonus) {
+		if (typeof bonus == 'number' && bonus > 0 && bonus < 100) {
+			this._bonus = bonus
+		} else {
+			console.log('Bonus not correct');
+		}
+	}
+}
+
 const bmw = new Car('bmw', 'black', 10)
 
-console.log(bmw.getBonus());
+console.log(bmw._bonus);
 bmw.setBonus(30)
 
 bmw.info();
+

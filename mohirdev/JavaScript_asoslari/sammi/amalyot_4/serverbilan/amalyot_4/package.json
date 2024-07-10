@@ -1,0 +1,19 @@
+{
+	"name": "amalyot_4",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"js",
+		"html",
+		"serial"
+	],
+	"author": "Shohruh Egamov",
+	"license": "ISC",
+	"description": "JavaScript from 0 to hero",
+	"devDependencies": {
+		"json-server": "^1.0.0-beta.1"
+	}
+}
