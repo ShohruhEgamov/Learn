@@ -1,2 +1,0 @@
-print("Salom Python")
-

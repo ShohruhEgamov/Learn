@@ -1077,4 +1077,609 @@ print(ildizlar)
 toq_sonlar = list(filter(lambda n: n % 2 == 0, y))
 print(toq_sonlar)
 
-# ......................................Bu yerda son topish
+
+#...........................................................OOP darslari
+
+class Talaba:
+    """Talaba nomli klass yaratamiz"""
+
+    def __init__(self, ism, familiya, tyil):
+        """Talabaning xususiyatlari"""
+        self.ism = ism
+        self.familiya = familiya
+        self.tyil = tyil
+        self.bosqich = 1
+
+    def get_name(self):
+        return self.ism
+
+    def get_info(self):
+        """Talaba haqida ma'lumot"""
+        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi "
+
+    def set_bosqich(self, bosqich):
+        """Talabaning kursini yangilovchi metod"""
+        self.bosqich = bosqich
+
+    def update_bosqich(self):
+        """Talabanining bosqichini 1taga ko'paytirish"""
+        self.bosqich += 1
+
+    def get_name(self):
+        """Talabaning ismini qaytaradi"""
+        return self.ism
+
+    def get_lastname(self):
+        """Talabaning familiyasini qaytaradi"""
+        return self.familiya
+
+    def get_fullname(self):
+        """Talabaning ism-familiyasini qaytaradi"""
+        return f"{self.ism} {self.familiya}"
+
+    def get_age(self, yil):
+        """Talabaning yoshini qaytaradi"""
+        return yil - self.tyil
+
+    def tanishtir(self):
+        print(f"Ismim {self.ism} {self.familiya}. {self.tyil} yilda tu'gilganman")
+
+
+# talaba1 = Talaba("Alijon","Valiyev",2000)
+# print(talaba1.get_info())
+# talaba1.update_bosqich() # 1 bosqichga oshiramiz
+# print(talaba1.get_info())
+# talaba1.update_bosqich() # 1 bosqichga oshiramiz
+# print(talaba1.get_info())
+
+# # talaba1.set_bosqich(3)
+# # print(talaba1.bosqich)
+
+
+
+class Talaba:
+    """Talaba nomli klass yaratamiz"""
+
+    def __init__(self, ism, familiya, tyil):
+        """Talabaning xususiyatlari"""
+        self.ism = ism
+        self.familiya = familiya
+        self.tyil = tyil
+        self.bosqich = 1
+
+    def set_bosqich(self, yangi_bosqich):
+        """Talabaning kursini yangilovchi metod"""
+        self.bosqich = yangi_bosqich # Bu yerda bosqichni funksiyasii
+
+    def update_bosqich(self):
+        """Talabanining bosqichini 1taga ko'paytirish"""
+        self.bosqich += 1    # Bu funksiya ishga tushganda 1dan kopayib borishi uchun
+
+    def get_info(self): # Bu yerda full ism chiqaradi
+        """Talaba haqida ma'lumot"""
+        return f"{self.ism} {self.familiya}. {self.bosqich}-bosqich talabasi"
+
+    def get_name(self):
+        """Talabaning ismini qaytaradi"""
+        return self.ism 
+
+    def get_lastname(self):
+        """Talabaning familiyasini qaytaradi"""
+        return self.familiya
+
+    def get_fullname(self):
+        """Talabaning ism-familiyasini qaytaradi"""
+        return f"{self.ism} {self.familiya}"
+
+    def get_age(self, yil):  # Bu yerda yoshni hisoblab chiqaradi
+        """Talabaning yoshini qaytaradi"""
+        return yil - self.tyil 
+
+
+class Fan:
+    """Fan nomli klass"""
+
+    def __init__(self, nomi):
+        self.nomi = nomi
+        self.talabalar_soni = 0  #Bu yerda talaba soni
+        self.talabalar = []  # Bu yerda talaba royhati
+
+    def add_student(self, talaba): # Bu yerda talabani royhatini va sonini shakillantiradi
+        """Fanga talabalar qo'shish"""
+        self.talabalar.append(talaba)
+        self.talabalar_soni += 1
+
+    def get_name(self):
+        """Fan nomi"""
+        return self.nomi
+
+    def get_students(self):
+        """Fanga yozilgan talabalar haqida ma'lumot"""
+        return [talaba.get_fullname() for talaba in self.talabalar]
+
+    def get_students_num(self):
+        """Fanga yozilgan talabalar soni"""
+        return self.talabalar_soni
+
+
+def see_methods(klass): # Bu yerda metodlarni korish
+    return [method for method in dir(klass) if method.startswith("__") is False]
+
+# dir(class nomi) Bu yeda turli metodlarni chiqaradi
+
+matem = Fan("Oliy Matematika")
+talaba1 = Talaba("Alijon", "Valiyev", 2000)
+talaba2 = Talaba("Hasan", "Alimov", 2001)
+talaba3 = Talaba("Akrom", "Boriyev", 2001)
+matem.add_student(talaba1)
+matem.add_student(talaba2)
+matem.add_student(talaba3)
+
+# print(matem.talabalar_soni)
+print(matem.talabalar)
+mat_talabalar = matem.get_students()
+print(mat_talabalar)
+
+print(see_methods(Talaba))
+print(see_methods(talaba1))
+print(see_methods(str))
+print(talaba1.__dict__)
+print(talaba1.__dict__.keys())
+
+print(talaba1.get_info())
+print(matem.add_student())
+print(see_methods(Talaba))
+
+print(talaba1.set_bosqich())
+print(talaba1.update_bosqich())
+
+
+class Car:
+    def __init__(self, make, model, rang, korobka, narh):
+        self.make = make
+        self.model = model
+        self.rang = rang
+        self.korobka = korobka
+        self.narh = narh
+        self.km = 0
+
+    def get_make(self):
+        return self.make
+
+    def get_model(self):
+        return [moshna.get_model() for talaba in self.talabalar]
+
+    def get_rang(self):
+        return self.rang
+
+    def get_gear(self):
+        self.km += 1
+
+moshna = Car('GM','Lasetti', 'oq','mehanika',1150000)
+
+#.................................Bu yerda Shaxs malumot qaytaradigan metod
+
+class Shaxs:
+    """Shaxslar haqida ma'lumot"""
+
+    def __init__(self, ism, familiya, passport, tyil):
+        """Shaxsning xususiyatlari"""
+        self.ism = ism
+        self.familiya = familiya
+        self.passport = passport
+        self.tyil = tyil
+
+    def get_info(self):
+        """Shaxs haqida ma'lumot"""
+        info = f"{self.ism} {self.familiya}. "
+        info += f"Passport:{self.passport}, {self.tyil}-yilda tug`ilgan"
+        return info
+
+    def get_age(self, yil):
+        """Shaxsning yoshini qaytaruvchi metod"""
+        return yil - self.tyil
+
+
+class Talaba(Shaxs):
+    """Talaba klassi"""
+
+    def __init__(self, ism, familiya, passport, tyil, idraqam, manzil,fanlar):
+        """Talabaning xususiyatlari"""
+        super().__init__(ism, familiya, passport, tyil)
+        self.idraqam = idraqam
+        self.bosqich = 1
+        self.manzil = manzil
+        self.fanlar = []
+
+    def get_id(self):
+        """Talabaning ID raqami"""
+        return self.idraqam
+
+    def get_bosqich(self):
+        """Talabaning o'qish bosqichi"""
+        return self.bosqich
+
+    def get_info(self):
+        """Talaba haqida ma'lumot"""
+        info = f"{self.ism} {self.familiya}. "
+        info += f"{self.get_bosqich()}-bosqich. ID raqami: {self.idraqam}"
+        return info
+
+
+class Manzil:
+    """Manzil saqlash uchun klass"""
+
+    def __init__(self, uy, kocha, tuman, viloyat):
+        """Manzil xususiyatlari"""
+        self.uy = uy
+        self.kocha = kocha
+        self.tuman = tuman
+        self.viloyat = viloyat
+
+    def get_manzil(self):
+        """Manzilni ko'rish"""
+        manzil = f"{self.viloyat} viloyati, {self.tuman} tumani, "
+        manzil += f"{self.kocha} ko'chasi, {self.uy}-uy"
+        return manzil
+class Fan(Talaba):
+    def __init__(self,matem,ingliztili):
+        self.matem = matem
+        self.ingliztili = ingliztili
+        
+        
+fan = Fan('oliy matematika', 'About my self')
+talaba1_manzil = Manzil(12, "Olmazor", "Bog'bon", "Samarqand")
+talaba1 = Talaba("Valijon", "Aliyev", "FA112299", 2000, "0000012", talaba1_manzil,fan)
+
+
+class Shaxs:
+    """Shaxslar haqida ma'lumot"""
+
+    def __init__(self, ism, familiya, passport, tyil):
+        """Shaxsning xususiyatlari"""
+        self.ism = ism
+        self.familiya = familiya
+        self.passport = passport
+        self.tyil = tyil
+
+    def get_info(self):
+        """Shaxs haqida ma'lumot"""
+        info = f"{self.ism} {self.familiya}. "
+        info += f"Passport:{self.passport}, {self.tyil}-yilda tug`ilgan"
+        return info
+
+    def get_age(self, yil):
+        """Shaxsning yoshini qaytaruvchi metod"""
+        return yil - self.tyil
+
+
+class Talaba(Shaxs):
+    """Talaba klassi"""
+
+    def __init__(self, ism, familiya, passport, tyil, idraqam):
+        """Talabaning xususiyatlari"""
+        super().__init__(ism, familiya, passport, tyil)
+        self.idraqam = idraqam
+        self.bosqich = 1
+
+    def get_id(self):
+        """Talabaning ID raqami"""
+        return self.idraqam
+
+    # def get_bosqich(self):
+    #     """Talabaning o'qish bosqichi"""
+    #     self.bosqich = 1
+    def get_bosqich_yangi(self):
+        """Talabaning o'qish bosqichi"""
+        self.bosqich += 1
+
+    def get_info(self):
+        """Talaba haqida ma'lumot"""
+        info = f"{self.ism} {self.familiya}. "
+        info += f"{self.bosqich}-bosqich. ID raqami: {self.idraqam}"
+        return info
+    
+talaba1 = Talaba("Valijon", "Aliyev", "FA112299", 2000, "0000012")
+
+
+#....................................................uyga vazifa 30 dars
+
+class Shaxs:
+    def __init__(self, ism, familya, tyil):
+        self.ism = ism
+        self.familya = familya
+        self.tyil = tyil
+    
+    def get_info(self):
+        return f"{self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}"
+
+class Talaba(Shaxs): # Bu yerda Shaxsdan meros oladi
+    def __init__(self, ism, familya, tyil):
+        super().__init__(ism, familya, tyil)  # Bu yerda esa toliq merosiga egalik qiladi
+        self.fanlar = []
+
+    def tanishuv(self):
+        return f"Men {self.ism} {self.familya}. Tug'ilgan yilim {self.tyil}. Yoshim {2024 - self.tyil} da"
+
+    def fanga_yozil(self, fan):  # Bu yerda fanga yozilish uchun
+        self.fanlar.append(fan)
+        print(f"{self.ism} {fan.nomi} faniga yozildi.")
+
+    # def remove_fan(self, fan): # Bu yerda yozilgan fanlarni ochirish uchun
+    #     if fan in self.fanlar:
+    #         self.fanlar.remove(fan)
+    #         print(f"{self.ism} {fan.nomi} fanidan o'chirildi.")
+    #     else:
+    #         print("Siz bu fanga yozilmagansiz")
+    
+    def get_yozilish(self):
+        return [self.nomi for fan in self.fanlar]
+    
+    def get_info(self):
+        fanlar = ", ".join([fan.nomi for fan in self.fanlar])
+        return f"{self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}. Yoshim {2024 - self.tyil} da. Yozilgan fanlar: {fanlar}"
+
+class Fan:
+    def __init__(self, nomi):
+        self.nomi = nomi
+
+# Voris klasslar
+class Professor(Shaxs):
+    def __init__(self, ism, familya, tyil, kafedra):
+        super().__init__(ism, familya, tyil)
+        self.kafedra = kafedra
+
+    def get_info(self):
+        return f"Professor {self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}. Kafedra: {self.kafedra}"
+
+class Foydalanuvchi(Shaxs):
+    def __init__(self, ism, familya, tyil, login):
+        super().__init__(ism, familya, tyil)
+        self.login = login
+    
+    def get_info(self):
+        return f"Foydalanuvchi {self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}. Login: {self.login}"
+
+class Admin(Foydalanuvchi):
+    def __init__(self, ism, familya, tyil, login):
+        super().__init__(ism, familya, tyil, login)
+    
+    def ban_user(self):
+        print("Foydalanuvchi bloklandi")
+
+# Testlar
+talaba = Talaba("Shohruh", "Egamov", 2000)  # Bu yerda Talabaga obyekt berish
+talaba2 = Talaba("Farruh", "Egamov", 1998)
+
+# Fan obyektlarini yaratish
+fan1 = Fan("Matematika")
+fan2 = Fan("Ingliz tili")  # Bu yerda esa Fan berish
+
+# Fanlarga yozilish
+talaba.fanga_yozil(fan1) 
+talaba.fanga_yozil(fan2) # bu yerda fanga yozilish
+
+# # Fanlarni olib tashlash
+# talaba.remove_fan(fan1)  # Bu yerda fanni ochirish
+# talaba.remove_fan(fan1)
+
+# get_info metodi
+print(talaba.get_info())
+print(talaba2.get_info())
+
+professor = Professor("Akmal", "Ismatov", 1975, "Fizika")
+print(professor.get_info())
+
+foydalanuvchi = Foydalanuvchi("Olim", "Karimov", 1990, "olim123")
+print(foydalanuvchi.get_info())
+
+admin = Admin("Sardor", "Xolmatov", 1985, "admin_sardor")
+print(admin.get_info())
+admin.ban_user()
+
+
+print(talaba.fanlar)
+fan3 = talaba.get_yozilish()
+print(fan3)
+
+
+#......................................................Bu yerda tuzatilgan varyanti
+
+
+class Shaxs:
+    def __init__(self, ism, familya, tyil):
+        self.ism = ism
+        self.familya = familya
+        self.tyil = tyil
+    
+    def get_info(self):
+        return f"{self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}"
+
+class Talaba(Shaxs):
+    def __init__(self, ism, familya, tyil):
+        super().__init__(ism, familya, tyil)
+        self.fanlar = []
+
+    def tanishuv(self):
+        return f"Men {self.ism} {self.familya}. Tug'ilgan yilim {self.tyil}. Yoshim {2024 - self.tyil} da"
+
+    def fanga_yozil(self, fan):
+        self.fanlar.append(fan)
+        print(f"{self.ism} {fan.nomi} faniga yozildi.")
+
+    def remove_fan(self, fan):
+        if fan in self.fanlar:
+            self.fanlar.remove(fan)
+            print(f"{self.ism} {fan.nomi} fanidan o'chirildi.")
+        else:
+            print("Siz bu fanga yozilmagansiz")
+    
+    def get_info(self):
+        fanlar = ", ".join([fan.nomi for fan in self.fanlar])
+        return f"{self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}. Yoshim {2024 - self.tyil} da. Yozilgan fanlar: {fanlar}"
+    
+    def __str__(self):
+        fanlar = ", ".join([str(fan) for fan in self.fanlar])
+        return f"Talaba: {self.ism} {self.familya}, Fanlar: [{fanlar}]"
+
+class Fan:
+    def __init__(self, nomi):
+        self.nomi = nomi
+    
+    def __str__(self):  # Bu yerda fanlarni royhatga qoshish uchun
+        return self.nomi
+
+# Voris klasslar
+class Professor(Shaxs):
+    def __init__(self, ism, familya, tyil, kafedra):
+        super().__init__(ism, familya, tyil)
+        self.kafedra = kafedra
+
+    def get_info(self):
+        return f"Professor {self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}. Kafedra: {self.kafedra}"
+
+class Foydalanuvchi(Shaxs):
+    def __init__(self, ism, familya, tyil, login):
+        super().__init__(ism, familya, tyil)
+        self.login = login
+    
+    def get_info(self):
+        return f"Foydalanuvchi {self.ism} {self.familya}. Tug'ilgan yil: {self.tyil}. Login: {self.login}"
+
+class Admin(Foydalanuvchi):
+    def __init__(self, ism, familya, tyil, login):
+        super().__init__(ism, familya, tyil, login)
+    
+    def ban_user(self):
+        print("Foydalanuvchi bloklandi")
+
+# Testlar
+talaba = Talaba("Shohruh", "Egamov", 2000)
+talaba2 = Talaba("Farruh", "Egamov", 1998)
+
+# Fan obyektlarini yaratish
+fan1 = Fan("Matematika")
+fan2 = Fan("Ingliz tili")
+fan3 = Fan("Ona-tili")
+
+# Fanlarga yozilish
+talaba.fanga_yozil(fan1)
+talaba.fanga_yozil(fan2)
+talaba.fanga_yozil(fan3)
+talaba2.fanga_yozil(fan1)
+talaba2.fanga_yozil(fan2)
+talaba2.fanga_yozil(fan3)
+
+#Fanlarni olib tashlash
+# talaba.remove_fan(fan1)
+talaba.remove_fan(fan3)
+
+#get_info metodi
+print(talaba.get_info())
+print(talaba2.get_info())
+
+# __str__ metodi
+print(talaba)
+print(talaba2)
+
+# professor = Professor("Akmal", "Ismatov", 1975, "Fizika")
+# print(professor.get_info())
+
+# foydalanuvchi = Foydalanuvchi("Olim", "Karimov", 1990, "olim123")
+# print(foydalanuvchi.get_info())
+
+# admin = Admin("Sardor", "Xolmatov", 1985, "admin_sardor")
+# print(admin.get_info())
+# admin.ban_user()
+
+
+# fnx = talaba.__str__()
+# print(fnx)
+
+
+from uuid import uuid4 # Bu id berishi uchun
+
+
+class Avto:
+    """Avtomobil klassi"""
+
+    def __init__(self, make, model, rang, yil, narh, km=0):
+        """Avtomobilning xususiyatlari"""
+        self.make = make
+        self.model = model
+        self.rang = rang
+        self.yil = yil
+        self.narh = narh
+        self.__km = km
+        self.__id = uuid4() # Bu yerda kirib korib bolmasligi uchun
+
+    def get_km(self):
+        return self.__km # bu yerda km i ko'rish uchun
+
+    def get_id(self):
+        return self.__id #Bu yerda id ni ko'rish
+
+    def add_km(self, km):
+        """Mashinaning km ga yana km qo'shish"""
+        if km >= 0:
+            self.__km += km
+        else:
+            print("Mashina km kamaytirib bo'lmaydi")
+
+
+# avto1 = Avto("GM","Malibu","Qora",2020,40000,100000)
+# print(f"ID: {avto1.get_id()}")
+# avto1.add_km(1500)
+# print(avto1.get_km())
+
+
+
+from uuid import uuid4
+
+
+class Avto:
+    """Avtomobil klassi"""
+
+    __num_avto = 0
+
+    def __init__(self, make, model, rang, yil, narh, km=0):
+        """Avtomobilning xususiyatlari"""
+        self.make = make
+        self.model = model
+        self.rang = rang
+        self.yil = yil
+        self.narh = narh
+        self.__km = km
+        self.__id = uuid4()
+        Avto.__num_avto += 1
+
+    @classmethod
+    def get_num_avto(cls):  # incapsul bolgan __num_avto = 0 n korish uchun
+        return cls.__num_avto
+
+    def get_km(self):
+        return self.__km
+
+    def get_id(self):
+        return self.__id
+
+    def add_km(self, km):
+        """Mashinaning km ga yana km qo'shish"""
+        if km >= 0:
+            self.__km += km
+        else:
+            print("Mashina km kamaytirib bo'lmaydi")
+
+
+class Bus:
+    pass
+
+
+class Train:
+    pass
+
+avto = Avto("GM","Malibu","Qora",2020,40000)
+avto = Avto("GM","Malibu","Qora",2020,40000)
+print(Avto.get_num_avto())
+# #...........................................................31 uyga vazifa
+
