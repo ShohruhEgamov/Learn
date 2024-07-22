@@ -117,3 +117,7 @@ while True:
     else:
         print("Butun son kiriting")
 print(f"siz {2024-yosh} yilsiz")
+
+
+
+
