@@ -1,8 +1,8 @@
-
 import telebot
+from my_token import token
 from transliterate import to_cyrillic, to_latin
 
-TOKEN = "6443404583:AAHRh9L2-sghSGptDBTyoowUqorjUGBSiHs"  # <-- Tokeningizni shu yerga yozing
+TOKEN = token  # <-- Tokeningizni shu yerga yozing
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 # \start komandasi uchun mas'ul funksiya

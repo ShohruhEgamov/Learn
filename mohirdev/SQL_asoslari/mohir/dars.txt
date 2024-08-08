@@ -1,0 +1,119 @@
+Microsoft Windows [Version 10.0.19045.4651]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime>"C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime\psql.exe" "host=localhost port=5432 dbname=contact_db user=postgres sslmode=prefer co
+nnect_timeout=10" 2>>&1
+psql (16.3)
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+contact_db=# CREATE TABLE shower
+contact_db-# (
+contact_db(# name VARCHAR(50) NOT NULL,
+contact_db(# type VARCHAR(50) NOT NULL,
+contact_db(# price NUMERIC(3, 2) NOT NULL DEFAULT 1.00
+contact_db(# );
+CREATE TABLE
+contact_db=# INSERT INTO shower (name,type,price)
+contact_db-# VALUES ('Mila', 'Shampun',3.00);
+INSERT 0 1
+contact_db=# INSERT INTO shower (name,type)
+contact_db-# VALUES ('Mila', 'Shampun');
+INSERT 0 1
+contact_db=# \l
+                                                                List of databases
+    Name    |  Owner   | Encoding | Locale Provider |       Collate       |        Ctype        | ICU Locale | ICU Rules |   Access privileges
+------------+----------+----------+-----------------+---------------------+---------------------+------------+-----------+-----------------------
+ contact_db | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           |
+ postgres   | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           |
+ template0  | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           | =c/postgres          +
+            |          |          |                 |                     |                     |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           | =c/postgres          +
+            |          |          |                 |                     |                     |            |           | postgres=CTc/postgres
+ test_db    | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           |
+(5 rows)
+
+
+contact_db=# \c contact_db
+You are now connected to database "contact_db" as user "postgres".
+contact_db=# \d
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | cars          | table | postgres
+ public | doughnut_list | table | postgres
+ public | exemple_table | table | postgres
+ public | my_contacts   | table | postgres
+ public | my_well       | table | postgres
+ public | shower        | table | postgres
+ public | test          | table | postgres
+(7 rows)
+
+
+contact_db=# \d exemple_table
+                        Table "public.exemple_table"
+    Column    |            Type             | Collation | Nullable | Default
+--------------+-----------------------------+-----------+----------+---------
+ price        | numeric(6,2)                |           |          |
+ zip_code     | character varying(10)       |           |          |
+ comments     | text                        |           |          |
+ quantity     | integer                     |           |          |
+ book_title   | character varying(50)       |           |          |
+ gender       | character(1)                |           |          |
+ meeting_time | timestamp without time zone |           |          |
+ is_married   | boolean                     |           |          |
+
+
+contact_db=# SELECT * FROM public.exemple_table
+contact_db-# SELECT * FROM public.exemple_table;
+ОШИБКА:  ошибка синтаксиса (примерное положение: "SELECT")
+LINE 2: SELECT * FROM public.exemple_table;
+        ^
+contact_db=# SELECT * FROM public.exemple_table;
+ price  | zip_code |             comments              | quantity |  book_title   | gender |    meeting_time     | is_married
+--------+----------+-----------------------------------+----------+---------------+--------+---------------------+------------
+ 500.52 | Tugadi   | Bu yerda men sql ni o`rganayapman |        3 | Tasfiru hilol | m      | 2022-05-20 00:00:00 | t
+ 660.52 | salom    |                                   |          |               |        |                     |
+(2 rows)
+
+
+contact_db=# SELECT * FROM public.shower;
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+(2 rows)
+
+
+contact_db=# SELECT * FROM shower;
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+(2 rows)
+
+
+contact_db=# SELECT * FROM my_contacts;
+ last_name | first_name | email | b_day | profession | location | status | interests | seeking
+-----------+------------+-------+-------+------------+----------+--------+-----------+---------
+(0 rows)
+
+
+contact_db=# SELECT * FROM public.exemple_table;
+ price  | zip_code |             comments              | quantity |  book_title   | gender |    meeting_time     | is_married
+--------+----------+-----------------------------------+----------+---------------+--------+---------------------+------------
+ 500.52 | Tugadi   | Bu yerda men sql ni o`rganayapman |        3 | Tasfiru hilol | m      | 2022-05-20 00:00:00 | t
+ 660.52 | salom    |                                   |          |               |        |                     |
+(2 rows)
+
+
+contact_db=# SELECT * FROM public.exemple_table WHERE price = 660.52;;
+ price  | zip_code | comments | quantity | book_title | gender | meeting_time | is_married
+--------+----------+----------+----------+------------+--------+--------------+------------
+ 660.52 | salom    |          |          |            |        |              |
+(1 row)
+
+
+contact_db=#
