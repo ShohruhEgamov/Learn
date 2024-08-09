@@ -1,0 +1,125 @@
+######### BU YERDA SOLISHTIRISHLAR ######## 
+
+
+contact_db=# \d
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | cars          | table | postgres
+ public | doughnut_list | table | postgres
+ public | exemple_table | table | postgres
+ public | my_contacts   | table | postgres
+ public | my_well       | table | postgres
+ public | shower        | table | postgres
+ public | test          | table | postgres
+ public | yangi_tablo   | table | postgres
+(8 rows)
+
+
+contact_db=# SELECT * FROM shower;
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+(2 rows)
+
+
+contact_db=# INSERT INTO shower VALUES ('Mazza','Crem',5.5);
+INSERT 0 1
+
+contact_db=# INSERT INTO shower VALUES ('Non','Un',9.5);
+INSERT 0 1
+
+contact_db=# INSERT INTO shower VALUES ('Vilona','Shirinlik',6.5);
+INSERT 0 1
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mila   | Shampun   |  1.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(5 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price = 1.00;
+
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  1.00
+(1 row)
+
+
+contact_db=# SELECT * FROM shower WHERE price != 1.00;
+
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(4 rows)
+
+
+contact_db=#
+contact_db=# SELECT * FROM shower WHERE price < 1.00;
+
+ name | type | price
+------+------+-------
+(0 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price > 1.00;
+
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(4 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price <= 3.00;
+
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+(2 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price >= 3.00;
+
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(4 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE name < 'M';
+
+ name | type | price
+------+------+-------
+(0 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE name < 'f';
+
+ name | type | price
+------+------+-------
+(0 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE name > 'n';
+
+  name  |   type    | price
+--------+-----------+-------
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(2 rows)

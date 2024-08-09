@@ -1,0 +1,69 @@
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+ Mala   | Un        |  1.00
+(6 rows)
+
+
+contact_db=# DELETE FROM shower WHERE name = 'Mala' AND type = 'Un';
+DELETE 1
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+(5 rows)
+
+
+contact_db=# INSERT INTO shower VALUES ('Mala','Un',2.00);
+INSERT 0 1
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+ Mala   | Un        |  2.00
+(6 rows)
+
+
+contact_db=# UPDATE shower SET price = 4.00 WHERE name = 'Olma';
+UPDATE 1
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Mala   | Un        |  2.00
+ Olma   | Meva      |  4.00
+(6 rows)
+
+
+                                 ^
+contact_db=# UPDATE shower SET name = 'Malako',type = 'Sut' WHERE name = 'Mala';
+UPDATE 1
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  4.00
+ Malako | Sut       |  2.00
+(6 rows)

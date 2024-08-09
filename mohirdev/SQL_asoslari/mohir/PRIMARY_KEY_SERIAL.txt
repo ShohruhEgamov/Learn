@@ -1,0 +1,103 @@
+
+contact_db=# \d
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | cars          | table | postgres
+ public | doughnut_list | table | postgres
+ public | exemple_table | table | postgres
+ public | my_contacts   | table | postgres
+ public | my_well       | table | postgres
+ public | shower        | table | postgres
+ public | test          | table | postgres
+ public | yangi_tablo   | table | postgres
+(8 rows)
+
+
+contact_db=# \d shower
+                      Table "public.shower"
+ Column |         Type          | Collation | Nullable | Default
+--------+-----------------------+-----------+----------+---------
+ name   | character varying(50) |           | not null |
+ type   | character varying(50) |           | not null |
+ price  | numeric(3,2)          |           | not null | 1.00
+
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  4.00
+ Malako | Sut       |  2.00
+ Mazza  | Shirinlik |  8.60
+(7 rows)
+
+
+contact_db=# CREATE TABLE orders (id INT PRIMARY KEY, name VARCHAR(50), familya VARCHAR(50));
+CREATE TABLE
+
+contact_db=# INSERT INTO orders VALUES (1,'Shohruh','Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders VALUES (2,'Farrux','Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders VALUES (3,'Diyorbek','Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders VALUES (4,'Bekmirzo','Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders VALUES (5,'Gulmira','Egamova');
+INSERT 0 1
+
+contact_db=# SELECT * FROM orders;
+ id |   name   | familya
+----+----------+---------
+  1 | Shohruh  | Egamov
+  2 | Farrux   | Egamov
+  3 | Diyorbek | Egamov
+  4 | Bekmirzo | Egamov
+  5 | Gulmira  | Egamova
+(5 rows)
+
+
+contact_db=# SELECT MAX(id) FROM orders;
+ max
+-----
+   5
+(1 row)
+
+
+                               
+contact_db=# INSERT INTO orders_i (name, familya) VALUES ('Shohruh', 'Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders_i (name, familya) VALUES ('Farruh', 'Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders_i (name, familya) VALUES ('Diyorbek', 'Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders_i (name, familya) VALUES ('Bekmirza', 'Egamov');
+INSERT 0 1
+
+contact_db=# INSERT INTO orders_i (name, familya) VALUES ('Gulmira', 'Egamova');
+INSERT 0 1
+
+
+contact_db=# select * from orders_i;
+ id |   name   | familya
+----+----------+---------
+  1 | Shohruh  | Egamov
+  2 | Farruh   | Egamov
+  3 | Diyorbek | Egamov
+  4 | Bekmirza | Egamov
+  5 | Gulmira  | Egamova
+(5 rows)
+
+
+contact_db=#

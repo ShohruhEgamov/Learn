@@ -1,0 +1,20 @@
+############# YANGI TABLO YARATISH VA TABLOGA ELEMENT QOSHISH ##############
+
+
+contact_db=# CREATE TABLE yangi_tablo
+contact_db-# (
+contact_db(# mahsulot VARCHAR(50) NOT NULL,
+contact_db(# turi VARCHAR(50) NOT NULL,
+contact_db(# narxi NUMERIC(9, 2) NOT NULL DEFAULT 1.00
+contact_db(# );
+CREATE TABLE
+contact_db=# INSERT INTO yangi_tablo VALUES ('Qalbasa', 'Go`sht', '85000.00');
+INSERT 0 1
+contact_db=# SELECT * FROM yangi_tablo;
+ mahsulot |  turi  |  narxi
+----------+--------+----------
+ Qalbasa  | Go`sht | 85000.00
+(1 row)
+
+
+contact_db=#

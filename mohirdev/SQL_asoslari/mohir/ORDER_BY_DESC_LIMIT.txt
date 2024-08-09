@@ -1,0 +1,222 @@
+
+
+contact_db=# \d
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | cars          | table | postgres
+ public | doughnut_list | table | postgres
+ public | exemple_table | table | postgres
+ public | my_contacts   | table | postgres
+ public | my_well       | table | postgres
+ public | shower        | table | postgres
+ public | test          | table | postgres
+ public | yangi_tablo   | table | postgres
+(8 rows)
+
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  4.00
+ Malako | Sut       |  2.00
+(6 rows)
+
+
+contact_db=# SELECT * FROM shower ORDER BY price;
+  name  |   type    | price
+--------+-----------+-------
+ Malako | Sut       |  2.00
+ Mila   | Shampun   |  3.00
+ Olma   | Meva      |  4.00
+ Mazza  | Crem      |  5.50
+ Vilona | Shirinlik |  6.50
+ Non    | Un        |  9.50
+(6 rows)
+
+
+contact_db=# SELECT * FROM shower ORDER BY name\;
+contact_db-# SELECT * FROM shower ORDER BY name;
+  name  |   type    | price
+--------+-----------+-------
+ Malako | Sut       |  2.00
+ Mazza  | Crem      |  5.50
+ Mila   | Shampun   |  3.00
+ Non    | Un        |  9.50
+ Olma   | Meva      |  4.00
+ Vilona | Shirinlik |  6.50
+(6 rows)
+
+
+  name  |   type    | price
+--------+-----------+-------
+ Malako | Sut       |  2.00
+ Mazza  | Crem      |  5.50
+ Mila   | Shampun   |  3.00
+ Non    | Un        |  9.50
+ Olma   | Meva      |  4.00
+ Vilona | Shirinlik |  6.50
+(6 rows)
+
+
+contact_db=# SELECT * FROM shower ORDER BY price DESC;
+  name  |   type    | price
+--------+-----------+-------
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Mazza  | Crem      |  5.50
+ Olma   | Meva      |  4.00
+ Mila   | Shampun   |  3.00
+ Malako | Sut       |  2.00
+(6 rows)
+
+
+contact_db=# SELECT SUM(price) FROM shower;
+  sum
+-------
+ 30.50
+(1 row)
+
+
+contact_db=# SELECT MIN(price) FROM shower;
+ min
+------
+ 2.00
+(1 row)
+
+
+contact_db=# SELECT MAX(price) FROM shower;
+ max
+------
+ 9.50
+(1 row)
+
+
+contact_db=# SELECT AVG(price) FROM shower;
+        avg
+--------------------
+ 5.0833333333333333
+(1 row)
+
+
+contact_db=# SELECT COUNT(price) FROM shower;
+ count
+-------
+     6
+(1 row)
+
+
+contact_db=# INSERT INTO shower VALUES ('Mazza','Shirinlik',8.60);
+INSERT 0 1
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  4.00
+ Malako | Sut       |  2.00
+ Mazza  | Shirinlik |  8.60
+(7 rows)
+
+
+contact_db=# SELECT MAX(price) FROM shower GROUP BY type;
+ max
+------
+ 3.00
+ 4.00
+ 8.60
+ 5.50
+ 2.00
+ 9.50
+(6 rows)
+
+
+contact_db=# SELECT type, MAX(price) FROM shower GROUP BY type;
+   type    | max
+-----------+------
+ Shampun   | 3.00
+ Meva      | 4.00
+ Shirinlik | 8.60
+ Crem      | 5.50
+ Sut       | 2.00
+ Un        | 9.50
+(6 rows)
+
+
+contact_db=# SELECT type, SUM(price) FROM shower GROUP BY type;
+   type    |  sum
+-----------+-------
+ Shampun   |  3.00
+ Meva      |  4.00
+ Shirinlik | 15.10
+ Crem      |  5.50
+ Sut       |  2.00
+ Un        |  9.50
+(6 rows)
+
+
+contact_db=# SELECT type, count(price) FROM shower GROUP BY type;
+   type    | count
+-----------+-------
+ Shampun   |     1
+ Meva      |     1
+ Shirinlik |     2
+ Crem      |     1
+ Sut       |     1
+ Un        |     1
+(6 rows)
+
+
+contact_db=# SELECT DISTINCT type FROM shower;
+   type
+-----------
+ Shampun
+ Meva
+ Shirinlik
+ Crem
+ Sut
+ Un
+(6 rows)
+
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  4.00
+ Malako | Sut       |  2.00
+ Mazza  | Shirinlik |  8.60
+(7 rows)
+
+
+contact_db=# SELECT * FROM shower ORDER BY price DESC;
+  name  |   type    | price
+--------+-----------+-------
+ Non    | Un        |  9.50
+ Mazza  | Shirinlik |  8.60
+ Vilona | Shirinlik |  6.50
+ Mazza  | Crem      |  5.50
+ Olma   | Meva      |  4.00
+ Mila   | Shampun   |  3.00
+ Malako | Sut       |  2.00
+(7 rows)
+
+
+contact_db=# SELECT * FROM shower ORDER BY price DESC LIMIT 2;
+ name  |   type    | price
+-------+-----------+-------
+ Non   | Un        |  9.50
+ Mazza | Shirinlik |  8.60
+(2 rows)
+
+
+contact_db=#

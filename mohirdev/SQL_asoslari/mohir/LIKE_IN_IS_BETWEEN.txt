@@ -1,0 +1,216 @@
+
+contact_db-# \l
+                                                                List of databases
+    Name    |  Owner   | Encoding | Locale Provider |       Collate       |        Ctype        | ICU Locale | ICU Rules |   Access privileges
+------------+----------+----------+-----------------+---------------------+---------------------+------------+-----------+-----------------------
+ contact_db | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           |
+ postgres   | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           |
+ template0  | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           | =c/postgres          +
+            |          |          |                 |                     |                     |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           | =c/postgres          +
+            |          |          |                 |                     |                     |            |           | postgres=CTc/postgres
+ test_db    | postgres | UTF8     | libc            | Russian_Russia.1251 | Russian_Russia.1251 |            |           |
+(5 rows)
+
+
+contact_db-# \d
+             List of relations
+ Schema |     Name      | Type  |  Owner
+--------+---------------+-------+----------
+ public | cars          | table | postgres
+ public | doughnut_list | table | postgres
+ public | exemple_table | table | postgres
+ public | my_contacts   | table | postgres
+ public | my_well       | table | postgres
+ public | shower        | table | postgres
+ public | test          | table | postgres
+ public | yangi_tablo   | table | postgres
+(8 rows)
+
+
+contact_db-# \d my_contacts
+
+                      Table "public.my_contacts"
+   Column   |          Type          | Collation | Nullable | Default
+------------+------------------------+-----------+----------+---------
+ last_name  | character varying(50)  |           |          |
+ first_name | character varying(50)  |           |          |
+ email      | character varying(50)  |           |          |
+ b_day      | date                   |           |          |
+ profession | character varying(30)  |           |          |
+ location   | character varying(60)  |           |          |
+ status     | character varying(20)  |           |          |
+ interests  | character varying(200) |           |          |
+ seeking    | character varying(200) |           |          |
+
+
+contact_db-# \d shower
+
+                      Table "public.shower"
+ Column |         Type          | Collation | Nullable | Default
+--------+-----------------------+-----------+----------+---------
+ name   | character varying(50) |           | not null |
+ type   | character varying(50) |           | not null |
+ price  | numeric(3,2)          |           | not null | 1.00
+
+
+contact_db=# SELECT * FROM shower;
+
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mila   | Shampun   |  1.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(5 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE type is NULL;
+ name | type | price
+------+------+-------
+(0 rows)
+
+contact_db=# INSERT INTO shower VALUES ('Olma','Meva');
+INSERT 0 1
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mila   | Shampun   |  1.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+(6 rows)
+
+contact_db=# SELECT * FROM shower WHERE type IS NOT NULL;
+
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mila   | Shampun   |  1.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+(6 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE type LIKE '%n';
+
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+ Non  | Un      |  9.50
+(3 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE type LIKE 's%';
+
+ name | type | price
+------+------+-------
+(0 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE type LIKE 'S%';
+
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mila   | Shampun   |  1.00
+ Vilona | Shirinlik |  6.50
+(3 rows)
+
+
+contact_db=# INSERT INTO shower VALUES ('Mala','Un');
+INSERT 0 1
+
+contact_db=# SELECT * FROM shower WHERE name LIKE 'M%la';
+
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+ Mala | Un      |  1.00
+(3 rows)
+
+contact_db=# SELECT * FROM shower WHERE name NOT LIKE 'M%la';
+  name  |   type    | price
+--------+-----------+-------
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+(4 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price > 5 AND price < 9;
+  name  |   type    | price
+--------+-----------+-------
+ Mazza  | Crem      |  5.50
+ Vilona | Shirinlik |  6.50
+(2 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price BETWEEN 5 AND 9;
+  name  |   type    | price
+--------+-----------+-------
+ Mazza  | Crem      |  5.50
+ Vilona | Shirinlik |  6.50
+(2 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price = 1.00 OR price = 3.00;
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+ Olma | Meva    |  1.00
+ Mala | Un      |  1.00
+(4 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price BETWEEN 1.00  AND 3.00;
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+ Olma | Meva    |  1.00
+ Mala | Un      |  1.00
+(4 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price IN (1.00, 3.00);
+ name |  type   | price
+------+---------+-------
+ Mila | Shampun |  3.00
+ Mila | Shampun |  1.00
+ Olma | Meva    |  1.00
+ Mala | Un      |  1.00
+(4 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price NOT IN (1.00, 3.00);
+  name  |   type    | price
+--------+-----------+-------
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(3 rows)
+
+
+*****************BU YERDA TEXTGA OTKAZIB KEYIN TEKSHIRADI******************
+
+contact_db=# SELECT * FROM shower WHERE price::TEXT LIKE '%.50';
+  name  |   type    | price
+--------+-----------+-------
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+(3 rows)
+
+
+contact_db=#

@@ -1,13 +1,4 @@
-Microsoft Windows [Version 10.0.19045.4651]
-(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
 
-C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime>"C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime\psql.exe" "host=localhost port=5432 dbname=contact_db user=postgres sslmode=prefer co
-nnect_timeout=10" 2>>&1
-psql (16.3)
-WARNING: Console code page (866) differs from Windows code page (1251)
-         8-bit characters might not work correctly. See psql reference
-         page "Notes for Windows users" for details.
-Type "help" for help.
 
 contact_db=# CREATE TABLE shower
 contact_db-# (

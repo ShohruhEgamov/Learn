@@ -1,0 +1,39 @@
+
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mila   | Shampun   |  1.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+ Mala   | Un        |  1.00
+(7 rows)
+
+
+contact_db=# DELETE FROM shower WHERE name = 'Mila' AND type = 'Shampun' AND price = 1.00;;
+DELETE 1
+contact_db=# SELECT * FROM shower;
+  name  |   type    | price
+--------+-----------+-------
+ Mila   | Shampun   |  3.00
+ Mazza  | Crem      |  5.50
+ Non    | Un        |  9.50
+ Vilona | Shirinlik |  6.50
+ Olma   | Meva      |  1.00
+ Mala   | Un        |  1.00
+(6 rows)
+
+
+contact_db=# SELECT * FROM shower WHERE price = 1.00;
+ name | type | price
+------+------+-------
+ Olma | Meva |  1.00
+ Mala | Un   |  1.00
+(2 rows)
+
+
+contact_db=# DELETE FROM test;
+DELETE 0
+contact_db=#
