@@ -1,0 +1,183 @@
+Microsoft Windows [Version 10.0.19045.4651]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime>"C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime\psql.exe" "host=localhost port=5432 dbname=contact_db user=postgres sslmode=p
+refer connect_timeout=10" 2>>&1
+psql (16.3)
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+contact_db=# SELECT * FROM oilaviy;
+ tartib |   name   | familya
+--------+----------+---------
+ 1      | Shohruh  | Egamov
+ 2      | Farruh   | Egamov
+ 3      | Diyorbek | Egamov
+ 4      | Bekmirza | Egamov
+ 5      | Gulmira  | Egamova
+(5 rows)
+
+
+contact_db=# SELECT * FROM qiziqish;
+ id |   name
+----+----------
+  1 | Gaming
+  2 | Driving
+  3 | Football
+  4 | Music
+  5 | Quran
+  6 | Music
+  7 | Quen
+(7 rows)
+
+
+contact_db=# ALTER TABLE oilaviy DROP COLUMN qiziqish;
+ОШИБКА:  столбец "qiziqish" в таблице "oilaviy" не существует
+contact_db=# ALTER TABLE contact DROP COLUMN qiziqish;
+ОШИБКА:  отношение "contact" не существует
+contact_db=# ALTER TABLE contacts DROP COLUMN qiziqish;
+ALTER TABLE
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    |    kasb    | id |     tel
+------------+------------+------------+------------+----+--------------
+ Shohruh    | Egamov     | 2000-12-21 | Devaloper  |  1 | +79992372042
+ Diyorbek   | Egamov     | 1994-04-14 | Biznes     |  2 | +79992372042
+ Bekmirza   | Egamov     | 1996-11-21 | Master     |  3 | +79992372042
+ Farruh     | Egamov     | 1998-11-15 | Transleter |  4 | +79992372042
+ Gulmira    | Egamova    | 1995-08-08 | Quran      |  5 | +79992372042
+ Shuhratjon | Ortikov    | 1996-08-25 | Teacher    |  6 | +79992372042
+ Bekposhsha | Roziboyeva | 1975-02-01 | Quen       |  7 | +79992372042
+(7 rows)
+
+
+contact_db=# ALTER TABLE contacts DROP COLUMN kasb;
+ALTER TABLE
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel
+------------+------------+------------+----+--------------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042
+(7 rows)
+
+
+contact_db=# ALTER TABLE contacts ADD COLUMN kasb INT;
+ALTER TABLE
+contact_db=# SELECT * FROM kasb;
+ id |     name
+----+--------------
+  1 | Devaloper
+  2 | Biznes
+  3 | Master
+  4 | "Transleter"
+  5 | Quran
+  6 | Teacher
+  7 | Quen
+(7 rows)
+
+
+contact_db=# UPDATE contacts SET kasb = 1 WHERE id = 1;
+UPDATE 1
+contact_db=# UPDATE contacts SET kasb = 2 WHERE id = 2;
+UPDATE 1
+contact_db=# UPDATE contacts SET kasb = 3 WHERE id = 3;
+UPDATE 1
+contact_db=# UPDATE contacts SET kasb = 4 WHERE id = 4;
+UPDATE 1
+contact_db=# UPDATE contacts SET kasb = 5 WHERE id = 5;
+UPDATE 1
+contact_db=# UPDATE contacts SET kasb = 6 WHERE id = 6;
+UPDATE 1
+contact_db=# UPDATE contacts SET kasb = 7 WHERE id = 7;
+UPDATE 1
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel      | kasb
+------------+------------+------------+----+--------------+------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042 |    1
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042 |    2
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042 |    3
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042 |    4
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042 |    5
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042 |    6
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042 |    7
+(7 rows)
+
+
+contact_db=# SELECT id FROM kasb WHERE name = 'Devaloper';
+ id
+----
+  1
+(1 row)
+
+
+contact_db=# SELECT * FROM contacts WHERE kasb = 1;
+   ism   | familya |   t_yil    | id |     tel      | kasb
+---------+---------+------------+----+--------------+------
+ Shohruh | Egamov  | 2000-12-21 |  1 | +79992372042 |    1
+(1 row)
+
+
+contact_db=# INSERT INTO contacts VALUES ('Imronbek','Shuxratov','2021-09-11','+79986565865',5);
+ОШИБКА:  значение "+79986565865" вне диапазона для типа integer
+LINE 1: ...tacts VALUES ('Imronbek','Shuxratov','2021-09-11','+79986565...
+                                                             ^
+contact_db=# INSERT INTO contacts VALUES ('Imronbek','Shuxratov','2021-09-11',+79986565865,5);
+ОШИБКА:  целое вне диапазона
+contact_db=# INSERT INTO contacts VALUES ('Imronbek','Shuxratov','2021-09-11','+79986565865',5);
+ОШИБКА:  значение "+79986565865" вне диапазона для типа integer
+LINE 1: ...tacts VALUES ('Imronbek','Shuxratov','2021-09-11','+79986565...
+                                                             ^
+contact_db=# INSERT INTO contacts ()VALUES ('Imronbek','Shuxratov','2021-09-11','+79986565865',5);
+ОШИБКА:  ошибка синтаксиса (примерное положение: ")")
+LINE 1: INSERT INTO contacts ()VALUES ('Imronbek','Shuxratov','2021-...
+                              ^
+contact_db=# INSERT INTO contacts (ism,familya,t_yil,tel,kasb) VALUES ('Imronbek','Shuxratov','2021-09-11','+79986565865',5);
+INSERT 0 1
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel      | kasb
+------------+------------+------------+----+--------------+------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042 |    1
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042 |    2
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042 |    3
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042 |    4
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042 |    5
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042 |    6
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042 |    7
+ Imronbek   | Shuxratov  | 2021-09-11 |  8 | +79986565865 |    5
+(8 rows)
+
+
+contact_db=# INSERT INTO contacts (ism,familya,t_yil,tel,kasb) VALUES ('Diydorbek','Shuxratov','2021-10-4','+79986565865',1);
+INSERT 0 1
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel      | kasb
+------------+------------+------------+----+--------------+------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042 |    1
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042 |    2
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042 |    3
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042 |    4
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042 |    5
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042 |    6
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042 |    7
+ Imronbek   | Shuxratov  | 2021-09-11 |  8 | +79986565865 |    5
+ Diydorbek  | Shuxratov  | 2021-10-04 |  9 | +79986565865 |    1
+(9 rows)
+
+
+contact_db=# ALTER TABLE contacts ADD CONSTRAINT kasb FOREIGN KEY (kasb) REFERENCES kasb(id);
+ALTER TABLE
+contact_db=# UPDATE contacts SET kasb = 15 WHERE id = 2;
+ОШИБКА:  INSERT или UPDATE в таблице "contacts" нарушает ограничение внешнего ключа "kasb"
+DETAIL:  Ключ (kasb)=(15) отсутствует в таблице "kasb".
+contact_db=# SET lc_messages = 'en_US.UTF-8';
+SET
+contact_db=# UPDATE contacts SET kasb = 15 WHERE id = 2;
+ERROR:  insert or update on table "contacts" violates foreign key constraint "kasb"
+DETAIL:  Key (kasb)=(15) is not present in table "kasb".
+contact_db=#
