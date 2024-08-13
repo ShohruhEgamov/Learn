@@ -1,0 +1,207 @@
+Microsoft Windows [Version 10.0.19045.4651]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime>"C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime\psql.exe" "host=localhost port=5432 dbname=contact_db user=postgres sslmode=p
+refer connect_timeout=10" 2>>&1
+psql (16.3)
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel      | kasb
+------------+------------+------------+----+--------------+------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042 |    1
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042 |    2
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042 |    3
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042 |    4
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042 |    5
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042 |    6
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042 |    7
+ Imronbek   | Shuxratov  | 2021-09-11 |  8 | +79986565865 |    5
+ Diydorbek  | Shuxratov  | 2021-10-04 |  9 | +79986565865 |    1
+(9 rows)
+
+
+contact_db=# SELECT * FROM qiziqish;
+ id |   name
+----+----------
+  1 | Gaming
+  2 | Driving
+  3 | Football
+  4 | Music
+  5 | Quran
+  6 | Music
+  7 | Quen
+(7 rows)
+
+
+contact_db=# CREATE TABLE contact_salary (
+contact_db(#    id SERIAL PRIMARY KEY,
+contact_db(#    amount NUMERIC NOT NULL,
+contact_db(#    contact_id INT REFERENCES contacts (id),
+contact_db(#    UNIQUE (contact_id)
+contact_db(# );
+CREATE TABLE
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (300,1);
+INSERT 0 1
+contact_db=# VALUES (500,2);
+ column1 | column2
+---------+---------
+     500 |       2
+(1 row)
+
+
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (300,5);
+INSERT 0 1
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (900,5);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "contact_salary_contact_id_key"
+DETAIL:  Ключ "(contact_id)=(5)" уже существует.
+contact_db=# VALUES (900,8);
+ column1 | column2
+---------+---------
+     900 |       8
+(1 row)
+
+
+contact_db=# SELECT * FROM contact_salary;
+ id | amount | contact_id
+----+--------+------------
+  1 |    300 |          1
+  2 |    300 |          5
+(2 rows)
+
+
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (500,7);
+INSERT 0 1
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (600,3);
+INSERT 0 1
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (690,4);
+INSERT 0 1
+contact_db=# SELECT * FROM contact_salary;
+ id | amount | contact_id
+----+--------+------------
+  1 |    300 |          1
+  2 |    300 |          5
+  4 |    500 |          7
+  5 |    600 |          3
+  6 |    690 |          4
+(5 rows)
+
+
+contact_db=# INSERT INTO contact_salary (amount,contact_id)
+contact_db-# VALUES (300,1);
+ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "contact_salary_contact_id_key"
+DETAIL:  Ключ "(contact_id)=(1)" уже существует.
+contact_db=# CREATE TABLE qiziqishlar ()
+contact_db-# CREATE TABLE qiziqishlar ();
+ОШИБКА:  ошибка синтаксиса (примерное положение: "CREATE")
+LINE 2: CREATE TABLE qiziqishlar ();
+        ^
+contact_db=# CREATE TABLE qiziqishlar ();
+CREATE TABLE
+contact_db=# CREATE TABLE qiziqishlar ();
+CREATE TABLE
+contact_db=# CREATE TABLE qiziqishlar ();
+CREATE TABLE
+contact_db=# CREATE TABLE qiziqishlar ()
+contact_db-# CREATE TABLE qiziqishlar ()
+contact_db-# CREATE TABLE qiziqishlar ()
+contact_db-# CREATE TABLE qiziqishlar ()
+contact_db-# CREATE TABLE qiziqishlar (
+contact_db(#  id SERIAL PRIMARY KEY,
+contact_db(#  name VARCHAR(50)
+contact_db(# );
+ОШИБКА:  ошибка синтаксиса (примерное положение: "CREATE")
+LINE 2: CREATE TABLE qiziqishlar ()
+        ^
+contact_db=# CREATE TABLE qiziqishlar (
+contact_db(#  id SERIAL PRIMARY KEY,
+contact_db(#  name VARCHAR(50)
+contact_db(# );
+CREATE TABLE
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('devaloper');
+INSERT 0 1
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('gardeniy');
+INSERT 0 1
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('music');
+INSERT 0 1
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('dota');
+INSERT 0 1
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('games');
+INSERT 0 1
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('NFS');
+INSERT 0 1
+contact_db=# INSERT INTO qiziqishlar (name) VALUES ('GTA 5');
+INSERT 0 1
+contact_db=# SELECT * FROM qiziqishlar;
+ id |   name
+----+-----------
+  1 | devaloper
+  2 | gardeniy
+  3 | music
+  4 | dota
+  5 | games
+  6 | NFS
+  7 | GTA 5
+(7 rows)
+
+
+contact_db=# CREATE TABLE contac_qzq (
+contact_db(# id SERIAL PRIMARY KEY,
+contact_db(# contact_id INT REFERENCES contacts (id),
+contact_db(# interes_id INT REFERENCES qiziqishlar (id)
+contact_db(# );
+CREATE TABLE
+contact_db=# SELECT * FROM contac_qzq;
+ id | contact_id | interes_id
+----+------------+------------
+(0 rows)
+
+
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel      | kasb
+------------+------------+------------+----+--------------+------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042 |    1
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042 |    2
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042 |    3
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042 |    4
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042 |    5
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042 |    6
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042 |    7
+ Imronbek   | Shuxratov  | 2021-09-11 |  8 | +79986565865 |    5
+ Diydorbek  | Shuxratov  | 2021-10-04 |  9 | +79986565865 |    1
+(9 rows)
+
+
+contact_db=# SELECT * FROM oilaviy;
+ tartib |   name   | familya
+--------+----------+---------
+ 1      | Shohruh  | Egamov
+ 2      | Farruh   | Egamov
+ 3      | Diyorbek | Egamov
+ 4      | Bekmirza | Egamov
+ 5      | Gulmira  | Egamova
+(5 rows)
+
+
+contact_db=# INSERT INTO contac_qzq (contact_id, interes_id) VALUES (5,5);
+INSERT 0 1
+contact_db=# INSERT INTO contac_qzq (contact_id, interes_id) VALUES (5,4);
+INSERT 0 1
+contact_db=# SELECT * FROM contac_qzq;
+ id | contact_id | interes_id
+----+------------+------------
+  1 |          5 |          5
+  2 |          5 |          4
+(2 rows)
+
+
+contact_db=#

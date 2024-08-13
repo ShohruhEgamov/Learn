@@ -1,0 +1,104 @@
+Microsoft Windows [Version 10.0.19045.4651]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime>"C:\Users\Shaxruh\AppData\Local\Programs\pgAdmin 4\runtime\psql.exe" "host=localhost port=5432 dbname=contact_db user=postgres sslmode=p
+refer connect_timeout=10" 2>>&1
+psql (16.3)
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+contact_db=# SELECT * FROM contacts;
+    ism     |  familya   |   t_yil    | id |     tel      | kasb
+------------+------------+------------+----+--------------+------
+ Shohruh    | Egamov     | 2000-12-21 |  1 | +79992372042 |    1
+ Diyorbek   | Egamov     | 1994-04-14 |  2 | +79992372042 |    2
+ Bekmirza   | Egamov     | 1996-11-21 |  3 | +79992372042 |    3
+ Farruh     | Egamov     | 1998-11-15 |  4 | +79992372042 |    4
+ Gulmira    | Egamova    | 1995-08-08 |  5 | +79992372042 |    5
+ Shuhratjon | Ortikov    | 1996-08-25 |  6 | +79992372042 |    6
+ Bekposhsha | Roziboyeva | 1975-02-01 |  7 | +79992372042 |    7
+ Imronbek   | Shuxratov  | 2021-09-11 |  8 | +79986565865 |    5
+ Diydorbek  | Shuxratov  | 2021-10-04 |  9 | +79986565865 |    1
+(9 rows)
+
+
+contact_db=# SELECT ism AS i FROM contacts ORDER BY i;
+     i
+------------
+ Bekmirza
+ Bekposhsha
+ Diydorbek
+ Diyorbek
+ Farruh
+ Gulmira
+ Imronbek
+ Shohruh
+ Shuhratjon
+(9 rows)
+
+
+contact_db=# SELECT ism AS i FROM contacts AS c ORDER BY i;
+     i
+------------
+ Bekmirza
+ Bekposhsha
+ Diydorbek
+ Diyorbek
+ Farruh
+ Gulmira
+ Imronbek
+ Shohruh
+ Shuhratjon
+(9 rows)
+
+
+contact_db=# SELECT * FROM qiziqish;
+ id |   name
+----+----------
+  1 | Gaming
+  2 | Driving
+  3 | Football
+  4 | Music
+  5 | Quran
+  6 | Music
+  7 | Quen
+(7 rows)
+
+
+contact_db=# SELECT contacts.ism, contacts.familya, qiziqish.name FROM contacts INNER JOIN qiziqish ON contacts.kasb = qiziqish.id;
+    ism     |  familya   |   name
+------------+------------+----------
+ Diydorbek  | Shuxratov  | Gaming
+ Shohruh    | Egamov     | Gaming
+ Diyorbek   | Egamov     | Driving
+ Bekmirza   | Egamov     | Football
+ Farruh     | Egamov     | Music
+ Imronbek   | Shuxratov  | Quran
+ Gulmira    | Egamova    | Quran
+ Shuhratjon | Ortikov    | Music
+ Bekposhsha | Roziboyeva | Quen
+(9 rows)
+
+
+
+contact_db=# INSERT INTO contacts (ism,familya,tel) VALUES ('Shohjahon','Shuhratov',+54478555465);
+INSERT 0 1
+contact_db=# SELECT contacts.ism, contacts.familya, qiziqish.name FROM contacts LEFT OUTER JOIN qiziqish ON contacts.kasb = qiziqish.id;
+    ism     |  familya   |   name
+------------+------------+----------
+ Diydorbek  | Shuxratov  | Gaming
+ Shohruh    | Egamov     | Gaming
+ Diyorbek   | Egamov     | Driving
+ Bekmirza   | Egamov     | Football
+ Farruh     | Egamov     | Music
+ Imronbek   | Shuxratov  | Quran
+ Gulmira    | Egamova    | Quran
+ Shuhratjon | Ortikov    | Music
+ Bekposhsha | Roziboyeva | Quen
+ Shohjahon  | Shuhratov  |
+(10 rows)
+
+
+contact_db=#
