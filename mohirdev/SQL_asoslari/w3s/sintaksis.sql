@@ -137,6 +137,106 @@ CROSS JOIN categories;
 
 
 
+-- Operator UNIONikki yoki undan ortiq so'rovlarning natijalar to'plamini birlashtirish uchun ishlatiladi.
+SELECT product_id, product_name
+FROM products
+UNION
+SELECT testproduct_id, product_name
+FROM testproducts
+ORDER BY product_id;  
 
 
+-- UNION ALLIkki nusxadagi qiymatlarni qaytarish uchun foydalaning .
+SELECT product_id
+FROM products
+UNION ALL
+SELECT testproduct_id
+FROM testproducts
+ORDER BY product_id;
+
+
+-- Ushbu GROUP BYband bir xil qiymatlarga ega bo'lgan qatorlarni "har bir mamlakatdagi mijozlar sonini toping" kabi xulosa qatorlariga guruhlaydi.
+SELECT COUNT(customer_id), country
+FROM customers
+GROUP BY country;
+
+
+-- Quyidagi SQL bayonotida har bir mijoz tomonidan qilingan buyurtmalar soni ko'rsatilgan:
+SELECT customers.customer_name, COUNT(orders.order_id)
+FROM orders
+LEFT JOIN customers ON orders.customer_id = customers.customer_id
+GROUP BY customer_name;
+
+
+-- Ushbu HAVINGband SQL-ga qo'shildi, chunki bu WHEREbandni yig'ish funktsiyalari bilan ishlatib bo'lmaydi.
+-- Yig'ma funktsiyalar ko'pincha bo'laklar bilan qo'llaniladi GROUP BYva qo'shish orqali HAVINGbiz bandlar bilan bo'lgani kabi shart yozishimiz mumkin WHERE.
+-- Faqat 5 martadan ortiq vakili bo'lgan davlatlarni sanab o'ting:
+SELECT COUNT(customer_id), country
+FROM customers
+GROUP BY country
+HAVING COUNT(customer_id) > 5;
+
+
+
+-- Quyidagi SQL bayonotida faqat umumiy narxi 400$ yoki undan yuqori bo'lgan buyurtmalar ro'yxati keltirilgan:
+SELECT order_details.order_id, SUM(products.price)
+FROM order_details
+LEFT JOIN products ON order_details.product_id = products.product_id
+GROUP BY order_id
+HAVING SUM(products.price) > 400.00;
+
+
+
+-- 1000$ yoki undan ortiq buyurtma bergan mijozlar roʻyxati:
+SELECT customers.customer_name, SUM(products.price)
+FROM order_details
+LEFT JOIN products ON order_details.product_id = products.product_id
+LEFT JOIN orders ON order_details.order_id = orders.order_id
+LEFT JOIN customers ON orders.customer_id = customers.customer_id
+GROUP BY customer_name
+HAVING SUM(products.price) > 1000.00;
+
+
+
+-- Operator EXISTSpastki so'rovda biron bir yozuv mavjudligini tekshirish uchun ishlatiladi.
+-- EXISTSAgar quyi so'rov bir yoki bir nechta yozuvlarni qaytarsa, operator TRUE qiymatini qaytaradi .
+SELECT customers.customer_name
+FROM customers
+WHERE EXISTS (
+  SELECT order_id
+  FROM orders
+  WHERE customer_id = customers.customer_id
+);
+
+
+-- Operator ANYbitta ustun qiymati va boshqa qiymatlar oralig'i o'rtasida taqqoslashni amalga oshirish imkonini beradi.
+SELECT product_name
+FROM products
+WHERE product_id = ANY (
+  SELECT product_id
+  FROM order_details
+  WHERE quantity > 120
+);
+
+
+-- Agar buyurtma_tafsilotidagi HAMMA yozuvlar soni 10 dan katta bo'lsa, mahsulotlarni ro'yxatlang.
+-- Eslatma: Bu, albatta, FALSE qiymatini qaytaradi, chunki miqdor ustuni juda ko'p turli qiymatlarga ega (faqat 10 qiymati emas):
+SELECT product_name
+FROM products
+WHERE product_id = ALL (
+  SELECT product_id
+  FROM order_details
+  WHERE quantity > 10
+);
+
+
+-- Ifoda CASE shartlar orqali o'tadi va birinchi shart bajarilganda qiymatni qaytaradi (masalan, if-then-else iborasi).
+SELECT product_name,
+CASE
+  WHEN price < 10 THEN 'Low price product'
+  WHEN price > 50 THEN 'High price product'
+ELSE
+  'Normal product'
+END
+FROM products;
 
