@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+<body>
+
+<!--{% for x in fruits %}-->
+<!--  <h1>{{ x }}</h1>-->
+<!--{% endfor %}-->
+
+<!--{% with firstname='Farrux' %}-->
+<!--<h1>Hello {{ firstname }}, how are you?</h1>-->
+<!--{% endwith %}-->
+
+<!--<ul>-->
+<!--  {% for x in mymembers %}-->
+<!--    <li>{{ x.firstname }}</li>-->
+<!--  {% endfor %}-->
+<!--</ul>-->
+<!--<p>In views.py you can see what the fruits variable looks like.</p>-->
+
+
+<table border='1'>
+  <tr>
+    <th class="jadval">ID</th>
+    <th class="jadval">Firstname</th>
+    <th class="jadval">Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td class="jadval">{{ x.id }}</td>
+        <td class="jadval">{{ x.firstname }}</td>
+      <td class="jadval">{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>In views.py you can see how to import and fetch members from the database.</p>
+
+
+</body>
+</html>
+
+
