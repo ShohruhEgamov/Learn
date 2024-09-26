@@ -103,4 +103,4 @@ FROM loyiha;
 
 
 -- Data beyslarni korish uchun
-SHOW DATABASES;
+SHOW DATABASES;CREATE DATABASE loyiha_db;
