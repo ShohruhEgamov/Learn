@@ -1,0 +1,17 @@
+GoBuster (buyruqlar qatori xavfsizlik ilovasi) yordamida FakeBank veb-saytida yashirin sahifalarni topish uchun terminalga quyidagi buyruqni kiriting.
+
+gobuster -u http://fakebank.com -w wordlist.txt dir
+
+Yuqoridagi buyruq -ubiz skanerlayotgan veb-saytni ko'rsatish uchun ishlatiladi, -wyashirin sahifalarni topish uchun takrorlanadigan so'zlar ro'yxatini oladi.
+
+GoBuster ro'yxatdagi har bir so'z bilan veb-saytni skanerlashini va saytda mavjud sahifalarni topishini ko'rasiz. GoBuster sizga sahifa/katalog nomlari ro'yxatida topilgan sahifalarni aytib beradi (Holat: 200 bilan ko'rsatilgan).
+
+
+
+YouTube:
+
+Ko'plab kiber xavfsizlik mutaxassislari o'z kanallarida bepul darslar va qo'llanmalar joylashtiradilar. Masalan, 
+The Cyber Mentor 
+yoki 
+NetworkChuck 
+kanallari.
