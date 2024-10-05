@@ -8,6 +8,5 @@
 		"mysql2": "^3.11.3",
 		"nodemailer": "^6.9.15",
 		"upper-case": "^3.0.0"
-	},
-	"type": "module"
+	}
 }

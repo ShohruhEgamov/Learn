@@ -15,3 +15,30 @@ The Cyber Mentor
 yoki 
 NetworkChuck 
 kanallari.
+
+
+
+Keling, PDF faylidan nimani o'rganishimiz mumkinligini ko'rib chiqaylik. Dastur yordamida metama'lumotlarni 
+o'qishga harakat qilishimiz mumkin pdfinfo. Pdfinfo sarlavha, mavzu, muallif, yaratuvchi va yaratilgan sana kabi 
+PDF-fayl bilan bog'liq turli meta-ma'lumotlarni ko'rsatadi. (AttackBox allaqachon o'rnatilgan ; ammo, agar siz Kali 
+Linux danpdfinfo foydalanayotgan bo'lsangiz va o'rnatmagan bo'lsangiz , uni yordamida o'rnatishingiz mumkin .) Quyidagi 
+dan foydalanish misolini ko'rib chiqing 
+
+pdfinfosudo apt install poppler-utilspdfinfo DOCUMENT.pdf
+
+pdfinfo DOCUMENT.pdf
+
+
+Tasvirlardan EXIF ​​ma'lumotlarini o'qish uchun ko'plab onlayn va oflayn vositalar mavjud.
+ Bitta buyruq qatori vositasi exiftool. ExifTool JPEG tasvirlari kabi turli xil fayl turlarida metama'lumotlarni o'qish va yozish uchun ishlatiladi. 
+ (AttackBox allaqachon o'rnatilgan exiftool; ammo, agar siz Kali Linux dan foydalanayotgan bo'lsangiz va o'rnatmagan bo'lsangiz exiftool,
+  uni yordamida o'rnatishingiz mumkin 
+
+  sudo apt install libimage-exiftool-perl
+
+  .) 
+  Keyingi terminal oynasida biz
+
+  exiftool IMAGE.jpg
+  
+  ushbu rasmga kiritilgan barcha EXIF ​​ma'lumotlarini o'qishni amalga oshirdik.
