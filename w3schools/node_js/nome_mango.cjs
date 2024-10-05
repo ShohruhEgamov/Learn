@@ -282,58 +282,58 @@ async function run() {
 		const db = client.db(dbName);
 		const collection = db.collection('customers'); // o'z kollektsiyangiz nomini yozinglection 
 
-		// // Bu yerda birinchi elementni oladi
-		// const search = await db.collection('customers').findOne();
-		// console.log(search);
+		// Bu yerda birinchi elementni oladi
+		const search1 = await db.collection('customers').findOne();
+		console.log(search1);
 
-		// // Bu yerda "name" va "address" chiqaradi
-		// const search = await db.collection('customers').find({},
-		// 	{ projection: { _id: 0, name: 1, address: 1 } }).toArray();
-		// console.log(search);
+		// Bu yerda "name" va "address" chiqaradi
+		const search2 = await db.collection('customers').find({},
+			{ projection: { _id: 0, name: 1, address: 1 } }).toArray();
+		console.log(search2);
 
-		// // Bu yerda esa faqat bitta manzilni chiqaradi 
-		// var query = query = { address: "Park Lane 38" };
-		// const search = await db.collection('customers').find(query).toArray();
-		// console.log(search);
+		// Bu yerda esa faqat bitta manzilni chiqaradi 
+		var query = query = { address: "Park Lane 38" };
+		const search3 = await db.collection('customers').find(query).toArray();
+		console.log(search3);
 
-		// // Bu yerda biz hariflarga yoki 1 chi  harifiga qarab yozamiz
-		// var query = { address: /^S/ };
-		// const search = await db.collection('customers').find(query).toArray();
-		// console.log(search);
+		// Bu yerda biz hariflarga yoki 1 chi  harifiga qarab yozamiz
+		var query = { address: /^S/ };
+		const search4 = await db.collection('customers').find(query).toArray();
+		console.log(search4);
 
-		// //sort()Natijani o'sish yoki kamayish tartibida tartiblash uchun usuldan foydalaning
-		// var mysort = { name: 1 };
-		// const search = await db.collection('customers').find().sort(mysort).toArray();
-		// console.log(search);
-		// // { nomi: 1 } // ortib borayotgan
-		// // { nomi: -1 } // kamayib borayotgan
+		//sort()Natijani o'sish yoki kamayish tartibida tartiblash uchun usuldan foydalaning
+		var mysort = { name: 1 };
+		const search5 = await db.collection('customers').find().sort(mysort).toArray();
+		console.log(search5);
+		// { nomi: 1 } // ortib borayotgan
+		// { nomi: -1 } // kamayib borayotgan
 
 
-		// // MongoDB da deyilganidek yozuvni yoki hujjatni o'chirish uchun biz deleteOne()usuldan foydalanamiz.
-		// // Bir nechta hujjatni o'chirish uchun deleteMany()usuldan foydalaning.
-		// var mydelet = { address: 'Mountain 21' };
-		// const search = await db.collection('customers').deleteOne(mydelet);
-		// console.log(search.deletedCount + " document deleted");
+		// MongoDB da deyilganidek yozuvni yoki hujjatni o'chirish uchun biz deleteOne()usuldan foydalanamiz.
+		// Bir nechta hujjatni o'chirish uchun deleteMany()usuldan foydalaning.
+		var mydelet = { address: 'Mountain 21' };
+		const search6 = await db.collection('customers').deleteOne(mydelet);
+		console.log(search6.deletedCount + " document deleted");
 
-		// // Yozuvni yoki hujjatni MongoDB da deyilganidek, updateOne()usul yordamida yangilashingiz mumkin.
-		// var myquery = { address: "Valley 345" };
+		// Yozuvni yoki hujjatni MongoDB da deyilganidek, updateOne()usul yordamida yangilashingiz mumkin.
+		var myquery = { address: "Valley 345" };
 
-		// // Operatordan foydalanganda $setfaqat belgilangan maydonlar yangilanadi:
-		// var newvalues = { $set: { name: "Shohruh", address: "Xorazm" } }
-		// const search = await db.collection('customers').updateOne(myquery, newvalues);
-		// console.log(search.upsertedCount, " document deleted");
+		// Operatordan foydalanganda $setfaqat belgilangan maydonlar yangilanadi:
+		var newvalues = { $set: { name: "Shohruh", address: "Xorazm" } }
+		const search7 = await db.collection('customers').updateOne(myquery, newvalues);
+		console.log(search7.upsertedCount, " document deleted");
 
 		// // So'rov mezonlariga javob beradigan barcha hujjatlarni yangilash uchun updateMany()usuldan foydalaning.
 
+		// // Bu yerda ikkinchi massivni chiqaradi
+		const search8 = await db.collection('customers').find({},
+			{ projection: { _id: 0 } }).toArray();
+		console.log(search8[2].address);
 
-		// const search = await db.collection('customers').find({},
-		// 	{ projection: { _id: 0 } }).toArray();
-		// console.log(search[2].address);
 
-
-		// Ma'lumotlarni olish
-		// const data = await collection.find({}).toArray();
-		// console.log(data);
+		// // Ma'lumotlarni olish
+		const data = await collection.find({}).toArray();
+		console.log(data);
 
 
 		// // MongoDB-da natijani cheklash uchun biz limit() usuldan foydalanamiz.
