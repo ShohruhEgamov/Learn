@@ -1,0 +1,120 @@
+Barcha mavjud ma'lumotlar bazalarini ko'rish uchun terminal turida 
+show dbs
+--------------------------------------------------------------------------------------------------------------------
+Ma'lumotlar bazasi nomini yozib o'zgartirishingiz yoki yangi ma'lumotlar bazasini yaratishingiz mumkin .
+use
+
+--------------------------------------------------------------------------------------------------------------------
+To'plamni yaratishning 2 usuli mavjud.
+
+1-usul
+Siz ma'lumotlar bazasi usuli yordamida to'plam yaratishingiz mumkin createCollection().
+
+2-usul
+Jarayon davomida siz kollektsiya yaratishingiz mumkin insert.
+
+Misol
+Biz bu erda objectpost ma'lumotlarini o'z ichiga olgan haqiqiy JavaScript ob'ekti deb taxmin qilamiz:
+
+--------------------------------------------------------------------------------------------------------------------
+Hujjatlarni kiritish
+MongoDB ma'lumotlar bazasiga hujjatlarni kiritishning 2 usuli mavjud.
+
+insertOne()
+Bitta hujjatni kiritish uchun insertOne()usuldan foydalaning.
+
+insertMany()
+Bir vaqtning o'zida bir nechta hujjatlarni kiritish uchun insertMany()usuldan foydalaning.
+
+--------------------------------------------------------------------------------------------------------------------
+Ma'lumotlarni toping
+MongoDB to'plamidan ma'lumotlarni topish va tanlashning ikkita usuli mavjud find() va findOne().
+db.posts.find()
+db.posts.findOne()
+
+--------------------------------------------------------------------------------------------------------------------
+Ma'lumotlarni so'rash
+Ma'lumotlarni so'rash yoki filtrlash uchun biz so'rovni o'z find() yoki findOne()usullarimizga kiritishimiz mumkin.
+db.posts.find( {category: "News"} )
+
+Ushbu misol natijalarda faqat title va maydonlarini ko'rsatadi .date
+db.posts.find({}, {title: 1, date: 1})
+
+--------------------------------------------------------------------------------------------------------------------
+Hujjatni yangilash
+Mavjud hujjatni yangilash uchun biz updateOne()yoki updateMany()usullaridan foydalanishimiz mumkin.
+db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } ) 
+
+Agar topilmasa, kiriting
+Agar hujjat topilmasa, uni kiritmoqchi bo'lsangiz, variantdan foydalanishingiz mumkin upsert.
+
+Misol
+Barcha hujjatlarni 1 ga yangilash likes. Buning uchun biz (ko'paytirish) operatoridan foydalanamiz $inc:
+
+db.posts.updateMany({}, { $inc: { likes: 1 } })
+
+--------------------------------------------------------------------------------------------------------------------
+Hujjatlarni o'chirish
+deleteOne() yoki usullaridan foydalanib hujjatlarni o'chirib tashlashimiz mumkin deleteMany().
+
+deleteOne()
+Usul deleteOne()taqdim etilgan so'rovga mos keladigan birinchi hujjatni o'chiradi
+
+db.posts.deleteOne({ title: "Post Title 5" })
+
+deleteMany()
+Usul deleteMany()taqdim etilgan so'rovga mos keladigan barcha hujjatlarni o'chirib tashlaydi.
+
+--------------------------------------------------------------------------------------------------------------------
+MongoDB so'rov operatorlari
+Hujjat maydonlarini solishtirish va ularga murojaat qilish uchun ishlatilishi mumkin bo'lgan ko'plab so'rov operatorlari mavjud.
+
+Taqqoslash
+Qiymatlarni solishtirish uchun so'rovlarda quyidagi operatorlardan foydalanish mumkin:
+
+$eq: Qiymatlar teng
+$ne: Qiymatlar teng emas
+$gt: Qiymat boshqa qiymatdan katta
+$gte: Qiymat boshqa qiymatdan katta yoki unga teng
+$lt: Qiymat boshqa qiymatdan kichik
+$lte: Qiymat boshqa qiymatdan kichik yoki unga teng
+$in: Qiymat massiv ichida mos keladi
+Mantiqiy
+Quyidagi operatorlar bir nechta so'rovlarni mantiqiy taqqoslashlari mumkin.
+
+$and: Ikkala so'rov mos keladigan hujjatlarni qaytaradi
+$or: Har bir soʻrov mos keladigan hujjatlarni qaytaradi
+$nor: Ikkala so'rov mos kelmasa, hujjatlarni qaytaradi
+$not: So'rov mos kelmagan hujjatlarni qaytaradi
+Baholash
+Quyidagi operatorlar hujjatlarni baholashda yordam beradi.
+
+$regex: Maydon qiymatlarini baholashda muntazam ifodalardan foydalanishga ruxsat beradi
+$text: Matn qidiruvini amalga oshiradi
+$where: Hujjatlarni moslashtirish uchun JavaScript ifodasidan foydalanadi
+
+           Misol uchun
+({title: 'Post Title 4'}, {Misol uchun shu yerga shart beriladi ($set:{likes: 10})})
+
+--------------------------------------------------------------------------------------------------------------------
+MongoDB yangilash operatorlari
+Hujjatlarni yangilash paytida foydalanish mumkin bo'lgan ko'plab yangilash operatorlari mavjud.
+
+Maydonlar
+Maydonlarni yangilash uchun quyidagi operatorlardan foydalanish mumkin:
+
+$currentDate: Maydon qiymatini joriy sanaga o'rnatadi
+$inc: Maydon qiymatini oshiradi
+$rename: Maydon nomini o'zgartiradi
+$set: Maydon qiymatini o'rnatadi
+$unset: Hujjatdan maydonni olib tashlaydi
+Massiv
+Quyidagi operatorlar massivlarni yangilashda yordam beradi.
+
+$addToSet: Massivga alohida elementlar qo'shadi
+$pop: Massivning birinchi yoki oxirgi elementini olib tashlaydi
+$pull: So'rovga mos keladigan massivdan barcha elementlarni olib tashlaydi
+$push: Massivga element qo‘shadi
+
+
+--------------------------------------------------------------------------------------------------------------------
