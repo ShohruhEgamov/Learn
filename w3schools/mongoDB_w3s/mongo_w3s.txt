@@ -118,3 +118,196 @@ $push: Massivga element qo‘shadi
 
 
 --------------------------------------------------------------------------------------------------------------------
+
+db.posts.aggregate([
+  // 1-bosqich: Faqat 1 dan ortiq yoqtirgan hujjatlarni toping
+  {
+    $match: { likes: { $gt: 1 } }
+  },
+  // 2-bosqich: Hujjatlarni toifalar bo‘yicha guruhlang va har bir toifaga yoqqanini jamlang
+  {
+    $group: { _id: "$category", totalLikes: { $sum: "$likes" } }
+  }
+])
+
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $group
+Ushbu yig'ish bosqichi hujjatlarni taqdim etilgan yagona _idifoda bo'yicha guruhlaydi.
+
+db.(jadval nomi).aggregate(
+    [ { $group : { _id : "$(Qayerdan olishi)" } } ]
+)
+
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $limit
+Ushbu yig'ish bosqichi keyingi bosqichga o'tgan hujjatlar sonini cheklaydi.
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $project
+Ushbu yig'ish bosqichi faqat belgilangan maydonlarni keyingi yig'ish bosqichiga o'tkazadi.
+
+db.restaurants.aggregate([
+  {
+    $project: {
+      "name": 1,
+      "cuisine": 1,
+      "address": 1
+    }
+  },
+  {
+    $limit: 5
+  }
+])
+
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $sort
+Ushbu yig'ish bosqichi guruhlari barcha hujjatlarni belgilangan tartiblash tartibida saralaydi.
+
+db.(Bu yerga jadval nomi).aggregate([ 
+  { 
+    $sort: { "accommodates": -1 } 
+  },
+  {
+    $project: {
+      "name": 1,
+      "accommodates": 1
+    }
+  },
+  {
+    $limit: 5
+  }
+])
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $match
+Ushbu yig'ish bosqichi topilma kabi harakat qiladi. U taqdim etilgan so'rovga mos keladigan hujjatlarni filtrlaydi.
+
+db.listingsAndReviews.aggregate([ 
+  { $match : { property_type : "House" } },
+  { $limit: 2 },
+  { $project: {
+    "name": 1,
+    "bedrooms": 1,
+    "price": 1
+  }}
+])
+
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $addFields
+Ushbu yig'ish bosqichi hujjatlarga yangi maydonlarni qo'shadi.
+
+db.restaurants.aggregate([
+  {
+    $addFields: {
+      avgGrade: { $avg: "$grades.score" }
+    }
+  },
+  {
+    $project: {
+      "name": 1,
+      "avgGrade": 1
+    }
+  },
+  {
+    $limit: 5
+  }
+])
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $count
+Ushbu umumlashtirish bosqichi oldingi bosqichdan o'tgan hujjatlarning umumiy miqdorini hisoblaydi.
+
+db.restaurants.aggregate([
+  {
+    $match: { "cuisine": "Chinese" }
+  },
+  {
+    $count: "totalChinese"
+  }
+])
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $lookup
+Ushbu yig'ish bosqichi bir xil ma'lumotlar bazasidagi to'plamga chap tashqi ulanishni amalga oshiradi.
+
+To'rtta majburiy maydon mavjud:
+
+from: Bir xil ma'lumotlar bazasida qidirish uchun foydalaniladigan to'plam
+localField: Toʻplamda noyob identifikator sifatida ishlatilishi mumkin boʻlgan asosiy toʻplamdagi maydon from.
+foreignFieldfrom: Birlamchi toʻplamda noyob identifikator sifatida ishlatilishi mumkin boʻlgan toʻplamdagi maydon .
+as: To'plamdagi mos hujjatlarni o'z ichiga olgan yangi maydon nomi from.
+
+db.comments.aggregate([
+  {
+    $lookup: {
+      from: "movies",
+      localField: "movie_id",
+      foreignField: "_id",
+      as: "movie_details",
+    },
+  },
+  {
+    $limit: 1
+  }
+])
+
+--------------------------------------------------------------------------------------------------------------------
+Birlashtirish $out
+Ushbu yig'ish bosqichi qaytarilgan hujjatlarni yig'ish quvuridan to'plamga yozadi.
+
+db.listingsAndReviews.aggregate([
+  {
+    $group: {
+      _id: "$property_type",
+      properties: {
+        $push: {
+          name: "$name",
+          accommodates: "$accommodates",
+          price: "$price",
+        },
+      },
+    },
+  },
+  { $out: "properties_by_type" },
+])
+
+--------------------------------------------------------------------------------------------------------------------
+Atlas asboblar panelida Klaster nomini , so'ng Qidiruv yorlig'ini bosing.
+Qidiruv indeksini yaratish tugmasini bosing .
+Vizual muharriridan foydalaning va Keyingiga bosing.
+Indeksingizni nomlang, indekslanmoqchi bo'lgan ma'lumotlar bazasi va to'plamni tanlang va "Keyingi" tugmasini bosing.
+Agar siz indeksingizni "standart" deb nomlasangiz, quvur liniyasi bosqichida indeks nomini ko'rsatishingiz shart emas $search.
+sample_mflixMa'lumotlar bazasi va to'plamni tanlang movies.
+Qidiruv indeksini yaratish- ni bosing va indeks tugashini kuting.
+So'rovni bajarish
+Qidiruv indeksimizdan foydalanish uchun biz $searchyig'ish quvur liniyasidagi operatordan foydalanamiz.
+
+Misol
+db.movies.aggregate([
+  {
+    $search: {
+      index: "default", // optional unless you named your index something other than "default"
+      text: {
+        query: "star wars",
+        path: "title"
+      },
+    },
+  },
+  {
+    $project: {
+      title: 1,
+      year: 1,
+    }
+  }
+])
+
+
+
