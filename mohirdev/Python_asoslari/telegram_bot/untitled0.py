@@ -1,9 +1,10 @@
 from transliterate import to_cyrillic, to_latin
 import telebot
+from my_token import token
 
 # print(to_latin("Шоҳруҳ"))
 # print(to_cyrillic("Shohruh"))
-TOKEN = '6443404583:AAHRh9L2-sghSGptDBTyoowUqorjUGBSiHs'
+TOKEN = token
 bot = telebot.TeleBot("TOKEN", parse_mode=None)
 
 @bot.message_handler(commands=['start'])
