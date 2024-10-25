@@ -1,6 +1,11 @@
 from django.utils import timezone
 from django.db import models
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=News.Status.PUBLISHED)
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     def __str__(self):
@@ -17,7 +22,7 @@ class News(models.Model):
     slug = models.SlugField(max_length=250)
     body = models.TextField()
     image = models.ImageField(upload_to='news/images')
-    catigory = models.ForeignKey(Category,
+    category = models.ForeignKey(Category,
                                  on_delete=models.CASCADE)
     publish_time = models.DateTimeField(default=timezone.now)
     created_time = models.DateTimeField(auto_now_add=True)
@@ -26,11 +31,13 @@ class News(models.Model):
                               choices=Status.choices,
                               default=Status.DRAFT
                               )
+    objects = models.Manager()
+    published = PublishedManager()
+
 
     class Meta:
         ordering = ('-publish_time',) #-published_time'
 
     def __str__ (self):
         return self.title
-
 
