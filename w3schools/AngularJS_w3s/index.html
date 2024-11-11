@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+	<!-- <div ng-app=" myApp">
+
+	<p>Input somng in the input:</p>
+	<p>Name: <input type="text" ng-model="name"></p>
+	<p ng-bind="name"></p>
+
+
+
+	<div ng-init="firstName='John'">
+
+		<p>The name is <span ng-bind="firstName"></span></p>
+		<p>My first expression: {{ 5 + 5 }}</p>
+		<p>Bu yerda esa {{10 - 5}}</p>
+	</div>
+
+
+	<p>Bu yerda shaxsiy malumotlar</p>
+
+	<div ng-controller="myCtrl">
+		Ism: <input type="text" ng-model="firstName"><br>
+		Familya: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{firstName + " " + lastName}}
+	</div>
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function ($scope) {
+			$scope.firstName = "Shohruh";
+			$scope.lastName = "Egamov";
+		});
+	</script> -->
+
+
+	<!-- <p>Change the value of the input field:</p>
+
+	<div ng-app="" ng-init="myCol='lightblue'; myCal='red'">
+		<input ng-style="{'background-color': myCol, 'color': myCal}" ng-model="myCol">
+	</div>
+
+	<p>AngularJS resolves the expression and returns the result.</p>
+
+	<p>The background color of the input box will be whatever you write in the input field.</p> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="" ng-init="bgColor='lightblue'; textColor='red'">
+		<p>Background colorni kiriting:</p>
+		<input type="text" ng-model="bgColor" placeholder="Masalan: blue yoki #0000ff">
+
+		<p>Text colorni kiriting:</p>
+		<input type="text" ng-model="textColor" placeholder="Masalan: red yoki #ff0000">
+
+		<p>Radiusi qancha</p>
+		<input type="text" ng-model="textRatius" placeholder="Masalan: 15px">
+
+		<p>Natija:</p>
+		<input ng-style="{'background-color': bgColor, 'color': textColor,'border-radius': textRatius}"
+			placeholder="Matn shu yerda ko'rinadi">
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="" ng-init="son1=1;son2=2">
+
+		<input type="text" ng-model="Son1" placeholder="summa"><br>
+		<input type="text" ng-model="amal" placeholder="Amal ( + , - , * , / )"><br>
+		<input type="text" ng-model="Son2" placeholder="summa">
+
+		<p>Total:
+			<span ng-if="amal == '+'">{{ Son1 + Son2 }}</span>
+			<span ng-if="amal == '-'">{{ Son1 - Son2 }}</span>
+			<span ng-if="amal == '*'">{{ Son1 * Son2 }}</span>
+			<span ng-if="amal == '/'">{{ Son1 / Son2 }}</span>
+		</p>
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="" ng-init="">
+
+		<input type="number" ng-model="Son1" placeholder="Son1 ni kiriting"><br>
+		<input type="text" ng-model="amal" placeholder="Amal"><br>
+		<input type="number" ng-model="Son2" placeholder="Son2 ni kiriting"><br>
+
+		<p>Total:
+			<span ng-if="amal == '+'">{{ Son1 + Son2 }}</span>
+			<span ng-if="amal == '-'">{{ Son1 - Son2 }}</span>
+			<span ng-if="amal == '*'">{{ Son1 * Son2 }}</span>
+			<span ng-if="amal == '/'">{{ Son1 / Son2 }}</span>
+		</p>
+
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+
+		<p>The name is {{ person.firstName }}</p>
+
+	</div> -->
+
+	<!-- <div ng-app="" ng-init="points=[1,15,19,2,40]">
+
+		<p>The third result is {{ points[3] }}</p>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		{{ firstName + " " + lastName }}
+	</div> -->
+	<!-- <div ng-app="myApp" w3-test-directive></div>
+	-->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		<p>First Name: {{ firstName }}</p>
+		<p>Last Name: {{ lastName }}</p>
+	</div>
+	<div ng-app="app1" ng-controller="myCtrl1">
+		<p>First Name: {{ firstName }}</p>
+		<p>Last Name: {{ lastName }}</p>
+	</div> -->
+	<!-- <script>
+		// var app = angular.module("myApp", []);
+		// app.controller("myCtrl", function ($scope) {
+		// 	$scope.firstName = "Shohruh";
+		// 	$scope.lastName = "Egamov";
+		// });
+
+		// var app = angular.module("myApp", []);
+
+		// app.directive("w3TestDirective", function () {
+		// 	return {
+		// 		template: "I was made in a directive constructor!"
+		// 	};
+		// });
+
+	</script> -->
+	<!-- // <script src="myCtrl.js"></script> -->
+	<!-- Birinchi ilova -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		<p>First Name: {{ firstName }}</p>
+		<p>Last Name: {{ lastName }}</p>
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- Ikkinchi ilova -->
+	<!-- <div ng-app="app1" ng-controller="myCtrl1">
+		<p>First Name: {{ firstName }}</p>
+		<p>Last Name: {{ lastName }}</p>
+	</div> -->
+
+	<!-- <script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function ($scope) {
+			$scope.firstName = "Shohruh";
+			$scope.lastName = "EGAMOV";
+		});
+
+		var app1 = angular.module("app1", []);
+		app1.controller("myCtrl1", function ($scope) {
+			$scope.firstName = "Farrux";
+			$scope.lastName = "EGAMOV";
+		});
+	</script> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- Birinchi controller -->
+	<!-- <div ng-controller="myCtrl">
+	<p>First Name: {{ firstName }}</p>
+	<p>Last Name: {{ lastName }}</p>
+</div> -->
+
+	<!-- Ikkinchi controller -->
+	<!-- <div ng-controller="myCtrl1">
+	<p>First Name: {{ firstName }}</p>
+	<p>Last Name: {{ lastName }}</p>
+</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="" ng-init="firstName='John'">
+
+		<p>Input something in the input box:</p>
+		<p>Name: <input type="text" ng-model="firstName"></p>
+		<p>You wrote: {{ firstName }}</p>
+
+	</div> -->
+
+	<!-- <div ng-app="" ng-init="names=['Jani','Hege','Kai','Shohruh']">
+		<p>Bu yerda ismlar</p>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x}}
+			</li>
+		</ul>
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <shoh-test-directive></shoh-test-directive>
+	<hover-data></hover-data> -->
+
+	<!-- <script>
+		var app = angular.module("myApp", []);
+		app.directive("shohTestDirective", function () {
+			return {
+				template: "<p>Made by a directive!</p>"
+			};
+		});
+
+		app.directive("hoverData", function () {
+			return {
+				template: "<p>29.10.2024</p>"
+			}
+		})
+	</script> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl2">
+		Name: <input ng-model="name">
+		<h1>You entered: {{name}}</h1>
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl2">
+		Name: <input ng-model="name">
+		<h1>You entered: {{name}}</h1>
+	</div> -->
+
+	<!-- <form ng-app="" name="myForm">
+		Email:
+		<input type="email" name="myAddress" ng-model="text">
+		<span ng-show="myForm.myAddress.$error.email">Bu hato email</span>
+	</form> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <form ng-app="" name="myForm" ng-init="myText = 'post@myweb.com'">
+		Email:
+		<input type="email" name="myAddress" ng-model="myText" required>
+		<p>Edit the e-mail address, and try to change the status.</p>
+		<h1>Status</h1>
+		<p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets all criteria).</p>
+		<p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed).</p>
+		<p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus).</p>
+	</form> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		<p ng-bind="firstname"></p>
+		<p ng-bind="lastname"></p>
+		<p>Bu yerda ismingiz {{firstname}} {{lastname}}</p>
+		<input ng-model="firstname">
+		<input ng-model="lastname">
+		<h1 ng-click="ismUzgarishi()">{{firstname}}</h1>
+	</div> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		First Name: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{fullName()}}
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+
+		<ul>
+			<li ng-repeat="x in names">
+				Ismi {{ x.name }}. Qayerda: {{x.country }}da
+			</li>
+		</ul>
+
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<h1 ng-click="nomUzgarishi()">{{carname}}</h1>
+
+	</div>
+	<p>The property "carname" was made in the controller, and can be referred to in the view by using the {{ }}
+		brackets.</p> -->
+
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<ul>
+			<li ng-repeat="x in names">{{x}}</li>
+		</ul>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp">
+		<p>The rootScope's favorite color:</p>
+		<h1>{{color}}</h1>
+
+		<div ng-controller="myCtrl">
+
+			<p>The scope of the controller's favorite color:</p>
+			<h1>{{color}}</h1>
+
+		</div>
+
+		<p>The rootScope's favorite color is still:</p>
+		<h1>{{color}}</h1>
+
+		<p>The rootScope's favorite color is still:</p>
+		<h1>{{color}}</h1>
+
+		<div ng-controller="myCtrl">
+
+			<p>The scope of the controller's favorite color:</p>
+			<h1>{{color}}</h1>
+
+		</div>
+	</div> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="personCtrl">
+		<p>The name is {{ firstName | capitalize }}</p>
+		<p>The name is {{ lastName | uppercase }}</p>
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+
+		<p>Looping with objects:</p>
+		<ul>
+			<li ng-repeat="x in names | orderBy:'country'">
+				{{ x.name + ', ' + x.country }}
+			</li>
+		</ul>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="costCtrl">
+
+		<h1>Price: {{ price | currency:"€"}}</h1>
+
+	</div> -->
+
+	<!-- "i" harfi bo'lgan nomlarni qaytaring: -->
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+
+		<ul>
+			<li ng-repeat="x in names | filter : 'i'">
+				{{ x }}
+			</li>
+		</ul>
+
+	</div> -->
+
+
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+
+		<p>Type a letter in the input field:</p>
+
+		<p><input type="text" ng-model="test"></p>
+
+		<ul>
+			<li ng-repeat="x in names | filter:test">
+				{{ x }}
+			</li>
+		</ul>
+
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>The time is:</p>
+
+		<h1>{{theTime}}</h1>
+
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>The time is:</p>
+
+		<h1>{{theTime}}</h1>
+
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Today's welcome message is:</p>
+
+		<h1>{{myWelcome}}</h1>
+
+	</div> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Today's welcome message is:</p>
+
+		<h1>{{myWelcome}}</h1>
+
+		<p>{{myGoodBye}}</p>
+
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Data : {{content}}</p>
+		<p>Status : {{statuscode}}</p>
+		<p>StatusText : {{statustext}}</p>
+
+	</div>
+
+	<p>The response object has many properties. This example demonstrate the value of the data, status, and statusText
+		properties.</p> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<h1>{{content}}</h1>
+
+	</div>
+
+	<p>The $http service executes different functions on success and failure.</p> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="customersCtrl">
+
+		<ul>
+			<li ng-repeat="x in myData">
+				{{ x.Name + ', ' + x.Country + ', ' + x.Famile }}
+			</li>
+		</ul>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="customersCtrl">
+
+		<table>
+			<tr ng-repeat="x in names">
+				<td ng-if="$odd" style="background-color:#f1f1f1">
+					{{ x.Name }}</td>
+				<td ng-if="$even">
+					{{ x.Name }}</td>
+				<td ng-if="$odd" style="background-color:#f1f1f1">
+					{{ x.Country }}</td>
+				<td ng-if="$even">
+					{{ x.Country }}</td>
+			</tr>
+		</table>
+
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<select ng-model="selectedName" ng-options="x for x in names">
+		</select>
+
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<select>
+			<option ng-repeat="x in names">{{x}}</option>
+		</select>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Select a car:</p>
+
+		<select ng-model="selectedCar">
+			<option ng-repeat="x in cars" value="{{x.model}}">{{x.model}}</option>
+		</select>
+		<select ng-model="selectedCarColor">
+			<option ng-repeat="x in cars" value="{{x.color}}">{{x.color}}</option>
+		</select>
+
+		<h1>You selected: {{selectedCar}}</h1>
+		<h1>You selected color: {{selectedCarColor}}</h1>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Select a car:</p>
+
+		<select ng-model="selectedCar">
+			<option ng-repeat="x in cars" ng-value="{{x}}">{{x.model}}</option>
+		</select>
+
+		<h1>You selected a {{selectedCar.color}} model {{selectedCar.model}}</h1>
+
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Select a car:</p>
+
+		<select ng-model="selectedCar" ng-options="x.model for x in cars">
+		</select>
+
+		<h1>You selected: {{selectedCar.model}}</h1>
+		<p>Its color is: {{selectedCar.color}}</p>
+
+	</div> -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Select a car:</p>
+
+		<select ng-model="selectedCar" ng-options="x for (x, y) in cars"></select>
+
+		<h1>You selected: {{selectedCar}}</h1>
+
+	</div> -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Bu yerda tanlang:</p>
+
+		<select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
+		</select>
+
+		<h2>Tanlaganingiz: {{selectedCar.brand}}</h2>
+		<h2>Modeli: {{selectedCar.model}}</h2>
+		<h2>Rangi: {{selectedCar.color}}</h2>
+
+		<p>Note that the selected value represents an object.</p>
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="customersCtrl">
+
+		<table>
+			<tr ng-repeat="x in names">
+				<td>{{ x.Name }}</td>
+				<td>{{ x.Country }}</td>
+			</tr>
+		</table>
+
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="" ng-init="mySwitch=true">
+		<p>
+			<button ng-disabled="mySwitch">Click Me!</button>
+		</p>
+		<p>
+			<input type="checkbox" ng-model="mySwitch" />Button
+		</p>
+		<p>
+			{{ mySwitch }}
+		</p>
+	</div> -->
+
+	<!-- <div ng-app="" ng-init="mySwitch=true">
+
+		<p ng-hide="mySwitch">I am visible.</p>  
+
+		<p ng-show="mySwitch">I am not visible.</p>
+		<p>
+			<input type="checkbox" ng-model="mySwitch" />Button
+		</p>
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<h1 ng-mousemove="count = count + 'Salom men Sohruh '">Mouse Over Me!</h1>
+
+		<p>{{ count }}</p>
+
+	</div> -->
+	<!-- Bu yerda agar sichqoncha element ustida harakatlansa kopayadi -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<h3>Fibonachchi ketma-ketligi</h3> -->
+
+	<!-- Input for the number of terms -->
+	<!-- <label for="terms">Nechta son kerak:</label>
+		<input type="number" id="terms" ng-model="numTerms" placeholder="10"> -->
+
+	<!-- Button to generate the sequence -->
+	<!-- <button ng-click="generateFibonacci()">Ketma-ketlikni chiqarish</button> -->
+
+	<!-- Display the Fibonacci sequence -->
+	<!-- <p>Ketma-ketlik: {{ fibonacciSequence.join(", ") }}</p>
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<button ng-click="myFunc()">Click Me!</button>
+		<div ng-show="showMe">
+			<h1>Menu:</h1>
+			<div>Pizza</div>
+			<div>Pasta</div>
+			<div>Pesce</div>
+		</div>
+	</div> -->
+
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+
+	<!-- ------------------------------------------------JavaScript--------------------------------------------- -->
+	<script src="myCtrl.js"></script>
+</body>
+
+</html>

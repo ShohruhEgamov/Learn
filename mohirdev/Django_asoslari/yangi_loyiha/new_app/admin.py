@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News,Category
+from .models import News,Category,Contact
 
 # admin.site.register(News)
 # admin.site.register(Category)
@@ -19,3 +19,11 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id','name')
 
 # admin.site.register(Category,CategoryAdmin)
+# @admin.register(Contact)
+# class ContactAdmin(admin.ModelAdmin):
+#     list_display = ('id','name')
+#     list_filter = ('name',)
+#     search_fields = ('name',)
+#     ordering = ('name',)
+
+admin.site.register(Contact)
