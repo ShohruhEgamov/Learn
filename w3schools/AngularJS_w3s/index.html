@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
-
+<!-- <link rel="stylesheet" href="style.css"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
 <body>
 
@@ -603,15 +605,186 @@
 		<button ng-click="myFunc()">Click Me!</button>
 		<div ng-show="showMe">
 			<h1>Menu:</h1>
-			<div>Pizza</div>
-			<div>Pasta</div>
-			<div>Pesce</div>
+			<p>Pizza</p>
+			<p>Pasta</p>
+			<p>Pesce</p>
 		</div>
 	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+		<h1 ng-mousemove="myFunc($event)">Mouse Over Me!</h1>
+
+		<p>Coordinates: {{x + ', ' + y}}</p>
+	</div> -->
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="formCtrl">
+		<form>
+			First Name: <input type="text" ng-model="firstname">
+		</form>
+	</div> -->
+
+	<!-- <div ng-app="">
+		<form>
+			Tanlang:
+			<input type="radio" ng-model="myVar" value="dogs">Dogs
+			<input type="radio" ng-model="myVar" value="tutorials">Tutorials
+			<input type="radio" ng-model="myVar" value="cars">Cars
+		</form>
+
+		<form>
+			Select a topic:
+			<select ng-model="myVar">
+				<option value="">
+				<option value="dogs">Dogs
+				<option value="tuts">Tutorials
+				<option value="cars">Cars
+			</select>
+		</form>
+
+		<div ng-switch="myVar">
+			<div ng-switch-when="dogs">
+				<h1>Dogs</h1>
+				<p>Hush kelibsiz itlar qismiga</p>
+			</div>
+			<div ng-switch-when="tutorials">
+				<h1>Tutorials</h1>
+				<p>Hush kelibsiz Tutoriallar qismiga</p>
+			</div>
+			<div ng-switch-when="cars">
+				<h1>Cars</h1>
+				<p>Hush kelibsiz Carlar qismiga</p>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- <div ng-app="myApp" ng-controller="formCtrl">
+		<form novalidate>
+			First Name:<br>
+			<input type="text" ng-model="user.firstName"><br>
+			Last Name:<br>
+			<input type="text" ng-model="user.lastName">
+			<br><br>
+			<button ng-click="reset()">RESET</button>
+		</form>
+		<p>form = {{user}}</p>
+		<p>master = {{master}}</p>
+	</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp" ng-controller="formCtrl">
+		<p>Bu yerda ism kiriting</p>
+
+		<form name="myForm">
+			<label for="myInput">Ismingizni kiriting:</label>
+			<input type="text" id="myInput" name="myInput" ng-model="nameInput" ng-required="true">
+
+			<p>{{ validityStatus }}</p>
+
+			<button type="button" ng-click="checkValidity()">Tekshirish</button>
+		</form> -->
+
+	<!-- <div ng-app="">
+
+		<form name="myForm">
+			<p>Try writing in the input field:</p>
+
+			<input name="myName" ng-model="myName" type="email" required>
+
+			<p>The form gets a "ng-dirty" class when the form has been modified, and will therefore turn pink.</p>
+		</form>
+	</div> -->
+
+
+	<!-- <div ng-app="myApp">
+		<p>Kirish maydoniga yozishga harakat qiling:</p>
+
+		<form name="myForm">
+			<label for="input">Matn kiriting:</label>
+			<input type="text" id="input" name="input" ng-model="myInput" my-directive>
+			<p ng-show="myForm.input.$error.charE">Matnda "e" harfi bo'lishi kerak!</p>
+		</form>
+
+		<p>Kirishning haqiqiy holati:</p>
+		<h1>{{myForm.myInput.$valid}}</h1>
+	</div> -->
+
+
+
+	<!-- ---------------------------------------------------------------------Shu validate juda kerak bo'ladi -->
+	<!-- <h2>Validation Example</h2>
+
+	<form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+
+		<p>Username:<br>
+			<input type="text" name="user" ng-model="user" required placeholder="ism familya">
+			<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+				<span ng-show="myForm.user.$error.required">Username is required.</span>
+			</span>
+		</p>
+
+		<p>Email:<br>
+			<input type="email" name="email" ng-model="email" required placeholder="name@gmail.com">
+			<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+				<span ng-show="myForm.email.$error.required">Email is required.</span>
+				<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+			</span>
+		</p>
+
+		<p>
+			<input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+	myForm.email.$dirty && myForm.email.$invalid">
+		</p>
+
+	</form> -->
+
 
 
 	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
 
+	<!-- <div ng-app="myApp" ng-controller="myCtrl">
+		<p>{{ x1 }}</p>
+		<p>{{ x2 }}</p>
+	</div> -->
+
+
+	<!-- ---------------------------------------------------Bu yewrda boshqa html faylini yuklash------------------------------------------------ -->
+	<!-- <div ng-include="'myFile.htm'"></div> -->
+
+
+
+
+	<!-- <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+
+	<div ng-hide="myCheck">Shohruhbek Egamov</div> -->
+
+	<!-- ---------------------------------------------------HTML------------------------------------------------ -->
+	<!-- <div ng-app="myApp">
+		<p><a href="#/!">Main</a></p>
+
+		<a href="#!london">City 1</a>
+		<a href="#!paris">City 2</a>
+
+		<p>Click on the links.</p>
+
+		<p>Note that each "view" has its own controller which each gives the "msg" variable a value.</p>
+
+		<div ng-view></div>
+	</div> -->
+
+
+	<!-- ---------------------------------------------------Bu yewrda boshqa html ilova yaratish------------------------------------------------ -->
+
+	<div ng-app="myShoppingList" ng-controller="myCtrl">
+		<ul>
+			<li ng-repeat="x in products">{{x}}<span ng-click="removeItem($index)">×</span></li>
+		</ul>
+		<input ng-model="addMe">
+		<button ng-click="addItem()">Add</button>
+		<p>{{errortext}}</p>
+	</div>
+
+	<p>Try to add the same item twice, and you will get an error message.</p>
 	<!-- ------------------------------------------------JavaScript--------------------------------------------- -->
 	<script src="myCtrl.js"></script>
 </body>

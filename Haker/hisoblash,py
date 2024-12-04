@@ -1,0 +1,79 @@
+def calculate_atr(highs, lows, closes, period=14):
+    """
+    ATR (Average True Range) hisoblash
+    :param highs: Maksimal narxlar ro'yxati
+    :param lows: Minimal narxlar ro'yxati
+    :param closes: Yopilish narxlari ro'yxati
+    :param period: ATRni hisoblash uchun period (standart 14)
+    :return: ATR qiymati
+    """
+    true_ranges = []
+    for i in range(1, len(highs)):
+        tr = max(
+            highs[i] - lows[i],
+            abs(highs[i] - closes[i - 1]),
+            abs(lows[i] - closes[i - 1]),
+        )
+        true_ranges.append(tr)
+
+    atr = sum(true_ranges[-period:]) / period
+    return atr
+
+
+def detect_trend(closes):
+    """
+    Trendni aniqlash
+    :param closes: Yopilish narxlari ro'yxati
+    :return: Trend ("bullish", "bearish" yoki "neutral")
+    """
+    if closes[-1] > closes[-2] > closes[-3]:
+        return "bullish"
+    elif closes[-1] < closes[-2] < closes[-3]:
+        return "bearish"
+    else:
+        return "neutral"
+
+
+def trading_decision(price, atr, trend, sl_multiplier=1.5, tp_multiplier=3):
+    """
+    Savdo qarorini aniqlash
+    :param price: Joriy narx
+    :param atr: Hisoblangan ATR qiymati
+    :param trend: Bozor trendi ("bullish", "bearish", yoki "neutral")
+    :param sl_multiplier: Stop Loss masofasini aniqlash uchun koeffitsient
+    :param tp_multiplier: Take Profit masofasini aniqlash uchun koeffitsient
+    :return: SL, TP, va savdo qarori (Buy/Sell)
+    """
+    sl = price - atr * sl_multiplier
+    tp = price + atr * tp_multiplier
+
+    if trend == "bullish":
+        decision = "BUY"
+    elif trend == "bearish":
+        decision = "SELL"
+    else:
+        decision = "Kuzatishda davom eting"
+
+    return sl, tp, decision
+
+
+# Foydalanuvchi kiritmalari
+print("Narxlarni kiritish uchun yo'riqnomaga rioya qiling:")
+highs = list(map(float, input("Maksimal narxlar (vergul bilan ajrating): ").split(',')))
+lows = list(map(float, input("Minimal narxlar (vergul bilan ajrating): ").split(',')))
+closes = list(map(float, input("Yopilish narxlari (vergul bilan ajrating): ").split(',')))
+current_price = float(input("Joriy narxni kiriting: "))
+
+# ATRni hisoblash
+atr = calculate_atr(highs, lows, closes)
+print(f"ATR (14 period): {atr:.2f}")
+
+# Trendni aniqlash
+trend = detect_trend(closes)
+print(f"Bozor trendi: {trend}")
+
+# Savdo qarorini aniqlash
+sl, tp, decision = trading_decision(current_price, atr, trend)
+print(f"Stop Loss (SL): {sl:.2f}")
+print(f"Take Profit (TP): {tp:.2f}")
+print(f"Tavsiya: {decision}")

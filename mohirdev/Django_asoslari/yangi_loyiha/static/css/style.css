@@ -674,10 +674,11 @@ img:hover {
 	opacity: 0.5
 }
 
+
 .latest_post {
 	float: left;
 	display: inline;
-	width: 100%
+	width: 100%;
 }
 
 .latest_post>h2 {
@@ -692,7 +693,7 @@ img:hover {
 	padding: 0;
 	position: relative;
 	text-align: center;
-	text-transform: uppercase
+	text-transform: uppercase;
 }
 
 .latest_post>h2 span {

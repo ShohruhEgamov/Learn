@@ -2,10 +2,12 @@ input {
 	background-color: black;
 	color: red;
 	border-radius: 10px;
-	width: 60px;
+	width: 150px;
 	height: 20px;
 	justify-content: center;
 	align-items: center;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 p,
@@ -21,6 +23,8 @@ h1 {
 	/* border-style: solid;
 	border-color: black; */
 	border: solid, black, 2px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 p:hover {
@@ -61,4 +65,56 @@ select:hover {
 	color: black;
 	border-style: solid;
 	border: solid, black, 2px;
+}
+
+
+/* input.ng-untouched {
+	background-color: palevioletred;
+}
+
+input.ng-untouched {
+	background-color: lightgreen;
+} */
+
+/* form.ng-pristine {
+	background-color: lightblue;
+}
+
+form.ng-dirty {
+	background-color: pink;
+} */
+
+
+/*----------------------------------------------------------------------Bu yerda esa validaterning css */
+form.ng-valid {
+	border: 2px solid green;
+	background-color: #d4f8d4;
+	border-radius: 15px;
+}
+
+/* Xato yoki noto'ldirilgan */
+form.ng-invalid {
+	border: 2px solid red;
+	background-color: #f8d4d4;
+	border-radius: 15px;
+}
+
+
+div {
+	transition: all linear 0.5s;
+	background-color: lightblue;
+	height: 100px;
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+
+.ng-hide {
+	height: 0;
+	/* width: 0;
+	background-color: transparent;
+	top: -200px;
+	left: 1100px; */
 }

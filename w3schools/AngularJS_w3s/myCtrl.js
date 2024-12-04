@@ -1,4 +1,4 @@
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ["ngRoute"]);
 
 // app.controller("myCtrl", function ($scope) {
 // 	$scope.firstName = "Shohruh";
@@ -347,3 +347,154 @@ var app = angular.module('myApp', []);
 // 	}
 // });
 
+
+// app.controller('myCtrl', function ($scope) {
+// 	$scope.myFunc = function (myE) {
+// 		$scope.x = myE.clientX;
+// 		$scope.y = myE.clientY;
+// 	}
+// });
+
+// --------------------------------------------------------------------------------------------
+// app.controller('formCtrl', function ($scope) {
+// 	$scope.firstname = 'John';
+// });
+
+
+// app.controller('formCtrl', function ($scope) {
+// 	$scope.master = { firstName: "Ism", lastName: "Familya" }
+// 	$scope.reset = function () {
+// 		$scope.user = angular.copy($scope.master);
+// 	};
+// 	$scope.reset()
+// });
+
+
+// --------------------------------------------------------------------------------------------
+// app.controller("formCtrl", function ($scope) {
+// 	$scope.name = function () {
+// 		$scope.name = myForm.myInput.$valid;
+// 		if ($scope.rost == !$scope.name) {
+// 			return "Toldirildi"
+// 		} else { return 'Bu toldirilmadi' }
+// 	};
+// })
+
+
+// app.controller('myCtrl', function ($scope) {
+// 	$scope.firstName = '';
+// 	$scope.lastName = '';
+// 	$scope.fullName = function () {
+// 		if ($scope.firstName.length < 5) {
+// 			return 'Ismingiz qabul qilinmadi'
+// 		} else { return `Bu yerda to'liq ism ${$scope.firstName} ${$scope.lastName} ism uzunligi ${$scope.firstName.length} familya uzinligi ${$scope.lastName.length}`; }
+
+// 	};
+// });
+
+
+
+
+
+// app.controller("formCtrl", function ($scope) {
+// 	// To'ldirilgan yoki to'ldirilmaganlikni tekshirish funksiyasi
+// 	$scope.checkValidity = function () {
+// 		if ($scope.myForm.myInput.$pristine) {
+// 			$scope.validityStatus = "To'ldirildi";
+// 		} else {
+// 			$scope.validityStatus = "Bu to'ldirilmadi";
+// 		}
+// 	};
+// });
+
+
+
+// app.directive('myDirective', function () {
+// 	return {
+// 		require: 'ngModel',
+// 		link: function (scope, element, attr, mCtrl) {
+// 			function myValidation(value) {
+// 				if (value.indexOf("e") > -1) {
+// 					mCtrl.$setValidity('charE', true);
+// 				} else {
+// 					mCtrl.$setValidity('charE', false);
+// 				}
+// 				return value;
+// 			}
+// 			mCtrl.$parsers.push(myValidation);
+// 		}
+// 	};
+// });
+
+
+// //-----------------------------------------------------------------------------------Shu validate juda kerak bo'ladi
+// app.controller('validateCtrl', function ($scope) {
+// 	$scope.user = "";
+// 	$scope.email = "";
+// });
+
+
+
+// --------------------------------------------------------------------------------------------
+
+// app.controller('myCtrl', function ($scope) {
+// 	$scope.x1 = "SHOHRUH";
+// 	$scope.x2 = angular.lowercase($scope.x1)
+// });
+
+
+// app.controller('myCtrl', function ($scope) {
+// 	$scope.x1 = "John";
+// 	$scope.x2 = angular.uppercase($scope.x1);
+// });
+
+
+// app.controller('myCtrl', function($scope) {
+//     $scope.x1 = "JOHN";
+//     $scope.x2 = angular.isString($scope.x1);
+// });
+
+// app.controller('myCtrl', function($scope) {
+// 	$scope.x1 = "JOHN";
+// 	$scope.x2 = angular.isNumber($scope.x1);
+//   });
+
+
+// --------------------------------------------------------------------------------------------
+
+// app.config(function ($routeProvider) {
+// 	$routeProvider
+// 		.when("/", {
+// 			templateUrl: "main.htm"
+// 		})
+// 		.when("/london", {
+// 			templateUrl: "london.htm"
+// 		})
+// 		.when("/paris", {
+// 			templateUrl: "paris.htm"
+// })
+// 		.when("/blue", {
+// 			templateUrl: "blue.htm"
+// 		})
+// })
+
+
+
+// --------------------------------------------------------------------------------------------
+var app = angular.module("myShoppingList", []);
+app.controller("myCtrl", function ($scope) {
+	$scope.products = ["Milk", "Bread", "Cheese"];
+	$scope.addItem = function () {
+		$scope.errortext = "";
+		if (!$scope.addMe) { return; }
+		if ($scope.products.indexOf($scope.addMe) == -1) {
+			$scope.products.push($scope.addMe);
+		} else {
+			$scope.errortext = "The item is already in your shopping list.";
+		}
+	}
+	$scope.removeItem = function (x) {
+		$scope.errortext = "";
+		$scope.products.splice(x, 1);
+	}
+});
