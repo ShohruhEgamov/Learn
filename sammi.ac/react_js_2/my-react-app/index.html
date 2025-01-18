@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<!-- <script>
+		class Car {
+			constructor(name) {
+				this.brand = name;
+			}
+
+			present() {
+				return 'I have a ' + this.brand;
+			}
+		}
+
+		class Model extends Car {
+			constructor(name, mod) {
+				super(name);
+				this.model = mod;
+			}
+			show() {
+				return this.present() + ', it is a ' + this.model
+			}
+		}
+
+		const mycar = new Model("Ford", "Mustang");
+		document.write(mycar.show());
+	</script> -->
+
+	<!-- ............................................................................................................... -->
+	<!-- <h1>Regular Function</h1>
+
+	<p>The <strong>this</strong> keyword represents different objects depending on how the function was called.</p>
+
+	<button id="btn">Click Me!</button>
+
+	<p><strong>this</strong> represents:</p>
+
+	<p id="demo"></p>
+
+	<p>See the difference before and after the button is clicked.</p>
+	<script>
+		class Header {
+			constructor() {
+				this.color = "Red"
+			}
+			changeColor = function () {
+				document.getElementById('demo').innerHTML += this;
+			}
+		}
+
+		const myheader = new Header();
+
+		window.addEventListener('load', myheader.changeColor);
+
+		document.getElementById("btn").addEventListener("click", myheader.changeColor);
+	</script> -->
+
+	<!-- ............................................................................................................... -->
+	<!-- <script>
+		function calculate(a, b) {
+			const add = a + b;
+			const subtract = a - b;
+			const multiply = a * b;
+			const divide = a / b;
+
+			return [add, subtract, multiply, divide];
+		}
+
+		const [add, subtract, multiply, divide] = calculate(2, 4);
+
+		document.write("<p>Sum: " + add + "</p>");
+		document.write("<p>Difference " + subtract + "</p>");
+		document.write("<p>Product: " + multiply + "</p>");
+		document.write("<p>Quotient " + divide + "</p>");
+	</script> -->
+
+
+
+	<!-- ............................................................................................................... -->
+	<!-- <p id="demo"></p>
+	<script>
+		const vehicleOne = {
+			brand: 'Ford',
+			model: 'Mustang',
+			type: 'car',
+			year: 2021,
+			color: 'red',
+			registration: {
+				city: 'Houston',
+				state: 'Texas',
+				country: 'USA'
+			}
+		}
+
+		myVehicle(vehicleOne)
+
+		function myVehicle({ model, registration: { state } }) {
+			const message = 'My ' + model + ' is registered in ' + state + '.';
+
+			document.getElementById("demo").innerHTML = message;
+		}
+	</script> -->
+
+
+
+	<!-- ............................................................................................................... -->
+	<!-- <script>
+		const numbersOne = [1, 2, 3];
+		const numbersTwo = [4, 5, 6];
+		const numbersCombined = [...numbersOne, ...numbersTwo];
+
+		document.write(numbersCombined);
+	</script> -->
+
+	<!-- ............................................................................................................... -->
+	<!-- <script>
+		const numbers = [1, 2, 3, 4, 5, 6];
+
+		const [one, two, ...rest] = numbers;
+
+		document.write("<p>" + one + "</p>");
+		document.write("<p>" + two + "</p>");
+		document.write("<p>" + rest + "</p>");
+	</script> -->
+
+	<!-- ............................................................................................................... -->
+
+	<!-- <script>
+		const myVehicle = {
+			brand: 'Ford',
+			model: 'Mustang',
+			color: 'red'
+		}
+
+		const updateMyVehicle = {
+			type: 'car',
+			year: 2021,
+			color: 'yellow'
+		}
+
+		const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle }
+
+		//Check the result object in the console:
+		console.log(myUpdatedVehicle);
+	</script>
+
+	<p>Press F12 and see the result object in the console view.</p> -->
+
+
+	<!-- ............................................................................................................... -->
+
+	<h1 id="demo"></h1>
+
+	<script>
+		function renderApp() {
+			document.getElementById("demo").innerHTML = "Welcome!";
+		}
+
+		function renderLogin() {
+			document.getElementById("demo").innerHTML = "Please log in";
+		}
+
+		let authenticated = true;
+
+		if (authenticated) {
+			renderApp();
+		} else {
+			renderLogin();
+		}
+
+	</script>
+
+	<p>Try changing the "authenticated" variable to false, and run the code to see what happens.</p>
+</body>
+
+</html>
